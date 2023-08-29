@@ -1,7 +1,7 @@
 require('dotenv').config();
 require('./config/database.cjs');
 const express = require('express');
-const app = express();
+const app = require('./app-server.cjs');
 const PORT = process.env.PORT || 8000;
 const mongoose = require('mongoose');
 const path = require('path');
