@@ -31,6 +31,15 @@
 
 * [Installation]
 
+* [Purpose]
+
+* [Wireframes]
+<img src= './public/img/scamazon-landing-page-correct.png'/>
+
+* [ERD]
+
+* [Trello_Board]
+
 * [Technologies_Used]
 
 * [API]
