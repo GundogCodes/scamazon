@@ -26,7 +26,9 @@ app.use(logger('dev'))
 //check if there is a user in the requests
 const ensureLoggedIn  = require('./config/ensureLoggedIn.cjs')
 
-//app.use('/routeName',/pathToRoutesfile)
+//defining routes(endpoints) of app(api) where req/res can be done 
+//and information can be exchanged and check if they need to be logged in
+app.use('/api/users',ensureLoggedIn,require('./routes/user.cjs'))
 
 // catch all for wrong routes
 app.get('*', (req, res) => {

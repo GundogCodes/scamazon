@@ -13,11 +13,15 @@ function createJWT(user){
     }
     
 //checkToken function which responds with the expiry of the the token
-const checkToken = (req, res) => {
+exports.checkToken = (req, res) => {
     console.log('req.user', req.user)
     res.json(req.exp)
   }
 
+//authencationn function which returns the local token
+exports.auth = (req,res,next)=>{
+    res.json(res.locals.data.token)
+}
 //********************************************CRUD********************************************//
 //C
 exports.createUser = async (req,res,next)=>{
