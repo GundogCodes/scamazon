@@ -1,5 +1,5 @@
 //building itemSchema here
-const item = require('./item')
+const item = require('./item.cjs')
 const Schema = require('mongoose').Schema
 
 const itemSchema = new Schema({
