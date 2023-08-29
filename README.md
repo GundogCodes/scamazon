@@ -11,7 +11,7 @@
 * [Purpose]
 
 * [Wireframes]
-<img src= './public/img/scamazon-landing-page.png'/>
+<img src= './public/img/scamazon-landing-page-correct.png'/>
 
 * [ERD]
 
