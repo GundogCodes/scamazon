@@ -9,20 +9,20 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#Purpose">Purpose</a></li>
-        <li><a href="#Usage">Contributor</a></li>
+        <li><a href="#Usage">Usage</a></li>
         <li><a href="#Portfolio">Portfolio</a></li>
       </ul>
     </li>
     <li>
-      <a href="#placeholder">Getting Started</a>
+      <a href="#placeholder">placeholder</a>
       <ul>
         <li><a href="#placeholder">placeholder</a></li>
         <li><a href="#placeholder">placeholder</a></li>
         <li><a href="#placeholder">placeholder</a></li>
       </ul>
     </li>
-    <li><a href="#placeholder">challenges</a></li>
-    <li><a href="#placeholder">note to self</a></li>
+    <li><a href="#placeholder">placeholder</a></li>
+    <li><a href="#placeholder">placeholder</a></li>
     <li><a href="#placeholder">placeholder</a></li>
   </ol>
 </details>
@@ -30,16 +30,6 @@
 * [Usage]
 
 * [Installation]
-
-* [Purpose]
-
-
-* [Wireframes]
-<img src= './public/img/scamazon-landing-page.png'/>
-
-* [ERD]
-
-* [Trello_Board]
 
 * [Technologies_Used]
 
@@ -73,9 +63,7 @@ Our team created a MERN stack web application similar in style and function to m
   2. Erd
   3. Trello
 </details>
-### Wireframes
 
-### ERD
 
 ### Trello Board
 
