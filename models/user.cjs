@@ -28,10 +28,10 @@ const userSchema = new Schema(
             required: true
         },
         address: {
-            street: string,
-            city: string,
-            state: string,
-            zip: string,
+            street: String,
+            city: String,
+            state: String,
+            zip: String,
             lowercase: true,
             trim: true,
             required: true
@@ -67,3 +67,7 @@ userSchema.pre('save', async function(next) {
     this.password = await bcrypt.hash(this.password, SALT_ROUNDS)
     return next()
 })
+
+const User = mongoose.model('User',userSchema)
+
+module.exports = User

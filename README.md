@@ -2,7 +2,30 @@
 
 # SCAMAZON
 
-## Contents
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#Purpose">Purpose</a></li>
+        <li><a href="#Usage">Usage</a></li>
+        <li><a href="#Portfolio">Portfolio</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#placeholder">placeholder</a>
+      <ul>
+        <li><a href="#placeholder">placeholder</a></li>
+        <li><a href="#placeholder">placeholder</a></li>
+        <li><a href="#placeholder">placeholder</a></li>
+      </ul>
+    </li>
+    <li><a href="#placeholder">placeholder</a></li>
+    <li><a href="#placeholder">placeholder</a></li>
+    <li><a href="#placeholder">placeholder</a></li>
+  </ol>
+</details>
 
 * [Usage]
 
@@ -31,19 +54,28 @@
 
 * [Collaborators]
 
-### Usage
-
 ### Installation 
 
 ### Purpose 
 
 Our team created a MERN stack web application similar in style and function to multinational e-commerce platform, Amazon, for General Assembly coding bootcamp. 
 
-### Wireframes
+### Usage
 
-### ERD
+
+<details id="Portfolio">
+  <summary>Portfolio</summary>
+  
+ ## Portfolio
+  1. Wireframed 
+  <img src= './public/img/scamazon-landing-page.png'/>
+  2. Erd
+  3. Trello
+</details>
+
 
 ### Trello Board
+
 
 ### Technologies_Used
 
