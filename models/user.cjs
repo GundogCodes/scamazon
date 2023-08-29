@@ -28,10 +28,10 @@ const userSchema = new Schema(
             required: true
         },
         address: {
-            street: string,
-            city: string,
-            state: string,
-            zip: string,
+            street: String,
+            city: String,
+            state: String,
+            zip: String,
             lowercase: true,
             trim: true,
             required: true

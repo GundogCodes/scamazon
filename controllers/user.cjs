@@ -19,37 +19,44 @@ exports.checkToken = (req, res) => {
   }
 
 //authencationn function which returns the local token
-exports.auth = (req,res,next)=>{
-    res.json(res.locals.data.token)
+const apiController ={
+
+    auth (req,res){
+        cons
+        res.json(res.locals.data.token)
+    }
 }
 //********************************************CRUD********************************************//
+const dataController ={
 //C
-exports.createUser = async (req,res,next)=>{
+      async createUser (req,res,next){
     try {
         const newUser = await User.create(req.body)
         const token = createJWT(user)
         res.locals.data.user = newUser
         res.locals.data.token = token
+        res.json(newUser)
         next()
     } catch (error) {
         console.log('Ya gatta database prablem son')
         req.status(400).json({error:error.message})
     }
-}
+},
 
 //R
-exports.getUser = async (req,res,next)=>{
+    async getUser(req,res,next){
     try {
         const foundUser =  await User.findOne({_id:req.params.id})
         res.json(foundUser)
+        next()
     } catch (error) {
         req.status(400).json({error:error.message})
         
     }
-}
+},
 
 
-exports.loginUser = async (req,res,next)=>{
+    async loginUser (req,res,next){
     try {
         const user = await User.findOne({email:req.body.email})
         if(!user) throw Error()
@@ -61,31 +68,40 @@ exports.loginUser = async (req,res,next)=>{
     } catch (error) {
         res.status(400).json('Bad Credentials')
     }
-}
+},
 
 //U
-exports.updateUser = async (req,res,next) =>{
+    async updateUser(req,res,next) {
     try {
         const updatedUser = await User.findOneAndUpdate({_id:req.params.id},req.body,{new:true})
         updatedUser.save()
         res.locals.data.user = updatedUser
         res.locals.data.user = req.user.token 
-        
+        next()
     } catch (error) {
         res.status(400).json('Bad Credentials')
         
     }
-}
+},
 
 //D
-exports.deleteUser = async (req,res,next)=>{
+    async deleteUser (req,res,next){
     try {
         await User.findOneAndDelete({email:req.body.email})
         req.locals.data.user = null
         req.locals.data.token = null
         res.json('User Deleted')
+        next()
     } catch (error) {
         res.status(400).json('Bad Credentials')
         
     }
+}
+}
+
+
+module.exports = {
+    checkToken,
+    dataController,
+    apiController
 }
