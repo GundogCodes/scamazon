@@ -26,21 +26,21 @@ const userSchema = new Schema(
             trim: true,
             minlength: 3,
             required: true
+        },
+        address: {
+            street: { type: String, trim: true },
+            city: { type: String, trim: true },
+            state: { type: String, trim: true },
+            zip: { type: String, trim: true },
+            lowerCase: true,
+            trim: true,
+            required: true
+        },
+        phoneNumber: {
+            type: String,
+            trim: true,
+            required: true
         }
-        // address: {
-        //     street: { type: String, trim: true },
-        //     city: { type: String, trim: true },
-        //     state: { type: String, trim: true },
-        //     zip: { type: String, trim: true },
-        //     lowerCase: true,
-        //     trim: true,
-        //     required: true
-        // },
-        // phoneNumber: {
-        //     type: String,
-        //     trim: true,
-        //     required: true
-        // }
     },
     {
         timestamps: true,
