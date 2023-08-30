@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router()
 
-const {dataController,apiController, checkToken} = require('../controllers/user.cjs')
+const {dataController,apiController, checkToken} = require('../controllers/users.cjs')
 
 const ensureLoggedIn = require('../config/ensureLoggedIn.cjs')
 
