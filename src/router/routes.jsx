@@ -9,6 +9,11 @@ import WishlistPage from '../pages/LoginPage/LoginPage';
 import CartPage from '../pages/LoginPage/LoginPage';
 
 const routes = [
+	{
+		Component: HomePage,
+		key: 'Home',
+		path: '/'
+	},
 	{//Contains the signup as well
 		Component: LoginPage,
 		key: 'Login',
@@ -18,11 +23,6 @@ const routes = [
 		Component: UserPage,
 		key: 'User',
 		path: '/user/:id'
-	},
-	{
-		Component: HomePage,
-		key: 'Home',
-		path: '/'
 	},
 	{
 		Component: SearchPage,

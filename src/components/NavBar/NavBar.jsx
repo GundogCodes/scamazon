@@ -4,7 +4,9 @@ export default function NavBar(props){
     return(
         <nav className={styles.NavBarDiv}>
           {props.routes.map(({key,path})=>(
+            <div className={styles.titles}>
             <Link to={path} key={key} >{key}</Link>
+            </div>
           ))}
         </nav>
         )
