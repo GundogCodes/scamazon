@@ -19,7 +19,6 @@ app.use((req,res,next)=>{
 })
 
 
-
 //use logger to log http requests
 app.use(logger('dev'))
 
@@ -28,7 +27,7 @@ const ensureLoggedIn  = require('./config/ensureLoggedIn.cjs')
 
 //defining routes(endpoints) of app(api) where req/res can be done 
 //and information can be exchanged and check if they need to be logged in
-app.use('/api/users',ensureLoggedIn,require('./routes/user.cjs'))
+app.use('/api/users',require('./routes/user.cjs'))
 
 // catch all for wrong routes
 app.get('*', (req, res) => {
