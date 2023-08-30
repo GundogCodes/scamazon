@@ -68,7 +68,7 @@ Our team created a MERN stack web application similar in style and function to m
   
  ## Portfolio
   1. Wireframed 
-  <img src= 'https://miro.medium.com/v2/0*ZjYSm_q36J4KChdn'/>
+  <img src= './public/img/football.png'/>
   
   2. Erd
   3. Trello
