@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-
 const bcrypt = require('bcrypt')
 const Schema = mongoose.Schema
 
@@ -29,11 +28,11 @@ const userSchema = new Schema(
             required: true
         },
         address: {
-            street: String,
-            city: String,
-            state: String,
-            zip: String,
-            lowercase: true,
+            street: { type: String, trim: true },
+            city: { type: String, trim: true },
+            state: { type: String, trim: true },
+            zip: { type: String, trim: true },
+            lowerCase: true,
             trim: true,
             required: true
         },
@@ -41,14 +40,6 @@ const userSchema = new Schema(
             type: String,
             trim: true,
             required: true
-        },
-        //ask josh about this???
-        wishList: {
-            itemArray : [
-                {
-                    item: { type: Schema.Types.ObjectId, ref: 'Item' }
-                }
-            ]
         }
     },
     {
