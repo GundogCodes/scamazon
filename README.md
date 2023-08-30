@@ -161,14 +161,14 @@ Our team created a MERN stack web application similar in style and function to m
   ![Contact](./public/img/Contact-Us.png)
 
   #### Misc
-  ![Misc](./public/img/About.png)
-  ![Misc](./public/img/Careers.png)
-  ![Misc](./public/img/Corporate-Values.png)
-  ![Misc](./public/img/History.png)
-  ![Misc](./public/img/Job-Opening.png)
-  ![Misc](./public/img/Mission.png)
-  ![Misc](./public/img/Testimonies.png')
-  ![Misc](./public/img/Working-for-Scamazon.png')
+  ![About](./public/img/About.png)
+  ![Career](./public/img/Careers.png)
+  ![CorpV](./public/img/Corporate-Values.png)
+  ![History](./public/img/History.png)
+  ![Jobopen](./public/img/Job-Opening.png)
+  ![Mission](./public/img/Mission.png)
+  ![Test](./public/img/Testimonies.png')
+  ![Work](./public/img/Working-for-Scamazon.png')
 
   3. Trello
 </details>
