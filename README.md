@@ -69,6 +69,7 @@ Our team created a MERN stack web application similar in style and function to m
  ## Portfolio
   1. Wireframed 
   <img src= './public/img/scamazon-landing-page.png'/>
+  
   2. Erd
   3. Trello
 </details>
