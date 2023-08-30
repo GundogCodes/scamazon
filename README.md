@@ -168,8 +168,9 @@ Our team created a MERN stack web application similar in style and function to m
   ![Jobopen](./public/img/Job-Openings.png)
   ![Mission](./public/img/Mission.png)
   <img src= './public/img/Testimonies.png'/>
-  ![Testimonies](./public/img/Testimonies.png')
-  ![Work](./public/img/Working-for-Scamazon.png')
+
+  <img src= './public/img/Working-for-Scamazon.png'/>
+  
 
   3. Trello
 </details>
