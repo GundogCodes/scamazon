@@ -53,6 +53,11 @@
  
 <img src= './public/img/My-Orders.png'/>
 
+#### Wishlist
+
+<img src= './public/img/Wishlist.png'/>
+
+
 #### Checkout
 
 <img src= './public/img/Checkout.png'/>
