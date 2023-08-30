@@ -163,6 +163,9 @@ Our team created a MERN stack web application similar in style and function to m
 
 ### Technical_Challenges
 
+   #### Installing Vite 
+
+
 ### Collaborators 
 
   
