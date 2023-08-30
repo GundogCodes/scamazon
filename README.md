@@ -129,35 +129,35 @@ Our team created a MERN stack web application similar in style and function to m
   
   1. Wireframed 
 
-  ### Landing Page
+  ##### Landing Page
   ![Landing Page](./public/img/scamazon-landing-page-correct.png)
 
-  ### Items List
+  ##### Items List
   ![Items List](./public/img/Items-Page.png)
 
-  ### Item Detail
+  ##### Item Detail
   ![Item Detail](./public/img/Item-Detail.png)
 
-  ### Cart
+  ##### Cart
   ![Cart](./public/img/Cart.png)
 
-  ### My Orders
+  ##### My Orders
   ![My Orders](./public/img/My-Orders.png)
 
-  ### Wishlist
+  ##### Wishlist
   ![Wishlist](./public/img/Wishlist.png)
 
-  ### Checkout
+  ##### Checkout
   ![Checkout](./public/img/Checkout.png)
 
-  ### Login/Sign Up
+  ##### Login/Sign Up
   ![Login](./public/img/Login.png)
   ![Sign Up](./public/img/Sign-Up.png)
 
-  ### My Account
+  ##### My Account
   ![My Account](./public/img/My-Account.png)
 
-  ### Contact
+  ##### Contact
   ![Contact](./public/img/Contact-Us.png)
 
   2. Erd
