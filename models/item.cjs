@@ -1,6 +1,6 @@
 // seperation of concerns, this file is for the item model
-const monogoose = require('mongoose')
+const mongoose = require('mongoose')
 require('./category.cjs')
 const itemSchema = require('./itemSchema.cjs')
 
-module.exports = monogoose.model('Item', itemSchema)
+module.exports = mongoose.model('Item', itemSchema)
