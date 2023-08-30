@@ -129,36 +129,36 @@ Our team created a MERN stack web application similar in style and function to m
   
   1. Wireframed 
 
-  ##### Landing Page
-  ![Landing Page](./public/img/scamazon-landing-page-correct.png)
+  ### Landing Page
+  <img src="./public/img/scamazon-landing-page-correct.png" style="width: "300"; height: auto;">
 
-  ##### Items List
-  ![Items List](./public/img/Items-Page.png)
+  ### Items List
+  <img src="./public/img/Items-Page.png" style="width: "300"; height: auto;">
 
-  ##### Item Detail
-  ![Item Detail](./public/img/Item-Detail.png)
+  ### Item Detail
+  <img src="./public/img/Item-Detail.png" style="width: "300"; height: auto;">
 
-  ##### Cart
-  ![Cart](./public/img/Cart.png)
+  ### Cart
+  <img src="./public/img/Cart.png" style="width: "300"; height: auto;">
 
-  ##### My Orders
-  ![My Orders](./public/img/My-Orders.png)
+  ### My Orders
+  <img src="./public/img/My-Orders.png" style="width: "300"; height: auto;">
 
-  ##### Wishlist
-  ![Wishlist](./public/img/Wishlist.png)
+  ### Wishlist
+  <img src="./public/img/Wishlist.png" style="width: "300"; height: auto;">
 
-  ##### Checkout
-  ![Checkout](./public/img/Checkout.png)
+  ### Checkout
+  <img src="./public/img/Checkout.png" style="width: "300"; height: auto;">
 
-  ##### Login/Sign Up
-  ![Login](./public/img/Login.png)
-  ![Sign Up](./public/img/Sign-Up.png)
+  ### Login/Sign Up
+  <img src="./public/img/Login.png" style="width: "300"; height: auto;">
+  <img src="./public/img/Sign-Up.png" style="width: "300"; height: auto;">
 
-  ##### My Account
-  ![My Account](./public/img/My-Account.png)
+  ### My Account
+  <img src="./public/img/My-Account.png" style="width: 100%; height: auto;">
 
-  ##### Contact
-  ![Contact](./public/img/Contact-Us.png)
+  ### Contact
+  <img src="./public/img/Contact-Us.png" style="width: 100%; height: auto;">
 
   2. Erd
   3. Trello
