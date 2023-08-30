@@ -22,7 +22,7 @@ const routes = [
 	{
 		Component: HomePage,
 		key: 'Home',
-		path: '/home'
+		path: '/'
 	},
 	{
 		Component: SearchPage,
@@ -48,12 +48,8 @@ const routes = [
 		Component: WishlistPage,
 		key: 'Wishlist',
 		path: '/wishlist'
-	},
-	{
-		Component: CartPage,
-		key: 'Cart',
-		path: '/cart'
 	}
+	
 ];
 
 export default routes;
