@@ -133,7 +133,7 @@ Our team created a MERN stack web application similar in style and function to m
   ![Landing Page](./public/img/scamazon-landing-page-correct.png)
 
   ##### Items List
-  <img src="./public/img/Items-Page.png" width="500" height="300">
+  ![Items List](./public/img/Items-Page.png)
 
   ##### Item Detail
   ![Item Detail](./public/img/Item-Detail.png)
@@ -158,9 +158,18 @@ Our team created a MERN stack web application similar in style and function to m
   ![My Account](./public/img/My-Account.png)
 
   ##### Contact
-  ![Contact](./public/img/Contact-Us.png )
+  ![Contact](./public/img/Contact-Us.png)
 
-  2. Erd
+  #### Misc
+  ![Misc](./public/img/About.png)
+  ![Misc](./public/img/Careers.png)
+  ![Misc](./public/img/Corporate-Values.png)
+  ![Misc](./public/img/History.png)
+  ![Misc](./public/img/Job-Opening.png)
+  ![Misc](./public/img/Mission.png)
+  ![Misc](./public/img/Testimonies.png')
+  ![Misc](./public/img/Working-for-Scamazon.png')
+
   3. Trello
 </details>
 
