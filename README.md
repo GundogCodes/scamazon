@@ -122,7 +122,7 @@ Our team created a MERN stack web application similar in style and function to m
 ### Usage
 
 
-<details>
+<details id ="Portfolio" >
   <summary>Portfolio</summary>
   
   ## Portfolio
@@ -163,6 +163,7 @@ Our team created a MERN stack web application similar in style and function to m
   2. Erd
   3. Trello
 </details>
+
 
 
 ### Trello Board
