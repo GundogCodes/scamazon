@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 require('dotenv').config();
 require('./database.cjs');
 
