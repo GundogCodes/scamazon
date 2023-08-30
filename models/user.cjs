@@ -27,6 +27,9 @@ const userSchema = new Schema(
             minlength: 3,
             required: true
         },
+
+        //review this with josh
+        /*************************** */
         address: {
             street: { type: String, trim: true },
             city: { type: String, trim: true },
@@ -36,6 +39,8 @@ const userSchema = new Schema(
             trim: true,
             required: true
         },
+
+        /*************************** */
         phoneNumber: {
             type: String,
             trim: true,
