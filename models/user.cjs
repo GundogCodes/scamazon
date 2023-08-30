@@ -27,15 +27,26 @@ const userSchema = new Schema(
             minlength: 3,
             required: true
         },
-        address: {
-            street: { type: String, trim: true },
-            city: { type: String, trim: true },
-            state: { type: String, trim: true },
-            zip: { type: String, trim: true },
-            lowerCase: true,
-            trim: true,
-            required: true
-        },
+
+        //review this with josh
+        //make this a seperate schema
+        /*************************** */
+        // address: {
+        //     street: { type: String, trim: true },
+        //     city: { type: String, trim: true },
+        //     state: { type: String, trim: true },
+        //     zip: { type: String, trim: true },
+        //     lowerCase: true,
+        //     trim: true,
+        //     required: true
+        // },
+
+        /*************************** */
+
+        address : addressSchema,
+
+        /******* im unsure if this is actually going to work *******/
+        
         phoneNumber: {
             type: String,
             trim: true,
@@ -52,6 +63,17 @@ const userSchema = new Schema(
         }
     }
 )
+
+//make a new schema for the address
+const addressSchema = new Schema({
+    street: { type: String, trim: true },
+    city: { type: String, trim: true },
+    state: { type: String, trim: true },
+    zip: { type: String, trim: true },
+    lowerCase: true,
+    trim: true,
+    required: true
+})
 
 userSchema.pre('save', async function(next) {
     // single line if statement, if password is not modified, return next
