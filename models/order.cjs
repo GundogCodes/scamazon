@@ -10,11 +10,11 @@ specific item schem and associated functionality to add the prices
 
 //this is the schema for the order form per specific item
 const lineItemSchema = new Schema({
-    qauntity: { type: Number, default: 1 },
+    quantity: { type: Number, default: 1 },
     item: itemSchema
 }, {
     timestamps: true,
-    toJson: { virtuals: true }
+    toJSON: { virtuals: true }
 })
 
 //this multiplies the quantity by the price of the item
