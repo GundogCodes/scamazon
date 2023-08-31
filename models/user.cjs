@@ -60,7 +60,7 @@ const userSchema = new Schema(
         phoneNumber: {
             type: String,
             trim: true,
-            required: true
+            
         }
     },
     {
