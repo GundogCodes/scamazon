@@ -42,7 +42,7 @@ const dataController ={
         next()
     } catch (error) {
         console.log('Ya gatta database prablem son')
-        req.status(400).json({error:error.message})
+        res.status(400).json({error:error.message})
     }
 },
 
@@ -96,7 +96,7 @@ async deleteUser (req,res,next){
         console.log('---- req.locals.data.token --- ', req.locals.data.user)
         const findUser = await User.findOne({_id:req.params.id})
         console.log('---- findUser.id ---- ', findUser.id)
-        if(findUser.id !== req.locals.data.user._id){
+        if(findUser.id!==  req.locals.data.user._id){
             res.json('You are not Authorized to delete this account')
         } else if(findUser.id=== req.locals.data.user._id){
             await User.deleteOne({_id:req.params.id})
