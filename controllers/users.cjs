@@ -24,11 +24,15 @@ const dataController = {
   //C
   async createUser(req, res, next) {
     try {
-      const newUser = await User.create(req.body);
-      const token = createJWT(newUser); // newUser?
-      res.json(newUser);
-      res.locals.data.user = newUser;
+      const user = await User.create(req.body);
+      const token = createJWT(user);
+      console.log(user);
+      req.user = user;
+      res.locals.data.user = user;
       res.locals.data.token = token;
+      console.log('----res.locals.data.user-----', res.locals.data.user);
+      console.log('----res.locals.data.token-----', res.locals.data.token);
+      res.json(token);
       next();
     } catch (error) {
       console.log('Ya gatta database prablem son');
@@ -55,6 +59,8 @@ const dataController = {
       if (!match) throw new Error();
       res.locals.data.user = user;
       res.locals.data.token = createJWT(user);
+      console.log('----res.locals.data.user-----', res.locals.data.user);
+      console.log('----res.locals.data.token-----', res.locals.data.token);
       next();
     } catch (error) {
       res.status(400).json('Bad Credentials');
@@ -70,6 +76,7 @@ const dataController = {
         { new: true }
       );
       updatedUser.save();
+      res.json(updatedUser);
       res.locals.data.user = updatedUser;
       res.locals.data.user = req.user.token;
       next();
@@ -81,11 +88,19 @@ const dataController = {
   //D
   async deleteUser(req, res, next) {
     try {
-      await User.findOneAndDelete({ email: req.body.email });
-      req.locals.data.user = null;
-      req.locals.data.token = null;
-      res.json('User Deleted');
-      next();
+      console.log('---- req.locals.data.token --- ', req.locals.data.user);
+      const findUser = await User.findOne({ _id: req.params.id });
+      console.log('---- findUser.id ---- ', findUser.id);
+      if (findUser.id !== req.locals.data.user._id) {
+        res.json('You are not Authorized to delete this account');
+      } else if (findUser.id === req.locals.data.user._id) {
+        await User.deleteOne({ _id: req.params.id });
+        req.user = null;
+        req.locals.data.user = null;
+        req.locals.data.token = null;
+        res.json('User Deleted');
+        next();
+      }
     } catch (error) {
       res.status(400).json('Bad Credentials');
     }

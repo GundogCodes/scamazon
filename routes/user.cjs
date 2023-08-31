@@ -1,11 +1,10 @@
 const express = require('express');
 
 const router = express.Router();
-
 const {
+  checkToken,
   dataController,
   apiController,
-  checkToken,
 } = require('../controllers/users.cjs');
 
 const ensureLoggedIn = require('../config/ensureLoggedIn.cjs');
@@ -14,7 +13,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn.cjs');
 //I
 //N
 //D
-router.delete('/:id', apiController.auth, dataController.deleteUser);
+router.delete('/:id', dataController.deleteUser);
 //U
 router.put('/:id', dataController.updateUser, apiController.auth);
 //C
@@ -24,6 +23,6 @@ router.post('/login', dataController.loginUser, apiController.auth);
 //S
 router.get('/:id', dataController.getUser);
 
-// router.get('/check-token', ensureLoggedIn, checkToken);
+router.get('/check-token', ensureLoggedIn, checkToken);
 
 module.exports = router;

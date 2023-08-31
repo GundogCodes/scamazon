@@ -27,22 +27,25 @@ const userSchema = new Schema(
       minlength: 3,
       required: true,
     },
-    // address: {
-    //   street: { type: String, trim: true, lowercase: true, required: true },
-    //   city: { type: String, trim: true, lowercase: true, required: true },
-    //   state: { type: String, trim: true, lowercase: true, required: true },
-    //   zip: { type: String, trim: true, lowercase: true, required: true },
-    // },
-    // phoneNumber: {
-    //   type: String,
-    //   trim: true,
-    //   required: true,
-    // },
+    address: {
+      street: { type: String, trim: true },
+      city: { type: String, trim: true },
+      state: { type: String, trim: true },
+      zip: { type: String, trim: true },
+      lowerCase: true,
+      trim: true,
+      required: true,
+    },
+    phoneNumber: {
+      type: String,
+      trim: true,
+      required: true,
+    },
   },
   {
     timestamps: true,
     toJSON: {
-      transform: function (doc, ret) {
+      transorm: function (doc, ret) {
         delete ret.password;
         return ret;
       },
