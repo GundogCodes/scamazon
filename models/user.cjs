@@ -37,26 +37,7 @@ const userSchema = new Schema(
             minlength: 3,
             required: true
         },
-
-        //review this with josh
-        //make this a seperate schema
-        /*************************** */
-        // address: {
-        //     street: { type: String, trim: true },
-        //     city: { type: String, trim: true },
-        //     state: { type: String, trim: true },
-        //     zip: { type: String, trim: true },
-        //     lowerCase: true,
-        //     trim: true,
-        //     required: true
-        // },
-
-        /*************************** */
-
         address : addressSchema,
-
-        /******* im unsure if this is actually going to work *******/
-        
         phoneNumber: {
             type: String,
             trim: true,
@@ -66,7 +47,7 @@ const userSchema = new Schema(
     {
         timestamps: true,
         toJSON: {
-            transorm : function (doc, ret) {
+            transform : function (doc, ret) {
                 delete ret.password
                 return ret
             }
