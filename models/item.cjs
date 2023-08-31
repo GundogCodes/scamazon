@@ -3,4 +3,5 @@ const mongoose = require('mongoose')
 require('./category.cjs')
 const itemSchema = require('./itemSchema.cjs')
 
-module.exports = mongoose.model('Item', itemSchema)
+const Item = mongoose.model('Item', itemSchema)
+module.exports = Item

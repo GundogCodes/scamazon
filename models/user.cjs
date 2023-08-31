@@ -2,12 +2,11 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const Schema = mongoose.Schema;
 
-//not sure if this is going to break anything, 10-12 is the standard industry number of rounds for hashing
 const SALT_ROUNDS = 10;
 
 /********************** 
- this is the user model schema
- ***********************/
+this is the user model schema
+***********************/
 
 //make a new schema for the address
 const addressSchema = new Schema({
@@ -76,7 +75,5 @@ userSchema.pre('save', async function (next) {
   this.password = await bcrypt.hash(this.password, SALT_ROUNDS);
   return next();
 });
-
-const User = mongoose.model('User', userSchema);
 
 module.exports = User;
