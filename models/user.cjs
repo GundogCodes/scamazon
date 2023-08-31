@@ -1,13 +1,23 @@
-const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const Schema = mongoose.Schema;
 
-//not sure if this is going to break anything, 10-12 is the standard industry number of rounds for hashing
-const SALT_ROUNDS = 10
+const SALT_ROUNDS = 10;
 
 /********************** 
 this is the user model schema
 ***********************/
+
+
+//make a new schema for the address
+const addressSchema = new Schema({
+    street: { type: String, trim: true, lowercase:true , required:true},
+    city: { type: String, trim: true ,  lowercase:true , required:true},
+    state: { type: String, trim: true,  lowercase:true , required:true},
+    zip: { type: String, trim: true,  lowercase:true , required:true },
+   
+})
+
 
 const userSchema = new Schema(
     {
@@ -27,19 +37,30 @@ const userSchema = new Schema(
             minlength: 3,
             required: true
         },
-        address: {
-            street: { type: String, trim: true },
-            city: { type: String, trim: true },
-            state: { type: String, trim: true },
-            zip: { type: String, trim: true },
-            lowerCase: true,
-            trim: true,
-            required: true
-        },
+
+        //review this with josh
+        //make this a seperate schema
+        /*************************** */
+        // address: {
+        //     street: { type: String, trim: true },
+        //     city: { type: String, trim: true },
+        //     state: { type: String, trim: true },
+        //     zip: { type: String, trim: true },
+        //     lowerCase: true,
+        //     trim: true,
+        //     required: true
+        // },
+
+        /*************************** */
+
+        address : addressSchema,
+
+        /******* im unsure if this is actually going to work *******/
+        
         phoneNumber: {
             type: String,
             trim: true,
-            required: true
+            
         }
     },
     {
@@ -51,15 +72,14 @@ const userSchema = new Schema(
             }
         }
     }
-)
+);
 
 userSchema.pre('save', async function(next) {
-    // single line if statement, if password is not modified, return next
-    if (!this.isModified('password')) return next()
-    this.password = await bcrypt.hash(this.password, SALT_ROUNDS)
-    return next()
-})
+    if (!this.isModified('password')) return next();
+    this.password = await bcrypt.hash(this.password, SALT_ROUNDS);
+    return next();
+});
 
-const User = mongoose.model('User',userSchema)
+const User = mongoose.model('User', userSchema);
 
-module.exports = User
+module.exports = User;

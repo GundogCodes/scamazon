@@ -13,16 +13,15 @@ function createJWT(user){
     }
     
 //checkToken function which responds with the expiry of the the token
-exports.checkToken = (req, res) => {
+function checkToken(req, res) {
     console.log('req.user', req.user)
     res.json(req.exp)
   }
 
 //authencationn function which returns the local token
 const apiController ={
-
     auth (req,res){
-        cons
+
         res.json(res.locals.data.token)
     }
 }
@@ -31,15 +30,19 @@ const dataController ={
 //C
       async createUser (req,res,next){
     try {
-        const newUser = await User.create(req.body)
+        const user = await User.create(req.body)
         const token = createJWT(user)
-        res.locals.data.user = newUser
+        console.log(user)
+        req.user = user
+        res.locals.data.user = user
         res.locals.data.token = token
-        res.json(newUser)
+        console.log('----res.locals.data.user-----',res.locals.data.user)
+        console.log('----res.locals.data.token-----',res.locals.data.token)
+        res.json(token)
         next()
     } catch (error) {
         console.log('Ya gatta database prablem son')
-        req.status(400).json({error:error.message})
+        res.status(400).json({error:error.message})
     }
 },
 
@@ -50,11 +53,10 @@ const dataController ={
         res.json(foundUser)
         next()
     } catch (error) {
-        req.status(400).json({error:error.message})
+        res.status(400).json({error:error.message})
         
     }
 },
-
 
     async loginUser (req,res,next){
     try {
@@ -63,7 +65,9 @@ const dataController ={
         const match = await bcrypt.compare(req.body.password, user.password)
         if(!match) throw new Error()
         res.locals.data.user = user
-        res.locals.data.token = createJWT(token)
+        res.locals.data.token = createJWT(user)
+        console.log('----res.locals.data.user-----',res.locals.data.user)
+        console.log('----res.locals.data.token-----',res.locals.data.token)
         next()
     } catch (error) {
         res.status(400).json('Bad Credentials')
@@ -75,6 +79,7 @@ const dataController ={
     try {
         const updatedUser = await User.findOneAndUpdate({_id:req.params.id},req.body,{new:true})
         updatedUser.save()
+        res.json(updatedUser)
         res.locals.data.user = updatedUser
         res.locals.data.user = req.user.token 
         next()
@@ -85,20 +90,27 @@ const dataController ={
 },
 
 //D
-    async deleteUser (req,res,next){
+async deleteUser (req,res,next){
     try {
-        await User.findOneAndDelete({email:req.body.email})
-        req.locals.data.user = null
-        req.locals.data.token = null
-        res.json('User Deleted')
+        const findUser = await User.findOne({_id:req.params.id})
+        console.log('findUser.email', findUser.email)
+        console.log('req.body',req.body.email)
+        const match = await bcrypt.compare(req.body.password, findUser.password)
+        if(findUser.email !== req.body.email || !match){
+            res.json('Password is incorrect or not Authorized')
+        }
+        else if(findUser.email === req.body.email && match){
+            await User.deleteOne(findUser)
+            res.json('userDeleted')
         next()
+        }
     } catch (error) {
         res.status(400).json('Bad Credentials')
         
     }
 }
 }
-
+  
 
 module.exports = {
     checkToken,
