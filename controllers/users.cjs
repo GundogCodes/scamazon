@@ -100,6 +100,7 @@ async deleteUser (req,res,next){
 
         res.json('userDeleted')
         next()
+
     } catch (error) {
         res.status(400).json('Bad Credentials')
         
