@@ -92,15 +92,18 @@ const dataController ={
 //D
 async deleteUser (req,res,next){
     try {
-        console.log('---- req.locals.data.token --- ', req.locals.data.token)
-        console.log('---- req.locals.data.user --- ', req.locals.data.user)
         const findUser = await User.findOne({_id:req.params.id})
-        console.log('findUser', findUser)
-        console.log('findUser',findUser)
-
-        res.json('userDeleted')
+        console.log('findUser.email', findUser.email)
+        console.log('req.body',req.body.email)
+        const match = await bcrypt.compare(req.body.password, findUser.password)
+        if(findUser.email !== req.body.email || !match){
+            res.json('Password is incorrect or not Authorized')
+        }
+        else if(findUser.email === req.body.email && match){
+            await User.deleteOne(findUser)
+            res.json('userDeleted')
         next()
-
+        }
     } catch (error) {
         res.status(400).json('Bad Credentials')
         
