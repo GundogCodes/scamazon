@@ -6,9 +6,17 @@ const Schema = mongoose.Schema
 const SALT_ROUNDS = 10
 
 /********************** 
-this is the user model schema
-***********************/
+ this is the user model schema
+ ***********************/
 
+//make a new schema for the address
+const addressSchema = new Schema({
+    street: { type: String, trim: true, lowercase:true , required:true},
+    city: { type: String, trim: true ,  lowercase:true , required:true},
+    state: { type: String, trim: true,  lowercase:true , required:true},
+    zip: { type: String, trim: true,  lowercase:true , required:true },
+   
+})
 const userSchema = new Schema(
     {
         name: { 
@@ -50,7 +58,6 @@ const userSchema = new Schema(
         phoneNumber: {
             type: String,
             trim: true,
-            required: true
         }
     },
     {
@@ -64,16 +71,6 @@ const userSchema = new Schema(
     }
 )
 
-//make a new schema for the address
-const addressSchema = new Schema({
-    street: { type: String, trim: true },
-    city: { type: String, trim: true },
-    state: { type: String, trim: true },
-    zip: { type: String, trim: true },
-    lowerCase: true,
-    trim: true,
-    required: true
-})
 
 userSchema.pre('save', async function(next) {
     // single line if statement, if password is not modified, return next
