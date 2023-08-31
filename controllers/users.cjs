@@ -58,7 +58,6 @@ const dataController ={
     }
 },
 
-
     async loginUser (req,res,next){
     try {
         const user = await User.findOne({email:req.body.email})
@@ -94,9 +93,11 @@ const dataController ={
 async deleteUser (req,res,next){
     try {
         console.log('---- req.locals.data.token --- ', req.locals.data.token)
+        console.log('---- req.locals.data.user --- ', req.locals.data.user)
         const findUser = await User.findOne({_id:req.params.id})
         console.log('findUser', findUser)
         console.log('findUser',findUser)
+
         res.json('userDeleted')
         next()
     } catch (error) {
@@ -105,7 +106,7 @@ async deleteUser (req,res,next){
     }
 }
 }
-
+  
 
 module.exports = {
     checkToken,

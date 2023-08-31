@@ -17,6 +17,7 @@ const addressSchema = new Schema({
     zip: { type: String, trim: true,  lowercase:true , required:true },
    
 })
+
 const userSchema = new Schema(
     {
         name: { 
