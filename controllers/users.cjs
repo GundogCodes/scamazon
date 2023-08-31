@@ -53,7 +53,7 @@ const dataController ={
         res.json(foundUser)
         next()
     } catch (error) {
-        req.status(400).json({error:error.message})
+        res.status(400).json({error:error.message})
         
     }
 },
@@ -93,10 +93,10 @@ const dataController ={
 //D
 async deleteUser (req,res,next){
     try {
-        console.log('---- req.locals.data.token --- ', req.locals.data.user)
+        console.log('---- req.locals.data.token --- ', req.locals.data.token)
         const findUser = await User.findOne({_id:req.params.id})
         console.log('---- findUser.id ---- ', findUser.id)
-        if(findUser.id!==  req.locals.data.user._id){
+        if(findUser.id !== req.locals.data.user._id){
             res.json('You are not Authorized to delete this account')
         } else if(findUser.id=== req.locals.data.user._id){
             await User.deleteOne({_id:req.params.id})
