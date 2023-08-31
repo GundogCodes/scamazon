@@ -58,7 +58,6 @@ const dataController ={
     }
 },
 
-
     async loginUser (req,res,next){
     try {
         const user = await User.findOne({email:req.body.email})
@@ -94,25 +93,21 @@ const dataController ={
 async deleteUser (req,res,next){
     try {
         console.log('---- req.locals.data.token --- ', req.locals.data.token)
+        console.log('---- req.locals.data.user --- ', req.locals.data.user)
         const findUser = await User.findOne({_id:req.params.id})
-        console.log('---- findUser.id ---- ', findUser.id)
-        if(findUser.id !== req.locals.data.user._id){
-            res.json('You are not Authorized to delete this account')
-        } else if(findUser.id=== req.locals.data.user._id){
-            await User.deleteOne({_id:req.params.id})
-            req.user = null
-            req.locals.data.user = null
-            req.locals.data.token = null
-            res.json('User Deleted')
-            next()
-        }
+        console.log('findUser', findUser)
+        console.log('findUser',findUser)
+
+        res.json('userDeleted')
+        next()
+
     } catch (error) {
         res.status(400).json('Bad Credentials')
         
     }
 }
 }
-
+  
 
 module.exports = {
     checkToken,

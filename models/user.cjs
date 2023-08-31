@@ -8,6 +8,17 @@ const SALT_ROUNDS = 10;
 this is the user model schema
 ***********************/
 
+
+//make a new schema for the address
+const addressSchema = new Schema({
+    street: { type: String, trim: true, lowercase:true , required:true},
+    city: { type: String, trim: true ,  lowercase:true , required:true},
+    state: { type: String, trim: true,  lowercase:true , required:true},
+    zip: { type: String, trim: true,  lowercase:true , required:true },
+   
+})
+
+
 const userSchema = new Schema(
     {
         name: { 
