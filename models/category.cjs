@@ -3,9 +3,10 @@ const Schema = mongoose.Schema
 
 const categorySchema = new Schema({
     name: { type: String, required: true},
-    sortOrder: Number
+    sortOrder: {type: Number}
 }, {
     timestamps: true
 })
 
-module.exports = mongoose.model('categorySchema', categorySchema)
+const Category = mongoose.model('Category', categorySchema)
+module.exports = Category

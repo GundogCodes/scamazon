@@ -1,4 +1,4 @@
-const Item = require('../../models/item');
+const Item = require('../models/item.cjs')
 
 module.exports = {
   index,
@@ -7,7 +7,7 @@ module.exports = {
 
 async function index(req, res) {
   try{
-    const items = await Item.find({}).sort('name').populate('category').exec();
+    const items = await Item.find({})
     items.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
     res.status(200).json(items);
   }catch(e){
