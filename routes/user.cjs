@@ -1,25 +1,29 @@
-const express = require('express')
+const express = require('express');
 
-const router = express.Router()
+const router = express.Router();
 
-const {dataController,apiController, checkToken} = require('../controllers/users.cjs')
+const {
+  dataController,
+  apiController,
+  checkToken,
+} = require('../controllers/users.cjs');
 
-const ensureLoggedIn = require('../config/ensureLoggedIn.cjs')
+const ensureLoggedIn = require('../config/ensureLoggedIn.cjs');
 
 //INDUCES
 //I
 //N
 //D
-router.delete('/:id', apiController.auth, dataController.deleteUser)
+router.delete('/:id', apiController.auth, dataController.deleteUser);
 //U
-router.put('/:id', dataController.updateUser, apiController.auth)
+router.put('/:id', dataController.updateUser, apiController.auth);
 //C
-router.post('/new', dataController.createUser, apiController.auth)
+router.post('/new', dataController.createUser, apiController.auth);
+router.post('/login', dataController.loginUser, apiController.auth);
 //E
 //S
-router.get('/:id', userCtrl.getUser)
+router.get('/:id', dataController.getUser);
 
-router.get('/check-token', ensureLoggedIn, checkToken)
+// router.get('/check-token', ensureLoggedIn, checkToken);
 
-module.exports = router
-
+module.exports = router;
