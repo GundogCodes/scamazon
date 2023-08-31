@@ -1,7 +1,7 @@
 <img src= './public/img/SKAMAZON.png'/>
 
 # SCAMAZON
-
+ 
 <details>
   <summary>Table of Contents</summary>
   <ol>
