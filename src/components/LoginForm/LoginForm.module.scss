@@ -1,0 +1,13 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(21, 21, 172)
+}
+
+.form label {
+    background-color: aliceblue;
+    color: black; 
+    border: solid orange 1rem\;
+}
