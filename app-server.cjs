@@ -1,4 +1,5 @@
 const express = require('express');
+const checkToken = require('./config/checkToken.cjs');
 
 //created a express app
 const app = express();
@@ -17,6 +18,8 @@ app.use((req, res, next) => {
   res.locals.data = {};
   next();
 });
+
+app.use(checkToken);
 
 //use logger to log http requests
 app.use(logger('dev'));

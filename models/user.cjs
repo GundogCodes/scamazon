@@ -61,7 +61,7 @@ const userSchema = new Schema(
   {
     timestamps: true,
     toJSON: {
-      transorm: function (doc, ret) {
+      transform: function (doc, ret) {
         delete ret.password;
         return ret;
       },
@@ -75,5 +75,7 @@ userSchema.pre('save', async function (next) {
   this.password = await bcrypt.hash(this.password, SALT_ROUNDS);
   return next();
 });
+
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
