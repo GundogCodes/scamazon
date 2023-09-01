@@ -200,6 +200,9 @@ Our team created a MERN stack web application similar in style and function to m
 | POST            | /user            | Creates user      |
 | POST            | /user/login      | Logs in user      |
 | POST            | /user/logout/:id | Logs out user     |
+| DELETE          | /user/:id        | Delete user       |
+| PUT             | /user/:id        | Update user       |
+| GET             | /user/:id        | Get user info     |
 
 ### Testing
 
