@@ -1,7 +1,7 @@
 <img src= './public/img/SKAMAZON.png'/>
 
 # SCAMAZON
-
+ 
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -163,6 +163,9 @@ Our team created a MERN stack web application similar in style and function to m
 
 ### Technical_Challenges
 
+   #### Installing Vite 
+
+
 ### Collaborators 
 
   
@@ -232,3 +235,4 @@ Our team created a MERN stack web application similar in style and function to m
 [Webpack]: https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black
 
 [Webpack-url]: https://webpack.js.org/
+
