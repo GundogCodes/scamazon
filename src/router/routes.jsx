@@ -6,7 +6,7 @@ import ItemPage from '../pages/LoginPage/LoginPage';
 import CategoryPage from '../pages/LoginPage/LoginPage';
 import OrderPage from '../pages/LoginPage/LoginPage';
 import WishlistPage from '../pages/LoginPage/LoginPage';
-import CartPage from '../pages/LoginPage/LoginPage';
+import CartPage from '../pages/CartPage/CartPage';
 
 const routes = [
 	{
@@ -48,8 +48,12 @@ const routes = [
 		Component: WishlistPage,
 		key: 'Wishlist',
 		path: '/wishlist'
+	},
+	{
+		Component: WishlistPage,
+		key: 'Wishlist',
+		path: '/wishlist'
 	}
-	
 ];
 
 export default routes;
