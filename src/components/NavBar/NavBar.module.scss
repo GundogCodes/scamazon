@@ -1,16 +1,24 @@
+.class {
+    width: 100%;
+    display: inline-block;
+}
+
+.titles:hover{
+    color: red;
+}
+
 .NavBarDiv{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
     top: 0;
-    height: 4vh;
+    height: 8vh;
     background-color: rgba(34,41,53);
     width: 100vw;
     color:white;
     position: fixed;
         .titles{
-            
-            padding-left: 1rem;
-            padding-right: 1rem;
+            padding: 0 2rem 0 2rem;
             font-size: 2rem;
             align-self: center;
         }
