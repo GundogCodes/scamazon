@@ -50,9 +50,9 @@ const routes = [
 		path: '/wishlist'
 	},
 	{
-		Component: WishlistPage,
-		key: 'Wishlist',
-		path: '/wishlist'
+		Component: CartPage,
+		key: 'Cart',
+		path: '/cart'
 	}
 ];
 
