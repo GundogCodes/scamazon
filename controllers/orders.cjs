@@ -1,4 +1,4 @@
-const Order = require('../models/order.cjs');
+const Order = require('../models/order.cjs')
 
 module.exports = {
     cart,
@@ -12,8 +12,9 @@ module.exports = {
 // A cart is the unpaid order for a user
 async function cart(req,res) {
     try{
+        console.log('req', req)
         const cart = await Order.getCart(req.user._id);
-        res.status(200).jason(cart);
+        res.status(200).json(cart);
     }catch(e){
         res.status(400).json({ msg: e.message });
     }

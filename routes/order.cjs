@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const ordersCtrl = require('../controllers/orders.cjs');
-const usersCtrl = require('../controllers/users.cjs')
-
-
+const {checkToken} = require('../controllers/users.cjs')
+//const checkToken = require('../config/checkToken.cjs')
+const ensureLoggedIn = require('../config/ensureLoggedIn.cjs')
 
 // GET /api/orders/cart
 router.get('/cart', ordersCtrl.cart);
