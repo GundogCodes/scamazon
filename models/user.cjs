@@ -16,6 +16,7 @@ const addressSchema = new Schema({
   zip: { type: String, trim: true, lowercase: true, required: true },
 });
 const userSchema = new Schema(
+
   {
     name: {
       type: String,
@@ -67,6 +68,7 @@ const userSchema = new Schema(
       },
     },
   }
+
 );
 
 userSchema.pre('save', async function (next) {
