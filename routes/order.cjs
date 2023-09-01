@@ -10,7 +10,7 @@ router.get('/cart', ordersCtrl.cart);
 
 // POST /api/orders/createCart
 //router.post('/',usersCtrl.authenticateToken, ordersCtrl.createCart)
-router.post('/', ordersCtrl.createCart); 
+//router.post('/', ordersCtrl.createCart); 
 
 // GET /api/orders/history
 router.get('/history', ordersCtrl.history);

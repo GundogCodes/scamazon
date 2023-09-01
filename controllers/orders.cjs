@@ -2,7 +2,7 @@ const Order = require('../models/order.cjs')
 
 module.exports = {
     cart,
-    createCart,
+    //createCart,
     addToCart,
     //setItemQtyInCart,
     checkout,
@@ -20,35 +20,37 @@ async function cart(req,res) {
     }
 }
 
-async function createCart(req, res) {
-    try {
-        console.log('req.user._id:', req.user._id);
-        console.log('req.body:', req.body);
+// async function createCart(req, res) {
+//     try {
+//         console.log('req.user._id:', req.user._id);
+//         console.log('req.body:', req.body);
 
-        req.body.user = req.user._id;
-        const cart = await Order.create(req.body);
+//         req.body.user = req.user._id;
+//         const cart = await Order.create(req.body);
 
-        console.log('cart created:', cart);
+//         console.log('cart created:', cart);
 
-        req.user.cart = { _id: cart._id };
-        await req.user.save();
+//         req.user.cart = { _id: cart._id };
+//         await req.user.save();
 
-        console.log('user cart updated:', req.user);
+//         console.log('user cart updated:', req.user);
 
-        res.json(cart);
-    } catch (error) {
-        console.error('Error creating cart:', error);
-        res.status(400).json({ message: error.message });
-    }
-}
+//         res.json(cart);
+//     } catch (error) {
+//         console.error('Error creating cart:', error);
+//         res.status(400).json({ message: error.message });
+//     }
+// }
 
 
 
 //Add an item to the cart
 async function addToCart(req,res) {
     try {
-        const cart = await Order.getCart(req.user._id);
-        await cart.addItemToCart(req.param.id);
+        console.log('req.user._id',req.user._id)
+        console.log('req.params.id',req.params.id)
+        const cart = await Order.getCart(req.user.id);
+        await cart.addItemToCart(req.params.id);
         res.status(200).json(cart);
     } catch (e) {
         res.status(400).json({ msg: e.message});
@@ -60,10 +62,10 @@ async function addToCart(req,res) {
 //Update the cart's isPaid property to true 
 async function checkout(req, res) {
     try {
-        const cart = await Order.getCart(req.user._id);
+        const cart = await Order.getCart(req.user.id);
         cart.isPaid = true;
         await cart.save();
-        res.status
+        res.status(200).json(cart)
     } catch (e) {
         res.status(400).json({ msg: e.message })
     }

@@ -10,6 +10,7 @@ function createJWT(user) {
 //checkToken function which responds with the expiry of the the token
 function checkToken(req, res) {
   console.log('req.user', req.user);
+  console.log('req.exp', req.exp)
   res.json(req.exp);
 }
 
@@ -34,24 +35,25 @@ const dataController = {
       console.log('----res.locals.data.token-----', res.locals.data.token);
       next();
     } catch (error) {
-      console.log('Ya gatta database prablem son');
-      res.status(400).json({ error: error.message });
+        console.log('Ya gatta database prablem son');
+        res.status(400).json({ error: error.message });
     }
-  },
+},
 
-  //R
-  async getUser(req, res, next) {
+//R
+async getUser(req, res, next) {
     try {
-      const foundUser = await User.findOne({ _id: req.params.id });
-      res.json(foundUser);
+        const foundUser = await User.findOne({ _id: req.params.id });
+        res.json(foundUser);
     } catch (error) {
-      res.status(400).json({ error: error.message });
+        res.status(400).json({ error: error.message });
     }
-  },
+},
 
-  async loginUser(req, res, next) {
+async loginUser(req, res, next) {
     try {
-      const user = await User.findOne({ email: req.body.email });
+        const user = await User.findOne({ email: req.body.email });
+        req.user = user;
       if (!user) throw Error();
       const match = await bcrypt.compare(req.body.password, user.password);
       if (!match) throw new Error();
