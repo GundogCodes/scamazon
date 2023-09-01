@@ -12,6 +12,8 @@ module.exports = {
 // A cart is the unpaid order for a user
 async function cart(req,res) {
     try{
+        console.log("res.locals.datauser", res.locals.data.user)
+        console.log("req.user", req.user)
         const cart = await Order.getCart(req.user._id);
         res.status(200).jason(cart);
     }catch(e){
