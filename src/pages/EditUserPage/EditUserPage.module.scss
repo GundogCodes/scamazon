@@ -1,0 +1,43 @@
+.EditUserPage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+        width: 35vw;
+
+    }
+    form{
+        border-radius: 15px;
+        border-style: solid;
+        border-color: rgba(199,199,199);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 35vw;
+        height: 70vh;
+        padding: 2vmin;
+        box-shadow: 8px 8px 3px 3px gainsboro;
+        label{
+            font-size: 2.5vmin;
+            font-weight: bold;
+        }
+        input{
+            border-color: rgba(199,199,199);
+            font-size: 2.5vmin;
+            border-radius: 10px;
+            margin-top: 1vmin;
+            margin-bottom: 1vmin;
+        }
+        button{
+            margin-top: 2vmin;
+            width: 6.5vw;
+            font-size: 2.5vmin;
+            border-radius: 15px;
+            border-color: white;
+            background-color: rgba(249,217,76);
+        }
+    }
+}

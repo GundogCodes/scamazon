@@ -1,27 +1,62 @@
 import {useState} from 'react'
 import styles from './UserPage.module.scss'
 import {Link} from 'react-router-dom'
+import LoginPage from '../LoginPage/LoginPage'
 export default function UserPage({user,setUser}){
-    
     return(
         <div className={styles.UserPage} >
-            <h1>Hello, {user/*.name*/}</h1>
+            
+            <h1 className={styles.user}>Hello, PlaceHolder{/*user.name*/}</h1>
             <div className={styles.userOptions}>
             
-            <h2>Your Account</h2>
+            <h1>Your Account</h1>
 
                 <div className={styles.row1}>
-            <Link to='/orders'><h1 style={{color:'Black'}} className={styles.yourOrders} >Your Orders</h1></Link>
-            <Link to='/login'><h1 style={{color:'Black'}} className={styles.loginAndSecurity}>Login & Security</h1></Link>
-            <Link to='/address'><h1 style={{color:'Black'}}  className={styles.yourAddress}>Your Addresses</h1></Link>
-
-        
+            <Link to='/orders'>
+                <div style={{color:'Black'}} className={styles.box} >
+                <img src='https://m.media-amazon.com/images/G/15/x-locale/cs/help/images/gateway/self-service/order._CB661170529_.png'/>
+                <div className={styles.pDiv}>
+                <p className={styles.title}>Your Orders</p>
+                <p>Track, return, cancel an order, download invoice or buy again</p>
                 </div>
-               
+
+                </div>
+            </Link>
+            <Link to='/edit'><div style={{color:'Black'}} className={styles.box}>
+                <img src='https://m.media-amazon.com/images/G/15/x-locale/cs/contact-us/security._CB660063742_.png'/>
+                <div className={styles.pDiv}>
+                <p className={styles.title}>Login & Security</p>
+                <p>Manage password, email and mobile number</p>
+                </div>
+                </div>
+            </Link>
+            <Link to='/address'><div style={{color:'Black'}}  className={styles.box}>
+                <img src='https://m.media-amazon.com/images/G/15/x-locale/cs/contact-us/YAaddress._CB660350971_.png'/>
+                <div className={styles.pDiv}>
+                <p className={styles.title}>Your Addresses</p>
+                <p>Edit, remove or set default address</p>
+                </div>
+                </div>
+                </Link>
+                </div>
+            
                 <div className={styles.row2}>
-            <h1 className={styles.yourPayments}>Your Payments</h1>
-            <h1 className={styles.customerService}>Customer Service</h1>
-            <h1 className={styles.yourMessages}>Your Messages</h1>
+            <Link to='/payments'><div className={styles.box}style={{color:'Black'}}>
+                <img src='https://m.media-amazon.com/images/G/15/x-locale/cs/help/images/gateway/self-service/payment._CB661170529_.png'/>
+                <div className={styles.pDiv}>
+                <p className={styles.title}>Your Payments</p>
+                <p>Manage or add payment methods and view your transactions</p>
+                </div>
+                </div>
+                </Link>
+            <Link to='/wishlist'><div style={{color:'Black'}} className={styles.box}>
+                <img src='https://m.media-amazon.com/images/G/15/x-locale/cs/help/images/gateway/self-service/fshub/fshub_message_center._CB607580114_.png'/>
+                <div className={styles.pDiv}>
+                <p className={styles.title}>Your Wishlist</p>
+                <p>View, purchase, or remove items from wishlist </p>
+                </div>
+                </div>
+                </Link>
                 </div>
             </div>
  

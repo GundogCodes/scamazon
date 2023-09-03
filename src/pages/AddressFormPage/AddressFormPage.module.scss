@@ -1,23 +1,44 @@
 .AddressForm{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100vw;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    .theForm{
+    .currentAddress{
+        box-shadow: 8px 8px 3px 3px gainsboro;
+        margin: 10vmin;
         padding: 2vmin;
+        border-style: dashed;
+        border-color: rgba(199,199,199);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 33vw;
+        height: 65vh;
+        border-width: 3px;
+        border-radius: 10px;
+        .username{
+            font-weight: bold;
+        }
+    }
+    .theForm{
+        box-shadow: 8px 8px 3px 3px gainsboro;
+        padding-left: 1vmin;
+        padding-right: 1vmin;
         border-style: solid;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         width: 33vw;
         height: 70vh;
         font-weight: bold;
         border-width: 1px;
         border-radius: 10px;
         h3{
+            justify-self: flex-start;
             border-style: solid;
             border-radius: 10px;
             border-width: 1px;
@@ -25,10 +46,17 @@
             width: 33vw;
             padding-top: 1vmin;
             padding-bottom: 1vmin;
+            display: flex;
+            align-items: center;
             span{
                 color:rgba(90,90,92);
                 padding-left: 3px;
                 
+                margin-left: 1vmin;
+            }
+            img{
+                margin-left: 1vmin;
+                width:3vw;
             }
         }
         h1{

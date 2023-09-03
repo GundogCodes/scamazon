@@ -9,9 +9,21 @@ export default function AddressForm(){
     })
     return(
         <form className={styles.AddressForm} >
+            <div className={styles.currentAddress}>
+                <h1>Current Address</h1>
+                <p className={styles.username}>User Name</p>
+                <p className={styles.street}>123 Street</p>
+                <p className={styles.city}>City</p>
+                <p className={styles.state}>State</p>
+                <p className={styles.zip}>Zip</p>
+                <p className={styles.phone}>Phone number: 7801231234</p>
+
+            </div>
             <div className={styles.theForm}>
-                <h3><span>Default:</span> Scamazon</h3>
-            <h1>Update Your Address</h1>
+            <h1>Add Address</h1>
+                <h3>
+                    <span>Default:</span> <img src='https://selenakitt.com/wp-content/files/scamazon.png'/>
+                </h3>
 
             <p className={styles.text}>Address </p><input type='text' name="street" value={address.street}  className={styles.inputText} required />
             <p className={styles.text}>City </p><input type='text' name="city" value={address.city}  className={styles.inputText} required />

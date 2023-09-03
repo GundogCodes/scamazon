@@ -14,6 +14,8 @@ import SearchPage from './pages/SearchPage/SearchPage'
 import UserPage from './pages/UserPage/UserPage'
 import WishlistPage from './pages/WishlistPage/WishlistPage'
 import AddressFormPage from './pages/AddressFormPage/AddressFormPage'
+import YourPaymentPage from './pages/YourPaymentsPage/YourPaymentsPage'
+import EditUserPage from './pages/EditUserPage/EditUserPage'
 import {getUser} from '../src/utilities/users-service.cjs'
 function App() {
   const [user,setUser] = useState(getUser())
@@ -31,6 +33,9 @@ function App() {
       <Route path="/orders" element={<OrderPage user={user} setUser={setUser}/>}/>
       <Route path="/wishlist" element={<WishlistPage />}/>
       <Route path="/address" element={<AddressFormPage />}/>
+      <Route path="/payments" element={<YourPaymentPage/>}/>
+      <Route path="/edit" element={<EditUserPage/>}/>
+      
       
     </Routes>
     </>
