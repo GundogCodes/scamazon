@@ -1,0 +1,65 @@
+.AddressForm{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    .theForm{
+        padding: 2vmin;
+        border-style: solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 33vw;
+        height: 70vh;
+        font-weight: bold;
+        border-width: 1px;
+        border-radius: 10px;
+        h3{
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 1px;
+            align-self: flex-start;
+            width: 33vw;
+            padding-top: 1vmin;
+            padding-bottom: 1vmin;
+            span{
+                color:rgba(90,90,92);
+                padding-left: 3px;
+                
+            }
+        }
+        h1{
+            align-self: flex-start;
+        }
+        .text{
+            align-self:flex-start;
+            font-size: 2vmin;
+            width: 33vw;
+        }
+        .inputText{
+            height: 2.5vmin;
+            border-width: 1px;
+            border-radius: 10px;
+            align-self:flex-start;
+            font-size: 2vmin;
+            width: 33vw;
+        }
+        .submit{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+            margin-top: 2vmin;
+            font-weight: bold;
+            width: 16.5vw;
+            padding-top: 0.5vmin;
+            padding-bottom: 0.5vmin;
+            align-self:flex-start;
+            background-color:rgba(249,217,76) ;
+            border-radius: 15px;
+    }
+}
+
+}

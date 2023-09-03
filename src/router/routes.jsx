@@ -48,11 +48,6 @@ const routes = [
 		Component: WishlistPage,
 		key: 'Wishlist',
 		path: '/wishlist'
-	},
-	{
-		Component: WishlistPage,
-		key: 'Wishlist',
-		path: '/wishlist'
 	}
 ];
 
