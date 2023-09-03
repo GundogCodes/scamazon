@@ -8,6 +8,7 @@ import routes from './router/routes'
 import HomePage from './pages/HomePage/HomePage'
 import CategoryPage from './pages/CategoryPage/CategoryPage'
 import ItemPage from './pages/ItemPage/ItemPage'
+import CartPage from './pages/CartPage/Cartpage'
 import LoginPage from './pages/LoginPage/LoginPage'
 import OrderPage from './pages/OrderPage/OrderPage'
 import SearchPage from './pages/SearchPage/SearchPage'
@@ -24,6 +25,7 @@ function App() {
       <Route path="/user/:id" element={<UserPage />}/>
       <Route path="/search" element={<SearchPage />}/>
       <Route path="/item/:id" element={<ItemPage />}/>
+      <Route path="/cart" element={<CartPage />}/>
       <Route path="/categories" element={<CategoryPage />}/>
       <Route path="/orders" element={<OrderPage />}/>
       <Route path="/wishlist" element={<WishlistPage />}/>

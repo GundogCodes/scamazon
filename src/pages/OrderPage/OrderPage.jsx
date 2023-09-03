@@ -1,10 +1,7 @@
 import styles from './OrderPage.module.scss'
 import {useState, UseEffect} from 'react'
-// import {Link} from 'react-router-dom'
 import * as ordersAPI from '../../utilities/orders-api'
-// import Logo from '../../components/Logo/Logo'
-// import UserLogout from '../../components/LoginForm'
-import NavBar from '../../components/NavBar'
+
 
 export default function OrderPage({user, setUser}) {
     //State
@@ -31,9 +28,6 @@ export default function OrderPage({user, setUser}) {
     //Rendered UI
     return(
         <main classname = {styles.OrderPage}>
-            <aside classname={styles.NavBar}>
-                <NavBar/>
-            </aside>
             <OrderList
                 orders={orders}
                 activeOrder={activeOrder}
