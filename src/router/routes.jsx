@@ -7,7 +7,7 @@ import CategoryPage from '../pages/LoginPage/LoginPage';
 import OrderPage from '../pages/LoginPage/LoginPage';
 import WishlistPage from '../pages/LoginPage/LoginPage';
 import CartPage from '../pages/CartPage/CartPage';
-import YourPaymentsPage from '../pages/YourPaymentsPage/YourPaymentsPage';
+
 
 const routes = [
 	{
@@ -54,11 +54,6 @@ const routes = [
 		Component: CartPage,
 		key: 'Cart',
 		path: '/cart'
-	},
-	{
-		Component: YourPaymentsPage,
-		key: 'Payments',
-		path: '/payments'
 	},
 ];
 

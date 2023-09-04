@@ -26,6 +26,24 @@ const Item = require('../models/item.cjs');
       image: '/img/PS5.png',
     },
     {
+      name: 'Airpod v9',
+      description:
+        'you got big ear? we got you cover',
+      category: categories[0],
+      price: 42.00,
+      rating: 4.5,
+      image: '/img/airpod.pn g',
+    },
+    {
+      name: 'Pear aPhone v23',
+      description:
+        'allergic to apple? or you prefer pear? or both? introducing the Pear aPhone v23',
+      category: categories[0],
+      price: 666.00,
+      rating: 4.5,
+      image: '/img/aPear.png',
+    },
+    {
       name: 'Franklin Sports Official Size Football',
       description:
         'Get outdoors for football fun with the Franklin Sports Official Size 1000 Outdoor Football! This official size football is perfect for all players to grip and throw the ball with ease. Constructed with a durable, synthetic leather surface, these footballs are built to stand up to all-weather play year after year. The deep-pebble surface increases grip so players can easily pass and catch the football even in the rain. This outdoor football is also designed with hand sewn laces for a professional feel that will help all players throw their best spirals. Available in single footballs and (12) football bulk packs, you can find official size outdoor footballs for you and your whole flag football team! The bulk football packs also come with an air pump with an inflation needle included, so you can keep your footballs in perfect condition. This football season, get out in the yard with the best outdoor football equipment and grab yourself a Franklin Sports Official Size 1000 Outdoor Football today!',
