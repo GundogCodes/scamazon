@@ -39,3 +39,11 @@ body {
 
 
 }
+
+.rating span {
+  margin: 0.1rem;
+}
+
+.rating svg {
+  color: #f8e825;
+}
