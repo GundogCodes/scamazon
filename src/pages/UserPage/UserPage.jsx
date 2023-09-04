@@ -3,10 +3,11 @@ import styles from './UserPage.module.scss'
 import {Link} from 'react-router-dom'
 import LoginPage from '../LoginPage/LoginPage'
 export default function UserPage({user,setUser}){
+    console.log(user)
     return(
         <div className={styles.UserPage} >
             
-            <h1 className={styles.user}>Hello, PlaceHolder{/*user.name*/}</h1>
+            <h1 className={styles.user}>Hello, {user.name}</h1>
             <div className={styles.userOptions}>
             
             <h1>Your Account</h1>
