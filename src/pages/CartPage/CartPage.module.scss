@@ -1,0 +1,54 @@
+.CartPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 4vh;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+
+    .userName{
+        color: white;
+    }
+
+    .Ordersdetails{
+        display: flex;
+
+        .OrdersList{
+            width: 90vw;
+            height: 72vh;
+            background-color: rgba(250,162,30);
+            overflow-y: auto;  
+        }
+
+        .OrdersList .image {
+            height: 8vw;
+            width: 8vw;
+            border-radius: 1vmin;
+        }
+          
+        .checkout{
+            margin-left: .9vw;
+            width: 50vw;
+            height: 30vh;
+            background-color: white;
+            color: rgba(250,162,30);
+        }
+    }
+
+    .lineItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        > p { 
+            margin: 0 1rem;
+        }
+        > img {
+            margin-right: 1rem;
+        }
+        > button {
+            margin-left: 1rem;
+        }
+    }
+}
