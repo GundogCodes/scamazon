@@ -203,7 +203,13 @@ Our team created a MERN stack web application similar in style and function to m
 | DELETE          | /user/:id        | Delete user       |
 | PUT             | /user/:id        | Update user       |
 | GET             | /user/:id        | Get user info     |
-
+- Order
+| **HTTP Method** | **End Point**    |    **Action**     |
+| :-------------- | :--------------: | ----------------: |
+| GET             | /orders/cart            | get cart info       |
+| GET             | /orders/history         | orders history      |
+| POST            | /orders/cart/items/:id  | add item to cart    |
+| POST            | /orders/checkout        | checkout cart       |
 ### Testing
 
 ### App Features 
