@@ -11,3 +11,10 @@ export function getAll() {
 export function getById(id) {
     return sendRequest(`${BASE_URL}/${id}`)
 }
+
+//function to get random items in promo banners
+/*
+export function getRandom(){
+    return sendRequest(`${BASE_URL/${id}}`)
+}
+*/

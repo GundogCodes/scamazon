@@ -1,16 +1,16 @@
 import styles from './PromoCarousel.module.scss'; 
-import items from '../config/seed.cjs';
+import PromoItem from '../PromoItem/PromoItem';
 
-export default function PromoCarousel({ item }){
-    const promoItems = item.map(i => 
-        <items
+export default function PromoCarousel({item}){
+    const promoItem = item.map(i => 
+        <PromoItem
             item={i}
-        />
+        /> 
     )
     
     return (
-        <div>
-            
+        <div className={styles.PromoCarousel}>
+            {promoItem}
         </div>
     )
 }

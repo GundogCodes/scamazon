@@ -1,16 +1,21 @@
 import styles from './SmallAd.module.scss'; 
-import items from '../config/seed.cjs';
+import PromoItem from '../PromoItem/PromoItem';
 
-export default function SmallAd({ item }) {
-    const promoItems = item.map(i => 
-        <items
+export default function SmallAd(item){
+    const smallAd = item.map(i => 
+        <PromoItem
             item={i}
         />
-    )
+    ) 
     
     return (
-        <div>
-
-        </div>
+        <main className={styles.SmallAd}>
+            <div className="left-ad" ></div>
+                {smallAd}
+            <div className="mid-ad" ></div>
+                {smallAd}
+            <div className="right-ad" ></div>
+                {smallAd}
+        </main>
     )
 }
