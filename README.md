@@ -206,9 +206,7 @@ Our team created a MERN stack web application similar in style and function to m
 
 
 
-- Order
-
-
+- ORDER ROUTES
 
 | **HTTP Method** | **End Point**    |    **Action**     |
 | :-------------- | :--------------: | ----------------: |
@@ -216,6 +214,14 @@ Our team created a MERN stack web application similar in style and function to m
 | GET             | /orders/history         | orders history      |
 | POST            | /orders/cart/items/:id  | add item to cart    |
 | POST            | /orders/checkout        | checkout cart       |
+
+- ITEMS ROUTES
+
+| **HTTP Method** | **End Point**    |    **Action**     |
+| :-------------- | :--------------: | ----------------: |
+| GET             | /items           | get items info    |
+| GET             | /items/:id       | get one item info |
+
 ### Testing
 
 ### App Features 
