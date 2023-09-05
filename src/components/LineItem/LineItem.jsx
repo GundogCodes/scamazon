@@ -23,6 +23,20 @@ return (
         >+</button>
       }
     </div>
+    <div className={styles.removeItem}>
+      <button 
+        classname={styles.wishlist}
+        onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty = 0)}
+        >
+        Move to Wishlist
+      </button>
+      <button 
+        classname={styles.remove}
+        onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty = 0)}
+        >
+        Remove
+      </button>
+    </div>
     <div className={styles.extPrice}>${lineItem.extPrice.toFixed(2)}</div>
   </div>
 );
