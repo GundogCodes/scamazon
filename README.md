@@ -16,7 +16,7 @@
     <li>
       <a href="#placeholder">placeholder</a>
       <ul>
-        <li><a href="#placeholder">placeholder</a></li>
+        <li><a href="#API">API</a></li>
         <li><a href="#placeholder">placeholder</a></li>
         <li><a href="#placeholder">placeholder</a></li>
       </ul>
@@ -189,9 +189,9 @@ Our team created a MERN stack web application similar in style and function to m
 | [![JWT][JWT]][JWT-url] | [![DigitalOcean][DigitalOcean]][DigitalOcean-url] | [![Gulp][Gulp]][Gulp-url] | [![Babel][Babel]][Babel-url] | [![Nodemon][Nodemon]][Nodemon-url] |
 | [![Webpack][Webpack]][Webpack-url] | [![DigitalOcean][DigitalOcean]][DigitalOcean-url] | [![Gulp][Gulp]][Gulp-url] | [![Babel][Babel]][Babel-url] | [![Nodemon][Nodemon]][Nodemon-url] |
 
-### API 
 
-### Routing
+<details id ="API" >
+  <summary>API</summary>
 
 - USER ROUTES
 
@@ -221,6 +221,8 @@ Our team created a MERN stack web application similar in style and function to m
 | :-------------- | :--------------: | ----------------: |
 | GET             | /items           | get items info    |
 | GET             | /items/:id       | get one item info |
+
+</details>
 
 ### Testing
 
