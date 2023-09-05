@@ -1,4 +1,5 @@
 import styles from './HomePage.module.scss'
+<<<<<<< HEAD
 import * as itemsAPI from '../../utilities/items-api'
 import * as ordersAPI from '../../utilities/orders-api';
 import { Link, useNavigate } from 'react-router-dom';
@@ -31,11 +32,22 @@ export default function HomePage({ }) {
         const updatedCart = await ordersAPI.addItemToCart(itemId);
         setCart(updatedCart)
     }
+=======
+
+import NavBar from '../componenets/NavBar'
+import PromoAdsSmall from '../components/PromoAdsSmall' 
+import PromoCarousel from '../components/PromoCarousel'
+import PromoCollection from '../comoponents/PromoCollection'
+import PromoMedia from '../components/PromoMedia'
+import PromoSeasonal from '../components/PromoSeasonal'
+
+>>>>>>> dev
 
 
     return(
         <div className={styles.HomePage}>
             <img className="page-banner" src='../public/img/scamazon.png'/>
+<<<<<<< HEAD
             <NavBar />
             
             <CategoryBar
@@ -79,6 +91,17 @@ export default function HomePage({ }) {
                 items={items.filter(item => item.name.price === items)}
                 handleAddToOrder={handleAddToOrder}
             />
+=======
+
+            <NavBar/>
+            <h3>By, Alex, Andrew, Bao, Gunish, Jeff, Sapana, TJ</h3>
+            <PromoCarousel/>
+            <PromoAdsSmall/>
+            <PromoSeasonal/>
+            <PromoMedia/>
+            <PromoCollection/>
+
+>>>>>>> dev
         </div>
     )
 }
