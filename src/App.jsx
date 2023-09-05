@@ -21,6 +21,7 @@ function App() {
 
   return (
     <>
+    <body>
     <NavBar routes={routes} />
       <Routes>
         <Route path="/" element={<HomePage />}/>
@@ -31,17 +32,18 @@ function App() {
         <Route path="/categories" element={<CategoryPage />}/>
         <Route path="/orders" element={<OrderPage />}/>
         <Route path="/wishlist" element={<WishlistPage />}/>
-
-        
       </Routes>
-
-
       <div className='sidebar'>
         <h2> test</h2>
-      
       </div>
+      <div>
+        <h2>empty</h2>
+      </div>
+      </body>
+
       <Footer />
     </>
+    
   )
 }
 
