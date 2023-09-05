@@ -10,7 +10,7 @@ export default function OrderPage({user, setUser}) {
 
     //Side Effect
         //User Logged In. Default to logout. This would be Nav bar
-        //Empty orders
+        //Empty orders logic
     useEffect(function () {
         async function fetchOrderHistory() {
             const orders = await ordersAPI.getOrderHistory();
