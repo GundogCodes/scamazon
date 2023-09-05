@@ -2,8 +2,13 @@ import {useState} from 'react'
 import styles from './UserPage.module.scss'
 import {Link} from 'react-router-dom'
 import LoginPage from '../LoginPage/LoginPage'
-export default function UserPage({user,setUser}){
-    console.log(user)
+import * as usersAPI from '../../utilities/users-service.cjs'
+export default function UserPage({setUser}){
+
+    const user ={
+        
+
+    }
     return(
         <div className={styles.UserPage} >
             

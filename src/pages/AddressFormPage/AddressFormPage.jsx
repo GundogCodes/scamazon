@@ -7,16 +7,30 @@ export default function AddressForm(){
         state:'',
         zip:''
     })
+
+    const user ={
+        name:"Gunish",
+        email:"gundog@gmail.com",
+        password:"Gun12345dog",
+        phoneNumber:'7805674567',
+        address:{
+            street:'123 st',
+            city:'Edmonton',
+            state:'Alberta',
+            zip:'6t94t0'
+        }
+    }
+
     return(
         <form className={styles.AddressForm} >
             <div className={styles.currentAddress}>
                 <h1>Current Address</h1>
-                <p className={styles.username}>User Name</p>
-                <p className={styles.street}>123 Street</p>
-                <p className={styles.city}>City</p>
-                <p className={styles.state}>State</p>
-                <p className={styles.zip}>Zip</p>
-                <p className={styles.phone}>Phone number: 7801231234</p>
+                <p className={styles.username}>{user.name}</p>
+                <p className={styles.street}>{user.address.street}</p>
+                <p className={styles.city}>{user.address.city}</p>
+                <p className={styles.state}>{user.address.state}</p>
+                <p className={styles.zip}>{user.address.zip}</p>
+                <p className={styles.phone}>{user.phoneNumber}</p>
 
             </div>
             <div className={styles.theForm}>
