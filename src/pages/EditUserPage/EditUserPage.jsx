@@ -1,23 +1,12 @@
 import styles from './EditUserPage.module.scss'
 import {useState} from 'react'
-export default function EditUserPage(){
-    
+export default function EditUserPage({user, setUser}){
+    console.log('user ',user)
     const [showInput, setShowInput] = useState(false)
     function handleEditClick(){
         setShowInput(!showInput)
     }    
-    const user ={
-        name:"Gunish",
-        email:"gundog@gmail.com",
-        password:"Gun12345dog",
-        phoneNumber:'7805674567',
-        address:{
-            street:'123 st',
-            city:'Edmonton',
-            state:'Alberta',
-            zip:'6t94t0'
-        }
-    }
+
     return(
         <div className={styles.EditUserPage}>
             <h1>Login & Security</h1>

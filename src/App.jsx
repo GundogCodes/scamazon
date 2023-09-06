@@ -26,19 +26,19 @@ function App() {
   return (
     
     <>
-    <body>
+    
     <NavBar routes={routes} />
 
     <Routes>
-      <Route path="/" element={<HomePage />}/>
-      <Route path="/user/:id" element={<UserPage/>}/>
+      <Route path="/" element={<HomePage  />}/>
+      <Route path="/user" element={<UserPage user={user} setUser={setUser}/>}/>
       <Route path="/search" element={<SearchPage/>}/>
       <Route path="/item/:id" element={<ItemPage/>}/>
       <Route path="/categories" element={<CategoryPage />}/>
       <Route path="/orders" element={<OrderPage/>}/>
-      <Route path="/address" element={<AddressFormPage />}/>
-      <Route path="/payments" element={<YourPaymentPage/>}/>
-      <Route path="/edit" element={<EditUserPage/>}/>
+      <Route path="/address" element={<AddressFormPage user={user} setUser={setUser} />}/>
+      <Route path="/payments" element={<YourPaymentPage user={user} setUser={setUser}/>}/>
+      <Route path="/edit" element={<EditUserPage user={user} setUser={setUser}/>}/>
       <Route path="/login" element={<LoginPage user={user} setUser={setUser}/>}/>
       <Route path="/wishlist" element={<WishlistPage user={user} setUser={setUser}/>}/>
     </Routes>
