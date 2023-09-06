@@ -1,8 +1,13 @@
 .LogOut{
+  position: relative;
+  height: 1vh;
+  width: 100vw;
+  background-color: red;
   button{
-    width: 1vmin;
-    height: 1vmin;
+    width: 100px;
+    height: 3vmin;
     background-color: yellow;
+    left: 45vw;
     bottom: 0;
     position: fixed;
   }

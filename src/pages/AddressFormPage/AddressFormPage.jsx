@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import styles from './AddressFormPage.module.scss'
-export default function AddressForm(){
+export default function AddressForm({user,setUser}){
+    console.log('user, ',user)
     const [address,setAddress] = useState({
         address:'',
         city:'',
@@ -8,18 +9,18 @@ export default function AddressForm(){
         zip:''
     })
 
-    const user ={
-        name:"Gunish",
-        email:"gundog@gmail.com",
-        password:"Gun12345dog",
-        phoneNumber:'7805674567',
-        address:{
-            street:'123 st',
-            city:'Edmonton',
-            state:'Alberta',
-            zip:'6t94t0'
-        }
-    }
+    // const user ={
+    //     name:"Gunish",
+    //     email:"gundog@gmail.com",
+    //     password:"Gun12345dog",
+    //     phoneNumber:'7805674567',
+    //     address:{
+    //         street:'123 st',
+    //         city:'Edmonton',
+    //         state:'Alberta',
+    //         zip:'6t94t0'
+    //     }
+    // }
 
     return(
         <form className={styles.AddressForm} >

@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 .loginlogo {
@@ -98,11 +99,12 @@
   border-radius: 8px;
   cursor: pointer;
   color: black;
+
 }
 
 .login__registerButton {
   border-radius: 2px;
-  width: 100%;
+  width: 200px;
   height: 30px;
   border: 1px solid;
   margin-top: 40px;
@@ -110,6 +112,7 @@
   color: #111111;
   border-radius: 5px;
   border-color: darkgray;
+  margin-right: 80vw;
 }
 
 .login__buttonContainer {

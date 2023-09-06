@@ -77,7 +77,13 @@
         height: 100vh;
         background-color: rgba(235,237,237);
         .headers{
-
+            display: flex;
+            flex-direction: column;
+            .username:hover{
+                padding-left: 20px;
+                border-radius: 15px;
+                background-color:rgba(202,203,203) ;
+            }
             h1{
                 margin-left: 12vw;
             }
@@ -104,9 +110,14 @@
                 border-top-left-radius: 15px;
                 border-top-right-radius: 15px;
                 overflow-y: scroll;
-            
+            .clickedCard{
+                background-color:rgb(195,196,196);
+                border-radius: 25px;
+            }
             }
             .cardShow{
+                border-style: solid;
+                border-width: 4px;
                 background-color: white;
                 margin-left: 1vw;
                 width: 800px;
