@@ -1,7 +1,8 @@
 <img src= './public/img/scamazon.png'/>
 
 # SCAMAZON
- 
+### "Delivering imaginary solutions to your imaginary needs." - Scamazon CEO, Melon Husk
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -27,72 +28,7 @@
   </ol>
 </details>
 
-* [Usage]
 
-* [Installation]
-
-* [Purpose]
-
-* [Wireframes]
-#### Landing Page
-<img src= './public/img/scamazon-landing-page-correct.png'/>
-
-#### Items List
-
-<img src= './public/img/Items-Page.png'/>
-
-#### Item Detail
-
-<img src= './public/img/Item-Detail.png'/>
-
-#### Cart
-
-<img src= './public/img/Cart.png'/>
-
-#### My Orders
- 
-<img src= './public/img/My-Orders.png'/>
-
-#### Wishlist
-
-<img src= './public/img/Wishlist.png'/>
-
-
-#### Checkout
-
-<img src= './public/img/Checkout.png'/>
-
-#### Login/Sign Up
-
-<img src= './public/img/Login.png'/>
-
-<img src= './public/img/Sign-Up.png'/>
-
-#### My Account
-
-<img src= './public/img/My-Account.png'/>
-
-#### Contact
-
-<img src= './public/img/Contact-Us.png'/>
-
-#### Misc
-
-<img src= './public/img/About.png'/>
-
-<img src= './public/img/Careers.png'/>
-
-<img src= './public/img/Corporate-Values.png'/>
-
-<img src= './public/img/History.png'/>
-
-<img src= './public/img/Job-Opening.png'/>
-
-<img src= './public/img/Mission.png'/>
-
-<img src= './public/img/Testimonies.png'/>
-
-<img src= './public/img/Working-for-Scamazon.png'/>
 
 
 * [ERD]
