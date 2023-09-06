@@ -1,14 +1,23 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import styles from './UserPage.module.scss'
 import {Link} from 'react-router-dom'
 import LoginPage from '../LoginPage/LoginPage'
-import * as usersAPI from '../../utilities/users-service.cjs'
-export default function UserPage({setUser}){
-
-    const user ={
-        
-
-    }
+import {signUp,login, logOut, getUser} from '../../utilities/users-service.cjs'
+export default function UserPage({user, setUser}){
+    console.log('user: ',user)
+    // const user ={
+    //     name:'Gunish',
+    //     email:'g@g.com',
+    //     password:'ggg',
+    //     phoneNumber:'7804562789',
+    //     address:{
+    //         street:'1234 st',
+    //         city:'Edmonton',
+    //         state:'Alberta',
+    //         zip:'t6w0n2'
+    //     }
+    // }
+    
     return(
         <div className={styles.UserPage} >
             

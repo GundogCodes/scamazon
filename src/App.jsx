@@ -18,19 +18,19 @@ import YourPaymentPage from './pages/YourPaymentsPage/YourPaymentsPage'
 import EditUserPage from './pages/EditUserPage/EditUserPage'
 import {getUser} from '../src/utilities/users-service.cjs'
 function App() {
-  const [user,setUser] = useState(getUser())
+
   return (
     
     <>
     <NavBar routes={routes} />
     <Routes>
       <Route path="/" element={<HomePage />}/>
-      <Route path="/login" element={<LoginPage user={user} setUser={setUser}/>}/>
-      <Route path="/user/:id" element={<UserPage user={user} setUser={setUser}/>}/>
-      <Route path="/search" element={<SearchPage />}/>
-      <Route path="/item/:id" element={<ItemPage />}/>
+      <Route path="/login" element={<LoginPage/>}/>
+      <Route path="/user/:id" element={<UserPage/>}/>
+      <Route path="/search" element={<SearchPage/>}/>
+      <Route path="/item/:id" element={<ItemPage/>}/>
       <Route path="/categories" element={<CategoryPage />}/>
-      <Route path="/orders" element={<OrderPage user={user} setUser={setUser}/>}/>
+      <Route path="/orders" element={<OrderPage/>}/>
       <Route path="/wishlist" element={<WishlistPage />}/>
       <Route path="/address" element={<AddressFormPage />}/>
       <Route path="/payments" element={<YourPaymentPage/>}/>
