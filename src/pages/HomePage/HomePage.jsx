@@ -31,16 +31,12 @@ export default function HomePage({ }) {
         <div className={styles.HomePage}>
             <img className="page-banner" src='../public/img/scamazon.png'/>
                 
-            /* how do we get the buttons for login/sign up on here again??? */
             <PromoCarousel
-                //click on item which takes user to item page
-                // rotates through 5 randomized deals(AI?)
-                // event handler(onClick)
                 items={items.filter(item => item.name.price === items)}
             />
-            {/* <PromoAdsSmall
+            <PromoAdsSmall
                 items={items.filter(item => item.name.price === items)}
-            /> */}
+            />
 
             {/* <PromoMedia
                 items={items.filter(item => item.name.price === items)}

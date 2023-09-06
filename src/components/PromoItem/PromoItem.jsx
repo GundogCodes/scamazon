@@ -24,12 +24,13 @@ export default function PromoItem() {
     }, []);
     
     async function linkToDetailPage() {
-        navigate('/:id/detail') //URL for item detail page
+        navigate`item/${item.id}` 
     }
     
     return (
         <h2 className={styles['item-container']}>
-            <Link to="/:id/" className="btn-sm" linkToDetailPage={linkToDetailPage}>View Item</Link>
+            
+            <Link to="/item/:id" className="btn-sm" linkToDetailPage={linkToDetailPage}>View Item</Link>
         </h2>
     )
 }

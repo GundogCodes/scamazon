@@ -15,20 +15,16 @@ export default function PromoCarousel() {
     
     return (
         <div className={styles.PromoCarousel}>
-          {item[0]}  
-            {/* <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="..." alt="First slide" />
+            <div className={styles.CarouselSlide} data-ride="carousel">
+                <div className={styles.CarouselInner}>
+                    <div className={styles.CarouselItemActive}>
+                    {item[0]}  
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="..." alt="Second slide" />
+                    <div className={styles.CarouselItemInactive}>
+                    {item[1]} {item[2]}    
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="..." alt="Third slide" />
-                </div>
             </div>
-        </div> */}
+        </div>
 
         </div>
     )

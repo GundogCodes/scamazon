@@ -1,0 +1,16 @@
+.PromoCarousel {
+    background-color: rgb(231, 13, 13);
+    border-radius: 15%;
+    display: inline-block;
+    flex-direction: row;
+    height: 12rem;
+    width: 50rem;
+
+}
+
+.CarouselSlide {
+    color: black;
+    display: flex; 
+    flex-direction: row;
+}
+
