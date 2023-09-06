@@ -5,7 +5,7 @@ import LoginPage from '../LoginPage/LoginPage'
 export default function AddressForm({user, setUser}){
 
     const [address,setAddress] = useState({
-        address:'',
+        street:'',
         city:'',
         state:'',
         zip:''
@@ -32,7 +32,7 @@ export default function AddressForm({user, setUser}){
             <span>Default:</span> <img src='https://selenakitt.com/wp-content/files/scamazon.png'/>
             </h3>
             
-            <p className={styles.text}>Address </p><input type='text' name="street"   className={styles.inputText} required />
+            <p className={styles.text}>Street </p><input type='text' name="street"   className={styles.inputText} required />
             <p className={styles.text}>City </p><input type='text' name="city"  className={styles.inputText} required />
             <p className={styles.text}>State </p><input type='text' name="state"   className={styles.inputText} required />
             <p className={styles.text}>Zip </p><input type='text' name="zip"   className={styles.inputText} required />

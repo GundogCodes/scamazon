@@ -17,7 +17,7 @@ import AddressFormPage from './pages/AddressFormPage/AddressFormPage'
 import YourPaymentPage from './pages/YourPaymentsPage/YourPaymentsPage'
 import EditUserPage from './pages/EditUserPage/EditUserPage'
 import {getUser} from '../src/utilities/users-service.cjs'
-
+import Footer from './components/Footer/Footer'
 import LogOut from './components/LogOut/LogOut'
 
 function App() {
@@ -42,6 +42,7 @@ function App() {
       <Route path="/login" element={<LoginPage user={user} setUser={setUser}/>}/>
       <Route path="/wishlist" element={<WishlistPage user={user} setUser={setUser}/>}/>
     </Routes>
+    <Footer />
     <LogOut user={user} setUser={setUser}/>
     </>
     

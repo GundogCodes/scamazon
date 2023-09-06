@@ -6,6 +6,7 @@ export default function YourPaymentPage({user,setUser}){
     const [blueClicked, setBlueClicked] = useState(false)
     const [platinumClicked, setPlatinumClicked] = useState(false)
     const [goldClicked, setGoldClicked] = useState(false)
+    const [nothingClicked, setNothingClicked] = useState(true)
     function handleTabClick(e){
         const innerText = e.target.innerText
         if(innerText=== 'Transactions'){
@@ -26,20 +27,24 @@ export default function YourPaymentPage({user,setUser}){
             setBlueClicked(true)
             setPlatinumClicked(false)
             setGoldClicked(false)
+            setNothingClicked(false)
         } else if(imgURL === platinumURL){
             setBlueClicked(false)
             setPlatinumClicked(true)
             setGoldClicked(false)
+            setNothingClicked(false)
             
         } else if (imgURL === goldURL){
             setBlueClicked(false)
             setPlatinumClicked(false)
             setGoldClicked(true)
+            setNothingClicked(false)
             
         } else{
             setBlueClicked(false)
             setPlatinumClicked(false)
             setGoldClicked(false)
+            setNothingClicked(false)
             
         }
 
@@ -74,6 +79,7 @@ export default function YourPaymentPage({user,setUser}){
             <div className={styles.cardsDiv}>
 
             <section className={styles.cardsList}>
+                
                 {blueClicked?
                 <div className={styles.clickedCard} onClick={handleCardClick}> <CreditCard  user={user} title={'Blue'} imgSrc={'https://ma.visamiddleeast.com/dam/VCOM/regional/ap/taiwan/global-elements/images/tw-visa-gold-card-498x280.png'}/></div>
                 :
@@ -95,6 +101,12 @@ export default function YourPaymentPage({user,setUser}){
         }
             </section>
             <div className={styles.cardShow}> 
+            {nothingClicked?
+        <h1 className={styles.clickPrompt}>Click on a Card to View Details...</h1> 
+        :
+        <></>   
+        }
+
             {blueClicked?
             <>
            
