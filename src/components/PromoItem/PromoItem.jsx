@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from './PromoItem.module.scss'; 
-import * as itemsAPI from '../../utilities/items-api';
+import * as itemsAPI from '../../utilities/items-api.cjs';
 import { Link, useNavigate } from 'react-router-dom';
 
 
@@ -12,10 +12,10 @@ export default function PromoItem() {
     useEffect(function () {
         //fetching the random items from the API to be displayed in the banners
         async function getItems() {
-            const items = await itemsAPI.getRandom(); //getOne?? get?? need the proper function here
-            itemsRef.current = items.reduce((/*???*/ item) => {
-                const item = item.name.price;
-                return item.name.price
+            const items = await itemsAPI.getItems(); //getOne?? get?? need the proper function here
+            itemsRef.current = items.map((i) => {
+                const item = i.name.price;
+                return i.name.price
             }, []);
             setActiveItem(activeItem);
 
@@ -29,7 +29,7 @@ export default function PromoItem() {
     
     return (
         <h2 className={styles['item-container']}>
-            <Link to="/:id/detail" className="btn-sm" linkToDetailPage={linkToDetailPage}>View Item</Link>
+            <Link to="/:id/" className="btn-sm" linkToDetailPage={linkToDetailPage}>View Item</Link>
         </h2>
     )
 }

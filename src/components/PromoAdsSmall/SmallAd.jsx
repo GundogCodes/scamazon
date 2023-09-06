@@ -1,7 +1,8 @@
 import styles from './SmallAd.module.scss'; 
 import PromoItem from '../PromoItem/PromoItem';
 
-export default function SmallAd(item){
+export default function SmallAd(item) {
+    
     const smallAd = item.map(i => 
         <PromoItem
             item={i}

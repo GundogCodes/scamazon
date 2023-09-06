@@ -1,8 +1,8 @@
 import styles from './PromoCollection.module.scss'; 
-import items from '../config/seed.cjs';
+import * as itemsAPI from '../../utilities/items-api.cjs'
 
 export default function PromoCollection({ item }) {
-    const promoItems = item.map(i => 
+    const promoCollection = item.map(i => 
         <items
             item={i}
         />
@@ -10,7 +10,7 @@ export default function PromoCollection({ item }) {
     
     return (
         <div>
-
+            {promoCollection}
         </div>
     )
 }
