@@ -45,11 +45,6 @@ const routes = [
 		path: '/orders'
 	},
 	{
-		Component: WishlistPage,
-		key: 'Wishlist',
-		path: '/wishlist'
-	},
-	{
 		Component: CartPage,
 		key: 'Cart',
 		path: '/cart'
