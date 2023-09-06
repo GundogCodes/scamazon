@@ -10,7 +10,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#Purpose">Purpose</a></li>
-        <li><a href="#Usage">Usage</a></li>
+        <li><a href="#Meet-The-Team">Meet our team</a></li>
         <li><a href="#Portfolio">Portfolio</a></li>
       </ul>
     </li>
@@ -55,7 +55,7 @@
 
 Our team created a MERN stack web application similar in style and function to multinational e-commerce platform, Amazon, for General Assembly coding bootcamp. 
 
-### Usage
+### Meet The Team
 
 
 <details id ="Portfolio" >
