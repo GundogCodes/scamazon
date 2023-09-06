@@ -2,13 +2,13 @@
   position: relative;
   height: 1vh;
   width: 100vw;
-  background-color: red;
   button{
     width: 100px;
     height: 3vmin;
-    background-color: yellow;
-    left: 45vw;
+    background-color: rgba(242,213,86);
+    margin-left: 47vw;
     bottom: 0;
     position: fixed;
+    border-radius: 15px;
   }
 }

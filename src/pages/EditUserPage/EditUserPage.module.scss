@@ -1,10 +1,23 @@
 .EditUserPage{
     width: 100vw;
+
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .showInputDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        .doneButt{
+
+            background-color: rgba(249,217,76);
+            margin-left: 2vmin;
+            width: 8vmin;
+        }
+    }
     h1{
         width: 35vw;
 
@@ -59,11 +72,12 @@
         button{
             margin-top: 2vmin;
             align-self: flex-start;
-            width: 6.5vw;
+            width: 16vmin;
             font-size: 2.5vmin;
             border-radius: 15px;
             border-color: white;
             background-color: rgba(249,217,76);
+            box-shadow: 3px 3px 3px 3px gainsboro;
         }
     }
 }
