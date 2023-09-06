@@ -1,4 +1,4 @@
-export default function ItemPage(){
+export default function ItemPage() {
     return(
         <>
         ItemPage
