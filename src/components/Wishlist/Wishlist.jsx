@@ -11,10 +11,17 @@ export default function Wishlist({wishlist, handleChangeQty}){
             key={item._id}
         />
     )
-
+    //Wishlist header + container to show wishlisted items
     return(
-        <>
-        WishlistPage
-        </>
+        <div className={styles.Wishlist}>
+            <h1 className={styles.header}>Wishlist</h1>
+            <div className={styles.lineItemContainer}>
+                {lineItems.length ?
+                {lineItems}
+                :
+                {}
+                }
+            </div>
+        </div>
     )
 }

@@ -1,6 +1,6 @@
 import styles from './LineItem.module.scss';
 
-export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
+export default function LineItem({ lineItem, isPaid, handleChangeQty, moveToWishlist }) {
 return (
   <div className={styles.LineItem}>
     <div className="flex-ctr-ctr">{lineItem.item.image}</div>
@@ -23,10 +23,17 @@ return (
         >+</button>
       }
     </div>
-    <div className={styles.removeItem}>
+    <div className={styles.wishlistItem}>
       <button 
         classname={styles.wishlist}
-        onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty = 0)}
+        onClick={() => 
+          moveToWishlist(
+            lineItem.item._id, 
+            lineItem.qty = 0,
+            wishlist.item._id,
+            wishList.qty + 1
+          )
+        }
         >
         Move to Wishlist
       </button>
