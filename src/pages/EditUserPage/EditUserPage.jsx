@@ -1,6 +1,7 @@
 import styles from './EditUserPage.module.scss'
 import {useState, useRef} from 'react'
 import { updateUserInfo } from '../../utilities/users-api.cjs'
+import LoginPage from '../LoginPage/LoginPage'
 // userId, newData
 export default function EditUserPage({user, setUser}){
     console.log('user ',user)
@@ -9,7 +10,7 @@ export default function EditUserPage({user, setUser}){
     const [newEmail,setNewEmail] = useState()
     const [newPassword,setNewPassword] = useState()
     const [newPhoneNumber,setNewPhoneNumber] = useState()
-
+    
  
 
     function handleChange(e){
@@ -53,7 +54,7 @@ export default function EditUserPage({user, setUser}){
 
     const [showInput, setShowInput] = useState(false)
 
-     function handleSubmit(){
+    async function handleSubmit(){
 
         console.log('submitted')
     }
@@ -65,6 +66,8 @@ export default function EditUserPage({user, setUser}){
 
     return(
         <div className={styles.EditUserPage}>
+            {user?
+            <>
             <h1>Login & Security</h1>
             <h2>Edit Info</h2>
             <form onSubmit={handleSubmit} >
@@ -141,6 +144,12 @@ export default function EditUserPage({user, setUser}){
                 </div>
                 <button  type='submit'>Submit Changes</button>
             </form>
+            </>
+            :
+            <>
+          <h1 className={styles.linkDiv}><Link to='/login'>Please Login to Continue...</Link></h1>
+            </>
+            }
         </div>
     )
 }

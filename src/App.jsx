@@ -42,7 +42,6 @@ function App() {
       <Route path="/login" element={<LoginPage user={user} setUser={setUser}/>}/>
       <Route path="/wishlist" element={<WishlistPage user={user} setUser={setUser}/>}/>
     </Routes>
-    <Footer />
     <LogOut user={user} setUser={setUser}/>
     </>
     
