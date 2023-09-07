@@ -1,6 +1,7 @@
 import styles from './PromoCarousel.module.scss'; 
 import PromoItem from '../PromoItem/PromoItem';
 
+
 export default function PromoCarousel() {
     const items = [{ name: 'sports equipment', price: 900 },
         {name: 'PS5', price: 3000},

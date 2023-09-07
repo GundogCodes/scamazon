@@ -29,3 +29,4 @@ const smallAd = items.map(i =>
         </main>
     )
 }
+
