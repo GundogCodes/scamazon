@@ -4,27 +4,37 @@ import { getById } from '../../utilities/items-api.cjs';
 import styles from './ItemPage.module.scss';
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
 import Ratings from '../../components/Ratings/Ratings';
-import { addToCart } from '../../utilities/orders-api.cjs';
+import { addToCart, getCart } from '../../utilities/orders-api.cjs';
 
 export default function ItemPage() {
   const { id } = useParams();
   const [item, setItem] = useState(null);
   const [cart, setCart] = useState(null);
 
-  console.log(typeof id);
   console.log('test Cart:', cart);
   async function handleAddToCart() {
     const updatedCart = await addToCart(id);
     setCart(updatedCart);
   }
 
+  // Get the cart data
   useEffect(() => {
     (async () => {
       try {
-        console.log('id: ', id);
-        const newItem = await getById(id);
-        setItem(newItem);
-        console.log('new item:', newItem);
+        const cart = await getCart();
+        setCart(cart);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
+  // Get the item data
+  useEffect(() => {
+    (async () => {
+      try {
+        const item = await getById(id);
+        setItem(item);
       } catch (error) {
         console.log(error);
       }

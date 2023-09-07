@@ -13,7 +13,7 @@ module.exports = {
 // A cart is the unpaid order for a user
 async function cart(req, res) {
   try {
-    console.log('req', req);
+    console.log('req.user._id: ', req.user._id);
     const cart = await Order.getCart(req.user._id);
     res.status(200).json(cart);
   } catch (e) {
@@ -46,13 +46,12 @@ async function cart(req, res) {
 //Add an item to the cart
 async function addToCart(req, res) {
   try {
-    console.log('req.user._id', req.user._id);
-    console.log('req.params.id', req.params.id);
-    const cart = await Order.getCart(req.user.id);
-    cart.user = await User.findOne(req.user.id);
+    const cart = await Order.getCart(req.user._id);
+    cart.user = await User.findById(req.user._id);
     await cart.addItemToCart(req.params.id);
     res.status(200).json(cart);
   } catch (e) {
+    console.log(e);
     res.status(400).json({ msg: e.message });
   }
 }
