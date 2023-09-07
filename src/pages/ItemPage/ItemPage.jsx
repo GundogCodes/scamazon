@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getById } from '../../utilities/items-api.cjs';
+import styles from './ItemPage.module.scss';
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
 import Ratings from '../../components/Ratings/Ratings';
 
 export default function ItemPage() {
   const { id } = useParams();
-  console.log('id: ', id);
   const [item, setItem] = useState(null);
 
   useEffect(() => {
@@ -27,7 +27,12 @@ export default function ItemPage() {
         <>
           <Row>
             <Col md={5}>
-              <Image src={item.image} alt={item.name} fluid />
+              <Image
+                src={item.image}
+                alt={item.name}
+                className={styles.picture}
+                fluid
+              />
             </Col>
             <Col md={4}>
               <ListGroup>
@@ -55,6 +60,11 @@ export default function ItemPage() {
                   <ListGroup.Item>
                     <Button className="btn-block" type="button">
                       Add To Cart
+                    </Button>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <Button className="btn-block" type="button">
+                      Add To Wishlist
                     </Button>
                   </ListGroup.Item>
                 </ListGroup>
