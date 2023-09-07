@@ -1,8 +1,20 @@
 import styles from './CartPage.module.scss';
+import { useState, useEffect } from 'react';
+import * as ordersAPI from '../../utilities/orders-api.cjs';
+export default function CartPage({user, setUser}){
+   
+    useEffect(function() {
 
-export default function CartPage(){
-    const user = { name: "bang3"}
-
+        async function getCart() {
+            try {
+                const cart = await ordersAPI.getCart();
+                setCart(cart);
+            } catch (error) {
+                console.error("Error fetching the cart:", error);
+            }
+        }
+        getCart();
+      }, []);
 
     const mockOrder = {
         user: "610ba3410a931a11638eabcd", 
@@ -68,13 +80,16 @@ export default function CartPage(){
         <div className={styles.CartPage}>
             <div className={styles.userName}>
                 {/* {user.name} */}
-                <h1>{user.name}</h1>
+                <h1>{user._id}</h1>
             </div>
             <div className={styles.Ordersdetails}>
                 <div className={styles.OrdersList}>List of cart items here{lineItems}</div>
+                <div className={styles.columnWrap}>
                 <div className={styles.checkout}> 
                 <p>total:${mockOrder.totalPrice}</p>
                 <button className={styles.checkoutbtn}>Proceed to checkout</button>
+                </div>
+                <div className={styles.promo}> promotion components here</div>
                 </div>
             </div>
         </div>

@@ -39,8 +39,8 @@ function App() {
         <Route path="/payments" element={<YourPaymentPage />} />
         <Route path="/edit" element={<EditUserPage />} />
         <Route path="/login" element={<LoginPage user={user} setUser={setUser} />} />
-        <Route path="/wishlist" element={<WishlistPage user={user} setUser={setUser} />} />
-        <Route path="/cart" element={<CartPage />} />
+        
+        <Route path="/cart" element={<CartPage user={user} setUser={setUser}/>} />
       </Routes>
 
       <LogOut user={user} setUser={setUser} />
