@@ -23,7 +23,7 @@ const routes = [
   {
     Component: UserPage,
     key: 'User',
-    path: '/user/:id',
+    path: '/user',
   },
   {
     Component: SearchPage,
