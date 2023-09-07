@@ -28,8 +28,8 @@ export default function PromoItem() {
     }
     
     return (
-        <h2 className={styles['item-container']}>
-            <Link to="/item/:id" class="btn-sm" linkToDetailPage={linkToDetailPage}>View Item</Link>
+        <h2 className={styles.itemContainer}>
+            <Link to="/item/:id" className={styles.btnSm} linkToDetailPage={linkToDetailPage}>View Item</Link>
         </h2>
     )
 }

@@ -29,7 +29,7 @@ export default function HomePage({ }) {
 
     return(
         <div className={styles.HomePage}>
-            <img className="page-banner" src='../public/img/scamazon.png'/>
+            <img className={styles.pageBanner} src='../public/img/scamazon.png'/>
                 
             <PromoCarousel
                 items={items.filter(item => item.name.price === items)}
