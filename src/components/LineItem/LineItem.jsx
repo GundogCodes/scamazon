@@ -30,11 +30,12 @@ return (
           moveToWishlist(
             lineItem.item._id, 
             lineItem.qty = 0,
-            wishlist.item._id,
-            wishList.qty + 1
+            lineItem.wishlist = true
+            // wishlist.item._id,
+            // wishList.qty + 1
           )
         }
-        >
+      >
         Move to Wishlist
       </button>
       <button 
