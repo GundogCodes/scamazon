@@ -1,37 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getById } from '../../utilities/items-api.cjs';
-import styles from './ItemPage.module.scss';
-import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
-import Ratings from '../../components/Ratings/Ratings';
-import { addToCart } from '../../utilities/orders-api.cjs';
-
-export default function ItemPage() {
-  const { id } = useParams();
-  const [item, setItem] = useState(null);
-  const [cart, setCart] = useState(null);
-
-  console.log(typeof id);
-  async function handleAddToCart() {
-    const updatedCart = await addToCart(id);
-    setCart(updatedCart);
-  }
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const newItem = await getById(id);
-        setItem(newItem);
-        console.log('new item:', item);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
-
-  return (
-    <>
-      {item ? (
+export default function ItemPage(){
+    return(
         <>
           <Row>
             <Col md={5}>

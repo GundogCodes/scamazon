@@ -1,4 +1,4 @@
-<img src= './public/img/SKAMAZON.png'/>
+<img src= './public/img/scamazon.png'/>
 
 # SCAMAZON
  
