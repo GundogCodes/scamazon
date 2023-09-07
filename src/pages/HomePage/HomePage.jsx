@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import styles from './HomePage.module.scss'
-//import * as itemsAPI from '../../utilities/items-api'
+import * as itemsAPI from '../../utilities/items-api.cjs'
 // import * as ordersAPI from '../../utilities/orders-api.cjs';
 //import { Link, useNavigate } from 'react-router-dom';
 import PromoAdsSmall from '../../components/PromoAdsSmall/SmallAd' 
@@ -17,7 +17,7 @@ export default function HomePage({ }) {
     useEffect(function () {
         //for if user does an "impulse buy" and adds item to cart right away
         async function getItems() {
-            const items = await itemsAPI.getItems();
+            const items = await itemsAPI.getAll();
             setItems(items);
           }
           getItems();

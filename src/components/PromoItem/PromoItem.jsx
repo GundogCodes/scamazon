@@ -29,8 +29,7 @@ export default function PromoItem() {
     
     return (
         <h2 className={styles['item-container']}>
-            
-            <Link to="/item/:id" className="btn-sm" linkToDetailPage={linkToDetailPage}>View Item</Link>
+            <Link to="/item/:id" class="btn-sm" linkToDetailPage={linkToDetailPage}>View Item</Link>
         </h2>
     )
 }
