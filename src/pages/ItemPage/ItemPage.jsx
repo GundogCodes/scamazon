@@ -4,10 +4,18 @@ import { getById } from '../../utilities/items-api.cjs';
 import styles from './ItemPage.module.scss';
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
 import Ratings from '../../components/Ratings/Ratings';
+import { addToCart } from '../../utilities/orders-api.cjs';
 
 export default function ItemPage() {
   const { id } = useParams();
   const [item, setItem] = useState(null);
+  const [cart, setCart] = useState(null);
+
+  console.log(typeof id);
+  async function handleAddToCart() {
+    const updatedCart = await addToCart(id);
+    setCart(updatedCart);
+  }
 
   useEffect(() => {
     (async () => {
@@ -58,7 +66,11 @@ export default function ItemPage() {
                     </Row>
                   </ListGroup.Item>
                   <ListGroup.Item>
-                    <Button className="btn-block" type="button">
+                    <Button
+                      onClick={handleAddToCart}
+                      className="btn-block"
+                      type="button"
+                    >
                       Add To Cart
                     </Button>
                   </ListGroup.Item>
