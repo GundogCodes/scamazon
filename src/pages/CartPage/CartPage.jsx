@@ -1,19 +1,17 @@
 import styles from './CartPage.module.scss';
 import { useState, useEffect } from 'react';
-import * as ordersAPI from '../../utilities/orders-api.cjs';
-export default function CartPage({user, setUser}){
-   
-    useEffect(function() {
-
-        async function getCart() {
-            try {
-                const cart = await ordersAPI.getCart();
-                setCart(cart);
-            } catch (error) {
-                console.error("Error fetching the cart:", error);
-            }
-        }
-        getCart();
+import { getCart } from '../../utilities/orders-api.cjs';
+export default function CartPage({ user, setUser}){
+    const [cartPage, setCartPage] = useState(null);
+    useEffect(() => {
+        (async () => {
+          try {
+            const cartPage = await getCart();
+            setCartPage(cartPage);
+          } catch (error) {
+            console.log(error);
+          }
+        })();
       }, []);
 
     const mockOrder = {
