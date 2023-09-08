@@ -67,10 +67,9 @@ export default function UserPage({user,setUser}){
                 </div>
                 </>   
                 :
-                <>
-                </> 
-            }
+
                 <LoginPage user={user} setUser={setUser} />
+            }
                 </div>
                 
                 

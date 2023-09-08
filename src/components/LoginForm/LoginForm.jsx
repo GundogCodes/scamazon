@@ -9,7 +9,8 @@ import { Link,useNavigate} from 'react-router-dom';
 import SignUpForm from '../SignUpForm/SignUpForm';
 
 
-export default function LoginForm({ setUser }) {
+export default function LoginForm({user, setUser }) {
+
     const [credentials, setCredentials] = useState({
         loginValue: '',
         password: ''
@@ -51,6 +52,7 @@ export default function LoginForm({ setUser }) {
         } catch {
             setError('Log In Failed - Try Again');
         }
+        
        handleClick()
     }
    

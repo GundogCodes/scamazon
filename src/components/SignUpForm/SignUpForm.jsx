@@ -4,7 +4,7 @@ import styles from './SignUpForm.module.scss'; // Assuming you have a separate C
 import { Link, useNavigate } from 'react-router-dom';
 
 
-export default function CreateAccountForm({ setUser }) {
+export default function CreateAccountForm({ user, setUser }) {
     const [credentials, setCredentials] = useState({
         firstName: '',
         lastName: '',
@@ -17,7 +17,7 @@ export default function CreateAccountForm({ setUser }) {
     // const [showSignUpForm, setShowSignUpForm] = useState(false);
      const navigate = useNavigate()
     function handleClick() {
-        navigate('/');
+        navigate('/user');
     }
 
     function handleChange(e) {
