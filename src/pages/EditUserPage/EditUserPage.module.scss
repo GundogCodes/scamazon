@@ -57,7 +57,15 @@
             margin: 10px;
             padding-left: 20px;
             font-weight: bold;
+            .editButt{
+                margin-right: 50px;
+                align-self: flex-end;
+                padding-left: 20px;
+                padding-right: 20px;
+                background-color: white;
+            }
             .sectionHeader{
+            
                 display: flex;
                 flex-direction: row;
             }
