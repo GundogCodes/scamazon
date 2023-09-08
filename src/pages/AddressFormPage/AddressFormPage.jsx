@@ -30,8 +30,18 @@ export default function AddressForm({user, setUser}){
 
     useEffect(()=>{
         const initUser = getUser()
-        console.log(initUser.address)
-        setInitUserAddress(initUser.address)
+        console.log('initUser Address',initUser.address)
+        if(!initUser.address){
+            setInitUserAddress({
+                street:'',
+                city:'',
+                state:'',
+                zip:''
+            })
+        } else{
+
+            setInitUserAddress(initUser.address)
+        }
     },[])
 
     function handleChange(e){

@@ -3,7 +3,7 @@ import {useState, useRef, useEffect} from 'react'
 import { updateUserInfo } from '../../utilities/users-api.cjs'
 import LoginPage from '../LoginPage/LoginPage'
 import { getUser } from '../../utilities/users-service.cjs'
-
+import { useNavigate } from 'react-router-dom'
 // userId, newData
 export default function EditUserPage({user, setUser}){
     const [initUser,setInitUser] = useState({
@@ -21,7 +21,7 @@ export default function EditUserPage({user, setUser}){
     const [userData, setUserData] = useState({
         name:user.name,
         email:user.email,
-        password:user.phoneNumber || '',
+        password:user.password || '',
         phoneNumber:user.phoneNumber || ''
     })
 
@@ -32,6 +32,7 @@ export default function EditUserPage({user, setUser}){
             const updatedUser = await updateUserInfo(user._id,userData)
             console.log('updatedUser ', updatedUser)
             setUpdatedData(true)
+            setUserData(updatedUser)
         } catch (error) {
             
         }
