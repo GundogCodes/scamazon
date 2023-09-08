@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -20,12 +21,13 @@ import {getUser} from '../src/utilities/users-service.cjs'
 import Footer from './components/Footer/Footer'
 import LogOut from './components/LogOut/LogOut'
 
+
 function App() {
- const [user, setUser] = useState(getUser())
+  const [user, setUser] = useState(getUser());
 
   return (
-    
     <>
+
     
     <NavBar routes={routes} />
 
@@ -43,9 +45,9 @@ function App() {
       <Route path="/wishlist" element={<WishlistPage user={user} setUser={setUser}/>}/>
     </Routes>
     <LogOut user={user} setUser={setUser}/>
+
     </>
-    
-  )
+  );
 }
 
-export default App
+export default App;

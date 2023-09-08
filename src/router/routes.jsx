@@ -1,14 +1,15 @@
-import LoginPage from '../pages/LoginPage/LoginPage'
+import LoginPage from '../pages/LoginPage/LoginPage';
 import UserPage from '../pages/UserPage/UserPage';
 import HomePage from '../pages/HomePage/HomePage';
 import SearchPage from '../pages/SearchPage/SearchPage';
-import ItemPage from '../pages/LoginPage/LoginPage';
+import ItemPage from '../pages/ItemPage/ItemPage';
 import CategoryPage from '../pages/LoginPage/LoginPage';
 import OrderPage from '../pages/LoginPage/LoginPage';
 import WishlistPage from '../pages/LoginPage/LoginPage';
 import CartPage from '../pages/CartPage/CartPage';
 
 const routes = [
+
 	{
 		Component: HomePage,
 		key: 'Home',
@@ -49,6 +50,7 @@ const routes = [
 		key: 'Cart',
 		path: '/cart'
 	}
+
 ];
 
 export default routes;
