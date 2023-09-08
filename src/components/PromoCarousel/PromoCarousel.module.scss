@@ -1,47 +1,80 @@
-.carouselSlide {
-    display: flex; 
-    flex-direction: row;
+// .carouselSlide {
+//     display: flex; 
+//     flex-direction: row;
 
-    .carouselInner {
-    background-color: rgb(58, 100, 100);
-    display: flex; 
-    flex-direction: row;
-    max-width: fit-content;
-    margin-bottom: .5rem;
-    }
+//     .carouselInner {
+//     display: flex; 
+//     flex-direction: row;
+//     max-width: fit-content;
+//     margin-bottom: .5rem;
+//     }
     
-    .card {
-        margin: 0 .5em;
+//     .card {
+//         background-color: rgb(58, 100, 100);
+//         margin: 0 .5em;
+//         max-width: fit-content;
+//         z-index:auto; 
+
+//     }
+
+
+//     .carouselControls {
+//         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+//     }
+//     .carouselControlPrev, .carouselControlNext{
+//         background-color: #e1e1e1;
+//         width: 10vh;
+//         height: 5vh;
+//         top: 50%;
+//         transform: translateY(-50%);
+//     }
+
+//     .carouselControlPrevIcon, .carouselControlNextIcon {
+//         color: orange; 
+//     }
+
+    
+
+// }
+
+.Carousel {
+
+    background-color: rgba(0, 0, 0, 0.805);
+    height: 20rem;
+    width: 50rem;
+
+
+    .CarouselItem {
+        display: flex; 
+        flex-direction: column;
     }
 
-    .carouselItem {
-        display: none;
+    #Inactive {
+        visibility: hidden;
     }
 
-    .carouselControls {
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
-    .carouselControlPrev, .carouselControlNext{
-        background-color: #e1e1e1;
-        width: 10vh;
-        height: 5vh;
-        top: 50%;
-        transform: translateY(-50%);
+    .Image {
+        margin-top: 10px;
+        display: flex;
+        justify-self: center;
+        align-self: center;
+        align-items: center;
+        height: 10rem; 
+        width: 7.5rem;
     }
 
-    .carouselControlPrev {
-        position: absolute;
-        left: .2rem;
+    .caption {
+        margin-top: 5px;
+        color: green; 
+        position: relative; 
+        left: -0.09rem; 
         
     }
-
-    // .carouselControlNext {
-        
-    // }
-
-    }
-
 }
+
+
+
 
 @media screen and (min-width:576px) {
     .carousel-inner{

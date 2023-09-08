@@ -5,8 +5,9 @@ import * as itemsAPI from '../../utilities/items-api.cjs'
 //import { Link, useNavigate } from 'react-router-dom';
 import PromoAdsSmall from '../../components/PromoAdsSmall/SmallAd' 
 import PromoCarousel from '../../components/PromoCarousel/PromoCarousel'
-import PromoCollection from '../../components/PromoCollection/PromoCollection'
-import PromoMedia from '../../components/PromoMedia/PromoMedia.jsx'
+import Footer from '../../components/Footer/Footer'
+//import PromoCollection from '../../components/PromoCollection/PromoCollection'
+//import PromoMedia from '../../components/PromoMedia/PromoMedia.jsx'
 //import NavBar from '../../components/NavBar/NavBar'
 
 export default function HomePage({ }) {
@@ -29,14 +30,15 @@ export default function HomePage({ }) {
 
     return(
         <div className={styles.HomePage}>
-            <img className={styles.pageBanner} src='../public/img/scamazon.png'/>
+            <img className={styles.pageBanner} src='../public/img/scamazon-logo.png'/>
                 
-            <PromoCarousel
+            <PromoCarousel className={styles.PromoCarousel}
                 items={items.filter(item => item.name.price === items)}
             />
-            <PromoAdsSmall
+            <PromoAdsSmall className={styles.PromoAdsSmall}
                 items={items.filter(item => item.name.price === items)}
             />
+            <Footer className={styles.Footer} />
 
             {/* <PromoMedia
                 items={items.filter(item => item.name.price === items)}

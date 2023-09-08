@@ -3,9 +3,9 @@ import PromoItem from '../PromoItem/PromoItem';
 
 export default function SmallAd() {
     
-    const items = [{ name: 'Sports Equipment', price: 900, image: '../../public/img/football.png'},
-    {name: 'PS5', price: 3000, image: '../../public/img/PS5.png'},
-    {name: 'Dress', price: 50, image: '../../public/img/womensdress.png'}
+    const items = [{ name: 'Gnome on Dragon', price: 900, image: '../../public/img/gnome.png'},
+    {name: 'Spare Tires', price: 3000, image: '../../public/img/tire.png'},
+    {name: 'Pokemon Emerald', price: 50, image: '../../public/img/pokemon-emerald.png'}
 ];
 const smallAd = items.map(i => 
     <PromoItem
@@ -18,13 +18,16 @@ const smallAd = items.map(i =>
     return (
         <main className={styles.SmallAd}>
             <div className={styles.leftAd} >
-                <img src="../../public/img/football.png" /> {smallAd[0]}
-                </div>
-                <div className={styles.midAd} >
-            <img src="../../public/img/PS5.png" />  {smallAd[1]}
+                <p>Gnome on Dragon</p>
+                <img src="../../public/img/gnome.png" /> {smallAd[0]}
+            </div>
+            <div className={styles.midAd} >
+                <p>Spare Tires</p>
+                <img src="../../public/img/tire.png" />  {smallAd[1]}
             </div>
             <div className={styles.rightAd} >
-                <img src="../../public/img/womensdress.png" />  {smallAd[2]}
+                <p>POKEMON EMERALD</p>
+                <img src="../../public/img/pokemon-emerald.png" />  {smallAd[2]}
             </div>    
         </main>
     )
