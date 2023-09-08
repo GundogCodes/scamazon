@@ -8,9 +8,6 @@ export default function LoginPage({ user, setUser }) {
     const [showSignUp, setShowSignUp] = useState(false); // Initial state is set to hide SignUpForm
     const navigate = useNavigate();
 
-    function handleClick() {
-        navigate('/');
-    }
     function handleShow() {
         setShowSignUp(!showSignUp)
     }

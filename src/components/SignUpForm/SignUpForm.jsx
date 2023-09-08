@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service.cjs';
 import styles from './SignUpForm.module.scss'; // Assuming you have a separate CSS module for this form
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 export default function CreateAccountForm({ setUser }) {
     const [credentials, setCredentials] = useState({
@@ -14,6 +15,10 @@ export default function CreateAccountForm({ setUser }) {
     });
     const [error, setError] = useState('');
     // const [showSignUpForm, setShowSignUpForm] = useState(false);
+     const navigate = useNavigate()
+    function handleClick() {
+        navigate('/');
+    }
 
     function handleChange(e) {
         if (e.target.name === 'firstName' || e.target.name === 'lastName') {
@@ -43,6 +48,7 @@ export default function CreateAccountForm({ setUser }) {
         } catch {
             setError('Account creation failed');
         }
+        handleClick()
     }
 
     return (

@@ -1,7 +1,8 @@
+
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service.cjs'
 import styles from './LoginForm.module.scss';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate} from 'react-router-dom';
 //import App from '../../App.jsx';
 export default function LoginForm({ setUser }) {
     const [credentials, setCredentials] = useState({
@@ -15,6 +16,10 @@ export default function LoginForm({ setUser }) {
     function handleChange(evt) {
         setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
         setError('');
+    }
+    const navigate = useNavigate()
+    function handleClick() {
+        navigate('/');
     }
 
     function handleLoginValueChange(evt) {
@@ -41,8 +46,9 @@ export default function LoginForm({ setUser }) {
         } catch {
             setError('Log In Failed - Try Again');
         }
+       handleClick()
     }
-
+   
 
     return (
         <div className={styles.login}>
@@ -80,7 +86,7 @@ export default function LoginForm({ setUser }) {
                                 required
                             />
                             <div className="login__buttonContainer">
-                                <button
+                                <button 
                                     type="submit"
                                     className={styles.login__signInButton}
                                 >

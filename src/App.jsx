@@ -22,7 +22,6 @@ function App() {
 
   return (
     <>
-    <body>
     <NavBar routes={routes} />
 
     <Routes>
