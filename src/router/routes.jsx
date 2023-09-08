@@ -1,14 +1,15 @@
-import LoginPage from '../pages/LoginPage/LoginPage'
+import LoginPage from '../pages/LoginPage/LoginPage';
 import UserPage from '../pages/UserPage/UserPage';
 import HomePage from '../pages/HomePage/HomePage';
 import SearchPage from '../pages/SearchPage/SearchPage';
-import ItemPage from '../pages/LoginPage/LoginPage';
+import ItemPage from '../pages/ItemPage/ItemPage';
 import CategoryPage from '../pages/LoginPage/LoginPage';
 import OrderPage from '../pages/LoginPage/LoginPage';
 import WishlistPage from '../pages/LoginPage/LoginPage';
 import CartPage from '../pages/CartPage/CartPage';
 
 const routes = [
+
 	{
 		Component: HomePage,
 		key: 'Home',
@@ -22,7 +23,7 @@ const routes = [
 	{
 		Component: UserPage,
 		key: 'User',
-		path: '/user/:id'
+		path: '/user'
 	},
 	{
 		Component: SearchPage,
@@ -45,15 +46,11 @@ const routes = [
 		path: '/orders'
 	},
 	{
-		Component: WishlistPage,
-		key: 'Wishlist',
-		path: '/wishlist'
-	},
-	{
 		Component: CartPage,
 		key: 'Cart',
 		path: '/cart'
 	}
+
 ];
 
 export default routes;

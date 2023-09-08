@@ -79,7 +79,7 @@ async login(req, res, next) {
         req.body,
         { new: true }
       );
-      updatedUser.save();
+
       res.json(updatedUser);
       // res.locals.data.user = updatedUser;
       // res.locals.data.token = req.user.token;

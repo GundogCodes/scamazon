@@ -2,8 +2,13 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service.cjs'
 import styles from './LoginForm.module.scss';
+
 import { Link,useNavigate} from 'react-router-dom';
 //import App from '../../App.jsx';
+
+import SignUpForm from '../SignUpForm/SignUpForm';
+
+
 export default function LoginForm({ setUser }) {
     const [credentials, setCredentials] = useState({
         loginValue: '',
@@ -52,14 +57,7 @@ export default function LoginForm({ setUser }) {
 
     return (
         <div className={styles.login}>
-            <Link to="/">
-                <img
-                    className={styles.loginlogo}
-                    src="/img/scamazon-logo.png"
-                    alt="Scamazon Logo"
-                />
-            </Link>
-
+         
             <div className={styles.login__container}>
                 {showSignUpForm ? (
                     <SignUpForm setUser={setUser} />
