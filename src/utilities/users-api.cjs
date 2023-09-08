@@ -12,5 +12,5 @@ export function login(credentials) {
 }
 
 export function updateUserInfo(userId,newData){
-    return sendRequest(`${BASE_URL}/${userId}`, 'POST', newData)
+    return sendRequest(`${BASE_URL}/${userId}`, 'PUT', newData)
 }
