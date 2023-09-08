@@ -17,7 +17,7 @@ export default function EditUserPage({user, setUser}){
     const [editButtEmail, setEditButtEmail] = useState(false)
     const [editButtPassword, setEditButtPassword] = useState(false)
     const [editButtPhoneNumber, setEditButtPhoneNumber] = useState(false)
-    const navigate = useNavigate()
+
     const [userData, setUserData] = useState({
         name:user.name,
         email:user.email,
