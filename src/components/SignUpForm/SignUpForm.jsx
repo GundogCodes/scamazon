@@ -13,6 +13,7 @@ export default function CreateAccountForm({ setUser }) {
         confirmPassword: '',
     });
     const [error, setError] = useState('');
+    // const [showSignUpForm, setShowSignUpForm] = useState(false);
 
     function handleChange(e) {
         if (e.target.name === 'firstName' || e.target.name === 'lastName') {
@@ -46,32 +47,33 @@ export default function CreateAccountForm({ setUser }) {
 
     return (
         <div className={styles.createAccount}>
+            <Link to="/">
+                <img
+                    className={styles.createAccountLogo}
+                    src="/img/scamazon-logo.png"
+                    alt="Scamazon Logo"
+                />
+            </Link>
+
 
             <div className={styles.createAccount__container}>
                 <h1 className={styles.createAccount__heading}>Create Account</h1>
 
                 <form onSubmit={handleSubmit}>
                     <h5>First and Last Name</h5>
-                    <div className={styles.createAccount__nameFields}>
+                    <div className="createAccount__nameFields">
                         <input
                             type="text"
                             name="firstName"
-                            placeholder="First Name"
+                            placeholder="First and Last Name"
                             value={credentials.firstName}
                             onChange={handleChange}
                             required
-                        />
-                        <input
-                            type="text"
-                            name="lastName"
-                            placeholder="Last Name"
-                            value={credentials.lastName}
-                            onChange={handleChange}
-                            required
+                            className={styles.createAccount__container__form__input__fname}
                         />
                     </div>
 
-                    <h5>Email or Mobile Phone Number</h5>
+                    <h5>Email</h5>
                     <input
                         type="text"
                         name="email"
@@ -80,10 +82,20 @@ export default function CreateAccountForm({ setUser }) {
                         required
                     />
 
+                    <h5>Phone Number</h5>
+                    <input
+                        type="text"
+                        name="phoneNumber"
+                        value={credentials.phoneNumber}
+                        onChange={handleChange}
+                        required
+                    />
+
                     <h5>Password</h5>
                     <input
                         type="password"
                         name="password"
+                        placeholder='At least 6 characters'
                         value={credentials.password}
                         onChange={handleChange}
                         minLength="6"
@@ -109,24 +121,10 @@ export default function CreateAccountForm({ setUser }) {
                         </button>
                     </div>
                 </form>
-
-                <p>
-                    By creating an account, you agree to Scmazon's Conditions of Use and
-                    Privacy Notice.
-                </p>
-
-                <Link to="/business-account">
-                    <button className={styles.createAccount__businessButton}>
-                        Buying for work? Create a free business account
-                    </button>
-                </Link>
-
-                <p>
-                    Already have an account? <Link to="/login">Sign in</Link>
-                </p>
-
+                
                 <p className={styles.createAccount__error}>{error}</p>
             </div>
         </div>
     );
 }
+
