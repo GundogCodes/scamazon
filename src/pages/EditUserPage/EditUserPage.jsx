@@ -54,9 +54,13 @@ export default function EditUserPage({user, setUser}){
 
     const [showInput, setShowInput] = useState(false)
 
-    async function handleSubmit(){
-
-        console.log('submitted')
+    async function handleSubmit(e){
+        e.preventDefault()
+        try {
+            
+        } catch (error) {
+            
+        }
     }
     
 
@@ -68,81 +72,37 @@ export default function EditUserPage({user, setUser}){
         <div className={styles.EditUserPage}>
             {user?
             <>
-            <h1>Login & Security</h1>
-            <h2>Edit Info</h2>
-            <form onSubmit={handleSubmit} >
-                <div className={styles.editDiv}>
-                    <div className={styles.heading}>
+            <h1 className={styles.titles}>Login & Security</h1>
+            <form>
+                <section>Username:
+                    <div className={styles.sectionHeader}>
 
-                <label>Name:</label>
-                <label>{user.name}</label>
-                <button onClick={handleEditClick}>Edit</button>
-                
+                    <h4>{user.name}</h4>
                     </div>
-                {showInput?
-                <div className={styles.showInputDiv}>
-                <input  defaultValue={user.name}  type='text' name='name' onChange={handleChange}  required/>
-                {/* <button onClick={handleDoneButton} name='name'className={styles.doneButt}>Done</button> */}
-                </div>
-                :
-                <></>
-            }
-                </div>
-                
-                <div className={styles.editDiv}>
-                    <div className={styles.heading}>
+                    <input type='text'/>
+                </section>
+                <section>Email:
+                    <div className={styles.sectionHeader}>
 
-                <label>E-mail:</label>
-                <label>{user.email}</label>
-                <button onClick={handleEditClick}>Edit</button>
-                
+                <h4>{user.email}</h4>
                     </div>
-                {showInput?
-                <div className={styles.showInputDiv}>
-                <input defaultValue={user.email} type='text' name='email' onChange={handleChange} required/>
-                {/* <button onClick={handleDoneButton} name='email' className={styles.doneButt}>Done</button> */}
-                </div>
-                :
-                <></>
-            }
-                </div>
-                
-                <div className={styles.editDiv}>
-                    <div className={styles.heading}>
+                    <input type='text'/>
+                </section>
+                <section>Password:
+                    <div className={styles.sectionHeader}>
 
-                <label>New Password:</label>
-                <label>{user.password||''}</label>
-                <button onClick={handleEditClick}>Edit</button>
-                
+                <h4>{user.password}</h4>
                     </div>
-                {showInput?
-                <div className={styles.showInputDiv}>
-                <input type='text' name='password' onChange={handleChange} required/>
-                {/* <button onClick={handleDoneButton} name='password' className={styles.doneButt}>Done</button> */}
-                </div>
-                :
-                <></>
-            }
-                </div>
-                
-                <div className={styles.editDiv}>
-                    <div className={styles.heading}>
+                    <input type='text'/>
+                </section>
+                <section>Phone Number:
+                    <div className={styles.sectionHeader}>
 
-                <label>Primary mobile phone:</label>
-                <label>{user.phoneNumber}</label>
-                <button onClick={handleEditClick}>Edit</button>
-                
+                <h4>{user.phoneNumber}</h4>
                     </div>
-                {showInput?
-                <div className={styles.showInputDiv}>
-                <input type='text' name='phoneNumber' onChange={handleChange}  />
-                {/* <button onClick={handleDoneButton} name='phoneNumber' className={styles.doneButt}>Done</button> */}
-                </div>
-                :
-                <></>
-            }
-                </div>
-                <button  type='submit'>Submit Changes</button>
+                    <input type='text'/>
+                </section>
+                <button>Submit Changes</button>
             </form>
             </>
             :
