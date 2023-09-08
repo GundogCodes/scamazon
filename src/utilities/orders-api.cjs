@@ -19,7 +19,7 @@ export function setItemQtyInCart(itemId, quantity) {
 
 // making isPaid to true
 export function checkout() {
-  return sendRequest(`${BASE_URL}/cart/checkout`, 'PUT');
+  return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
 }
 
 // returning paid orders back to the user

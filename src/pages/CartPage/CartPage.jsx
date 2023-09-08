@@ -1,95 +1,71 @@
 import styles from './CartPage.module.scss';
 import { useState, useEffect } from 'react';
-import { getCart } from '../../utilities/orders-api.cjs';
-export default function CartPage({ user, setUser}){
-    const [cartPage, setCartPage] = useState(null);
-    useEffect(() => {
-        (async () => {
-          try {
-            const cartPage = await getCart();
-            setCartPage(cartPage);
-          } catch (error) {
-            console.log(error);
-          }
-        })();
-      }, []);
+import { getCart, checkout } from '../../utilities/orders-api.cjs';
+import { Link, useNavigate } from 'react-router-dom';
 
-    const mockOrder = {
-        user: "610ba3410a931a11638eabcd", 
-        isPaid: false,
-        updatedAt: new Date().toISOString(),
-        lineItems: [
-            {
-                _id: "60fa2bac3f65ed12f1e8a2cb",
-                name: "Ergonomic Chair",
-                qty: 1,
-                price: 150.00,
-                image: '/img/PS5.png',
-            },
-            {
-                _id: "60fa2bac3f65ed12f1e8a2cc",
-                name: "Wireless Headphones",
-                qty: 2,
-                price: 80.00,
-                image: '/img/Mission.png',
-            },
-            {
-                _id: "60fa2bac3f65ed12f1e8a2cc",
-                name: "Wireless Headphones",
-                qty: 2,
-                price: 80.00,
-                image: '/img/Mission.png',
-            },
-            {
-                _id: "60fa2bac3f65ed12f1e8a2cc",
-                name: "THe fourth item",
-                qty: 1,
-                price: 333.00,
-                image: '/img/football.png',
-            },
-            {
-                _id: "60fa2bac3f65ed12f1e8a2cd",
-                name: "Gourmet Coffee Beans",
-                qty: 1,
-                price: 20.00,
-                image: '/img/PS5.png',
-            }
-        ],
-        createdAt: new Date().toISOString(),
-        totalPrice: "200.00"
-    };
+export default function CartPage({ user, setUser }) {
+    const [cart, setCart] = useState(null);
+    console.log("line7", cart);
+    const navigate = useNavigate();
 
-
+    useEffect(function () {
+        async function fetchCartData() {
+            const cartData = await getCart();
+            setCart(cartData);
+        }
+        fetchCartData();
+    }, []);
     
-    const lineItems = mockOrder.lineItems.map(item => (
-        <div key={item._id}>
+    console.log(user._id);
+
+    const handleChangeQty = (id, qty) => {
+        console.log("Change quantity for item:", id, "to:", qty);
+    }
+
+    const lineItems = cart?.lineItems?.map(lineItem => (
+        <div key={lineItem._id}>
             <div className={styles.lineItem}>
-                <img src={item.image} className={styles.image}/>
-                <p>Name: {item.name}</p>
-                <p>Quantity: {item.qty}</p>
-                <p>Price: ${item.price.toFixed(2)}</p>
-                {mockOrder.isPaid ? null : <button onClick={() => handleChangeQty(item._id, item.qty)}>Remove item</button>}
+                <Link to={`/item/${lineItem.item._id}`}>
+                    <img src={lineItem.item.image} className={styles.image} alt={lineItem.item.name} />
+                </Link>
+                <p>Name: {lineItem.item.name}</p>
+                <p>Quantity: {lineItem.quantity}</p>
+                <p>Price: ${lineItem.item.price.toFixed(2)}</p>
+                {cart.isPaid ? null : <button onClick={() => handleChangeQty(lineItem._id, lineItem.quantity - 1)}>Remove item</button>}
             </div>
             <hr className={styles.lineSeparator} />
         </div>
     ));
-   
-    return(
+
+    async function handleCheckout() {
+        await checkout(user._id);
+        console.log('line41', cart)
+        navigate('/cart');
+    }
+
+    const totalPrice = cart?.lineItems?.reduce((total, lineItem) => total + (lineItem.item.price * lineItem.quantity), 0).toFixed(2);
+
+    return (
         <div className={styles.CartPage}>
             <div className={styles.userName}>
-                {/* {user.name} */}
-                <h1>{user._id}</h1>
+                <h1>{user.name}</h1>
             </div>
             <div className={styles.Ordersdetails}>
-                <div className={styles.OrdersList}>List of cart items here{lineItems}</div>
-                <div className={styles.columnWrap}>
-                <div className={styles.checkout}> 
-                <p>total:${mockOrder.totalPrice}</p>
-                <button className={styles.checkoutbtn}>Proceed to checkout</button>
+                <div className={styles.OrdersList}>
+                    {!cart || !cart.lineItems || cart.lineItems.length === 0 ? (
+                        <div>Your cart is empty, my dude. Time to part with your hard-earned cash – add some items and let the shopping adventure begin! 🛒💰</div>
+                    ) : (
+                        lineItems
+                    )}
                 </div>
-                <div className={styles.promo}> promotion components here</div>
+                <div className={styles.columnWrap}>
+                    <div className={styles.checkout}>
+                        <p>total: ${totalPrice}</p>
+                        <button className={styles.checkoutbtn} onClick={handleCheckout}>Proceed to checkout</button>
+                    </div>
+                    <div className={styles.promo}> promotion components here</div>
                 </div>
             </div>
         </div>
-    )
+    );
 }

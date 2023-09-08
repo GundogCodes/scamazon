@@ -59,11 +59,16 @@ async function addToCart(req, res) {
 //Update the cart's isPaid property to true
 async function checkout(req, res) {
   try {
-    const cart = await Order.getCart(req.user.id);
+    console.log("Checking out for user ID:", req.user._id);
+    const cart = await Order.findOne({ user: req.user._id, isPaid: false });
+    console.log("Retrieved cart:", cart);
     cart.isPaid = true;
     await cart.save();
-    res.status(200).json(cart);
+    const updatedCart = await Order.getCart(req.user._id);
+    console.log("Updated cart after save:", updatedCart);
+    res.status(200).json(updatedCart);
   } catch (e) {
+    console.error("Error in checkout:", e);
     res.status(400).json({ msg: e.message });
   }
 }

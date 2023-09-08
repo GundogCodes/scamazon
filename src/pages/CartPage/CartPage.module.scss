@@ -13,9 +13,15 @@
     }
 
     .Ordersdetails{
-        display: flex;
-        flex-direction: row;
-
+       
+            display: flex;
+            flex-direction: row;
+            color: black;
+            text-align: center;         /* This centers inline or inline-block content. */
+            justify-content: center;    /* This centers flex items on the main axis (horizontally, in this case). */
+            align-items: center;        /* This centers flex items on the cross axis (vertically, in this case). */
+            font-size: 24px;            /* Adjust this value according to your preference. */
+        
         .OrdersList{
             width: 90vw;
             height: 81vh;
