@@ -1,18 +1,19 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import styles from './AddressFormPage.module.scss'
 import LoginPage from '../LoginPage/LoginPage'
 import { updateUserInfo } from '../../utilities/users-api.cjs'
+import { getUser } from '../../utilities/users-service.cjs'
 
 export default function AddressForm({user, setUser}){
-    const [gotAddress,setGotAddress] = useState(false)
-    const [newAddress,setNewAddress] = useState({
+    const [initUserAddress, setInitUserAddress] = useState({
         street:'',
         city:'',
         state:'',
         zip:''
     })
-    console.log('init user',user)
+    const [gotAddress,setGotAddress] = useState(false)
+
     //console.log('user.address',user.address)
     const [address,setAddress] = useState({
         street:'',
@@ -20,19 +21,31 @@ export default function AddressForm({user, setUser}){
         state:'',
         zip:''
     })
+    const [newAddress,setNewAddress] = useState({
+        street:'',
+        city:'',
+        state:'',
+        zip:''
+    })
+
+    useEffect(()=>{
+        const initUser = getUser()
+        console.log(initUser.address)
+        setInitUserAddress(initUser.address)
+    },[])
 
     function handleChange(e){
-        console.log(address)
         setAddress({...address,[e.target.name]:e.target.value})
     }
     async function handleSubmit(e){
         e.preventDefault()
         try {
         const updatedAddress = await updateUserInfo(user._id, {address})
-        console.log('updated Address ',updatedAddress)
+        console.log('updated address', updatedAddress)
+        setGotAddress(true)
         setNewAddress(address)
         } catch (error) {
-            
+            console.log(error)
         }
     }
     return(
@@ -42,7 +55,7 @@ export default function AddressForm({user, setUser}){
             <div className={styles.currentAddress}>
             <h1>Current Address</h1>
             <p className={styles.username}>{user.name}</p>
-            {gotAddress || user.address?
+            {gotAddress ?
             <>
             <p className={styles.street}>Street: {newAddress.street}</p>
             <p className={styles.city}>City: {newAddress.city}</p>
@@ -51,10 +64,10 @@ export default function AddressForm({user, setUser}){
             </>
             :
             <>
-            <p className={styles.street}>Street: </p>
-            <p className={styles.city}>City: </p>
-            <p className={styles.state}>State: </p>
-            <p className={styles.zip}> Zip: </p>
+            <p className={styles.street}>Street: {initUserAddress.street}</p>
+            <p className={styles.city}>City: {initUserAddress.city}</p>
+            <p className={styles.state}>State: {initUserAddress.state} </p>
+            <p className={styles.zip}> Zip: {initUserAddress.zip}</p>
             </>
         }
             
