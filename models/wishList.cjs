@@ -26,16 +26,16 @@ wishListSchema.statics.getWishlist = function (userID) {
 
 //this is the method to add an item to the wishlist
 wishListSchema.methods.addItemToWishlist = async function (itemID) {
-  const wishlist = this;
+  const wishList = this;
   //checking if item is already in cart
-  const item = wishlist.items.find((item) => item._id.equals(itemID));
+  const item = wishList.items.find((item) => item._id.equals(itemID));
 
   if (!item) {
     //if item is not in cart, add item to cart
     const item = await mongoose.model('Item').findById(itemID);
-    wishlist.items.push(item);
+    wishList.items.push(item);
   }
-  return wishlist.save();
+  return wishList.save();
 };
 
 //this method is to set the quantity of an item in the cart, it will add item if it doesn't already exist
@@ -56,12 +56,12 @@ wishListSchema.methods.setItemQty = function (itemID, newQty) {
 };
 
 wishListSchema.methods.removeItem = function (itemID) {
-  const wishlist = this;
+  const wishList = this;
 
-  const item = wishlist.items.find((item) => item._id.equals(itemID));
+  const item = wishList.items.find((item) => item._id.equals(itemID));
   item.deleteOne();
 
-  return wishlist.save();
+  return wishList.save();
 };
 
-module.exports = mongoose.model('Wishlist', wishListSchema);
+module.exports = mongoose.model('WishList', wishListSchema);
