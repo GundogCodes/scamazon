@@ -9,3 +9,25 @@
 .row {
   padding: 10%;
 }
+
+.primary {
+  background-color: rgb(249, 217, 76);
+  border: none;
+  border-radius: 50px;
+  width: 100%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.secondary {
+  background-color: rgb(242, 168, 66);
+  border: none;
+  border-radius: 50px;
+  width: 100%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
