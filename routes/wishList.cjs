@@ -8,4 +8,7 @@ router.get('/', wishListCtrl.wishList);
 // POST /api/wish-list/:id
 router.post('/:id', wishListCtrl.addToWishList);
 
+// DELETE /api/wish-list/:id
+router.delete('/:id', wishListCtrl.removeItemFromWishList);
+
 module.exports = router;
