@@ -13,6 +13,7 @@ export default function ItemPage() {
   const [cart, setCart] = useState(null);
   const [wishList, setWishList] = useState(null);
 
+  console.log('krazy kart time:', cart);
   async function handleAddToCart() {
     const updatedCart = await addToCart(id);
     setCart(updatedCart);
@@ -106,22 +107,22 @@ export default function ItemPage() {
                   </ListGroup.Item>
 
                   <ListGroup.Item>
-                    <Button
+                    <button
                       onClick={handleAddToCart}
-                      className="btn-block"
+                      className={styles.primary}
                       type="button"
                     >
-                      Add To Cart
-                    </Button>
+                      Add to Cart
+                    </button>
                   </ListGroup.Item>
                   <ListGroup.Item>
-                    <Button
+                    <button
                       onClick={handleAddToWishList}
-                      className="btn-block"
+                      className={styles.secondary}
                       type="button"
                     >
-                      Add To Wishlist
-                    </Button>
+                      Add to Wishlist
+                    </button>
                   </ListGroup.Item>
                 </ListGroup>
               </Card>
