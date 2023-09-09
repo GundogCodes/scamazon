@@ -24,7 +24,7 @@ return (
       }
     </div>
     <div className={styles.removeItems}>
-      <button 
+      {/* <button 
         classname={styles.wishlist}
         onClick={() => 
           moveToWishlist(
@@ -37,7 +37,7 @@ return (
         }
       >
         Move to Wishlist
-      </button>
+      </button> */}
       <button 
         classname={styles.remove}
         onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty = 0)}
