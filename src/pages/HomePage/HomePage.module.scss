@@ -3,29 +3,26 @@
     flex-direction: column;
     align-items: center;
     background-color: rgba(63, 164, 130, 0.5);
-    margin-bottom: 40rem;
+    margin-bottom: 30rem;
     justify-content: space-evenly;
+    height: 100%; 
+    width: 100%;
 
 
 
-.pageBanner {
-    align-self: center;
-    height: 8rem; 
-    width: 14rem; 
-    margin-bottom: .5rem;
-    padding: 1.5rem;
-    margin-top: -10rem;
-}
+    .pageBanner {
+        align-self: center;
+        height: 8rem; 
+        width: 14rem; 
+        margin-bottom: .5rem;
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
 
-.PromoCarousel {
-    margin: auto; 
-}
-
-
-
-.PromoAdsSmall {
-    display: inline;
-}
-
+    footer {
+      align-self: center;
+      justify-self: center;
+      left: 150px;
+    }
 
 }

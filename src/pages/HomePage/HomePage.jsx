@@ -24,22 +24,19 @@ export default function HomePage({ }) {
           getItems();
     }, []);
 
-    /*Event Handlers */
-
-
-
     return(
         <div className={styles.HomePage}>
             <img className={styles.pageBanner} src='../public/img/scamazon-logo.png'/>
                 
-            <PromoCarousel className={styles.PromoCarousel}
-                items={items.filter(item => item.name.price === items)}
+            <PromoCarousel className={styles.PromoCarousel} 
+                // items={items.filter(item => item.name.price === items)}
             />
             <PromoAdsSmall className={styles.PromoAdsSmall}
-                items={items.filter(item => item.name.price === items)}
+                // items={items.filter(item => item.name.price === items)}
             />
+            <footer>
             <Footer className={styles.Footer} />
-
+            </footer>
             {/* <PromoMedia
                 items={items.filter(item => item.name.price === items)}
             />
