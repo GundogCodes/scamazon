@@ -11,12 +11,14 @@ const Item = require('../models/item.cjs');
     { name: 'Sporting Goods', sortOrder: 20 },
     { name: 'Mens Clothing', sortOrder: 30 },
     { name: 'Womens Clothing', sortOrder: 40 },
+    { name: 'Toys', sortOrder: 50 },
+    { name: 'Tools/Auto', sortOrder: 60 }
   ]);
 
   await Item.deleteMany({});
   const items = await Item.create([
     {
-      name: 'Sony Playstation 5',
+      name: 'Used PS5',
       description:
         'The PS5 console unleashes new gaming possibilities that you never anticipated. Experience lightning fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio, and an all-new generation of incredible PlayStation games.',
       category: categories[0],
@@ -25,7 +27,7 @@ const Item = require('../models/item.cjs');
       image: '/img/PS5.png',
     },
     {
-      name: 'Franklin Sports Official Size Football',
+      name: 'Football',
       description:
         'Get outdoors for football fun with the Franklin Sports Official Size 1000 Outdoor Football! This official size football is perfect for all players to grip and throw the ball with ease. Constructed with a durable, synthetic leather surface, these footballs are built to stand up to all-weather play year after year. The deep-pebble surface increases grip so players can easily pass and catch the football even in the rain. This outdoor football is also designed with hand sewn laces for a professional feel that will help all players throw their best spirals. Available in single footballs and (12) football bulk packs, you can find official size outdoor footballs for you and your whole flag football team! The bulk football packs also come with an air pump with an inflation needle included, so you can keep your footballs in perfect condition. This football season, get out in the yard with the best outdoor football equipment and grab yourself a Franklin Sports Official Size 1000 Outdoor Football today!',
       category: categories[1],
@@ -51,6 +53,54 @@ const Item = require('../models/item.cjs');
       rating: 4.3,
       image: '/img/womensdress.png',
     },
+    {
+      name: 'Muppets Animal Puppet',
+      description:
+        'Beat Dave Grohl in drum battle',
+      category: categories[4],
+      price: 499.99,
+      rating: 5.0,
+      image: '/img/animal-puppet.png',
+    },
+    {
+      name: 'Gnome on Dragon',
+      description:
+        'There is no reason to NOT have one',
+      category: categories[4],
+      price: 33.33,
+      rating: 4.8,
+      image: '/img/gnome.png',
+    },
+    {
+      name: 'Pokemon Emerald',
+      description:
+        'Relive your childhood',
+      category: categories[4],
+      price: 1234.56,
+      rating: 4.9,
+      image: '/img/pokemon-emerald.png',
+    },
+    {
+      name: 'Lego Barbie',
+      description:
+        'The collaboration we never realized we needed.',
+      category: categories[4],
+      price: 300.56,
+      rating: 4.5,
+      image: '/img/lego-barbie.png',
+    },
+    {
+      name: 'Spare Tires',
+      description:
+        'Call Jim for size availability. If Jim is not there ask for Larry.',
+      category: categories[5],
+      price: 75.33,
+      rating: 2.3,
+      image: '/img/tire.png',
+    },
+
+
+
   ]);
   console.log(items);
 
