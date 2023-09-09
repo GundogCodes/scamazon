@@ -30,7 +30,6 @@ function App() {
 
 
     <NavBar routes={routes} />
-
     <Routes>
       <Route path="/" element={<HomePage  />}/>
       <Route path="/user" element={<UserPage user={user} setUser={setUser}/>}/>
@@ -43,9 +42,8 @@ function App() {
       <Route path="/edit" element={<EditUserPage user={user} setUser={setUser}/>}/>
       <Route path="/login" element={<LoginPage user={user} setUser={setUser}/>}/>
       <Route path="/wishlist" element={<WishlistPage user={user} setUser={setUser}/>}/>
-    </Routes>
+      </Routes>
     <LogOut user={user} setUser={setUser}/>
-
     </>
   );
 }
