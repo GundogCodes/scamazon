@@ -45,7 +45,7 @@ export default function ItemPage() {
     <>
       {item ? (
         <>
-          <Row>
+          <Row className={styles.row}>
             <Col md={5}>
               <Image
                 src={item.image}
@@ -77,6 +77,15 @@ export default function ItemPage() {
                       </Col>
                     </Row>
                   </ListGroup.Item>
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>Status:</Col>
+                      <Col>
+                        {item.countInventory > 0 ? 'In Stock' : 'Out Of Stock'}
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+
                   <ListGroup.Item>
                     <Button
                       onClick={handleAddToCart}
