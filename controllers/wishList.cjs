@@ -8,7 +8,6 @@ module.exports = {
   //   removeItemFromWishList,
 };
 
-// A cart is the unpaid order for a user
 async function wishList(req, res) {
   try {
     console.log('req.user._id: ', req.user._id);
@@ -19,7 +18,6 @@ async function wishList(req, res) {
   }
 }
 
-//Add an item to the cart
 async function addToWishList(req, res) {
   try {
     const wishList = await WishList.getWishList(req.user._id);
