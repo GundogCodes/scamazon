@@ -4,7 +4,7 @@ const itemSchema = require('./itemSchema.cjs');
 
 const lineItemSchema = new Schema(
   {
-    qauntity: { type: Number, default: 1 },
+    quantity: { type: Number, default: 1 },
     item: itemSchema,
   },
   {
