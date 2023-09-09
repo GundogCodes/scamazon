@@ -13,7 +13,7 @@ const wishListSchema = new Schema(
   }
 );
 
-wishListSchema.statics.getWishlist = function (userID) {
+wishListSchema.statics.getWishList = function (userID) {
   return this.findOneAndUpdate(
     //find the user id
     { user: userID },
@@ -25,7 +25,7 @@ wishListSchema.statics.getWishlist = function (userID) {
 };
 
 //this is the method to add an item to the wishlist
-wishListSchema.methods.addItemToWishlist = async function (itemID) {
+wishListSchema.methods.addItem = async function (itemID) {
   const wishList = this;
   //checking if item is already in cart
   const item = wishList.items.find((item) => item._id.equals(itemID));
