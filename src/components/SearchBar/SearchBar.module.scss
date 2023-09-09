@@ -1,0 +1,81 @@
+.SearchBar{
+    width: 100vw;
+    height: 75px;
+    background-color: rgba(20,25,32);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around ;
+    position: fixed;
+    top:60px;
+    img{
+        width: 140px;
+        height: 50px;
+        border-radius: 15px;
+    } 
+    img:hover{
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+    }
+    .deliverDiv{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        width: 200px;
+        height: 50px;
+        justify-content: center;
+        align-items: flex-start;
+        span{
+            font-weight: bold;
+        }
+        
+    }
+    .deliverDiv:hover{
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+    }
+    section{
+        display: flex;
+        input{
+            border-style: none;
+            width: 800px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            height: 50px;
+        }
+        button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            width: 50px;
+            height: 52px;
+            background-image: url(https://cdn-icons-png.flaticon.com/128/2989/2989907.png);
+            background-size:44px  ;
+            padding: 20px;
+            background-color: rgba(244,192,118);
+        }
+    }
+    .toUser, .toOrders, .toCart{
+        display: flex;
+        flex-direction: column;
+        height: 50px;
+        justify-content: center;
+        align-items: flex-start;
+        color: white;
+        padding: 20px;
+        span{
+            font-weight: bold;
+        }
+    }
+    .toUser:hover, .toOrders:hover, .toCart:hover{
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+    }
+
+ 
+}
