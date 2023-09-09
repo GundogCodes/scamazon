@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react';
 import styles from './WishlistPage.module.scss'
 import { getWishlist, setItemQtyInWishlist } from '../../utilities/wishlist-api.cjs';
+import * as itemsAPI from '../../utilities/items-api.cjs'
 import LoginPage from '../LoginPage/LoginPage'
 import {Link} from 'react-router-dom'
 //Import cart
 
-
 export default function WishlistPage({user}) {
-
   const [userWishlist, setUserWishlist] = useState ([]) 
-  // const [currentUser, setCurrentUser] = useState({})
+  // function createWishlistItems() {
+  //   const wishlistItems = wishlist.items
+  //   for (String item : wishlistItems) {}
+  // }
+//user.req._id
 
   useEffect(() => { 
     (async () => {
@@ -18,14 +21,8 @@ export default function WishlistPage({user}) {
     })
     ()
   })
+  console.log(user)
 
-  // useEffect(() => { 
-  //   (async () => {
-  //     const currentUser= await getWishlist ()
-  //     wishlist.user = currentUser
-  //   })
-  //   ()
-  // })
 
   return (
     <div className={styles.WishlistPage}>
@@ -33,12 +30,12 @@ export default function WishlistPage({user}) {
       <>
       <h1>{user.name}'s Wishlist</h1>
       <div className={styles.WishlistItems}>
-        {userWishlist}
+        {/* <createWishlistItems> */}
       </div>
       </>
       :
-      <h1>Test</h1>
-      // <LoginPage user={user} setUser={setUser}/>
+      // <h1>Test</h1>
+      <LoginPage user={user} setUser={setUser}/>
       }
     </div>
   );
