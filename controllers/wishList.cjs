@@ -5,7 +5,7 @@ module.exports = {
   wishList,
   //create wishList,
   addToWishList,
-  removeItemFromWishList,
+  //   removeItemFromWishList,
 };
 
 // A cart is the unpaid order for a user
@@ -18,28 +18,6 @@ async function wishList(req, res) {
     res.status(400).json({ msg: e.message });
   }
 }
-
-// async function createCart(req, res) {
-//     try {
-//         console.log('req.user._id:', req.user._id);
-//         console.log('req.body:', req.body);
-
-//         req.body.user = req.user._id;
-//         const cart = await Order.create(req.body);
-
-//         console.log('cart created:', cart);
-
-//         req.user.cart = { _id: cart._id };
-//         await req.user.save();
-
-//         console.log('user cart updated:', req.user);
-
-//         res.json(cart);
-//     } catch (error) {
-//         console.error('Error creating cart:', error);
-//         res.status(400).json({ message: error.message });
-//     }
-// }
 
 //Add an item to the cart
 async function addToWishList(req, res) {

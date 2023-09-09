@@ -64,4 +64,5 @@ wishListSchema.methods.removeItem = function (itemID) {
   return wishList.save();
 };
 
-module.exports = mongoose.model('WishList', wishListSchema);
+const WishList = mongoose.model('WishList', wishListSchema);
+module.exports = WishList;
