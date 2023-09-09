@@ -5,7 +5,7 @@ module.exports = {
   wishList,
   //create wishList,
   addToWishList,
-  //   removeItemFromWishList,
+  // removeItemFromWishList,
 };
 
 async function wishList(req, res) {

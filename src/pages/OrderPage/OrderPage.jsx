@@ -6,7 +6,7 @@ import {useState, UseEffect} from 'react'
 // import Logo from '../../components/Logo/Logo'
 // import UserLogout from '../../components/LoginForm'
 // import NavBar from '../../components/NavBar'
-import * as ordersAPI from '../../utilities/orders-api'
+// import * as ordersAPI from '../../utilities/orders-api'
 
 
 export default function OrderPage({user, setUser}) {
