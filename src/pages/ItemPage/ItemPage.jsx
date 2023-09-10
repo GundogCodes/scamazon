@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getById } from '../../utilities/items-api.cjs';
 import styles from './ItemPage.module.scss';
-import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
+import { Row, Col, Image, ListGroup, Card } from 'react-bootstrap';
 import Ratings from '../../components/Ratings/Ratings';
 import { addToCart, getCart } from '../../utilities/orders-api.cjs';
 import { getWishList, addToWishList } from '../../utilities/wishList-api.cjs';
@@ -17,12 +17,14 @@ export default function ItemPage() {
   async function handleAddToCart() {
     const updatedCart = await addToCart(id);
     setCart(updatedCart);
+    window.alert(`${item.name} has been added to your Cart`);
   }
 
   console.log('test wishList:', wishList);
   async function handleAddToWishList() {
     const updatedWishList = await addToWishList(id);
     setWishList(updatedWishList);
+    window.alert(`${item.name} has been added to your Wishlist`);
   }
 
   // Get wishList data
