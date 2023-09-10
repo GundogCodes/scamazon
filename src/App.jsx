@@ -26,7 +26,7 @@ import SearchBar from './components/SearchBar/SearchBar'
 function App() {
   const [user, setUser] = useState(getUser());
 
-  const [searchableItems, setSearchableItems] = useState([])
+  const [searchableItems, setSearchableItems] = useState(null)
 
 
   useEffect(  ()=>{
@@ -38,17 +38,20 @@ function App() {
       
     }) ()
     
-},[ ])
+},[])
 
   return (
     <>
 
 
     <NavBar routes={routes} />
-    <SearchBar searchableItems={searchableItems} user={user} setUser={setUser}/>
+    {searchableItems?
+    <SearchBar searchableItems={searchableItems} user={user} setUser={setUser}/> :<></>
+  }
 
     <Routes>
       <Route path="/" element={<HomePage  />}/>
+
       <Route path="/user" element={<UserPage user={user} setUser={setUser}/>}/>
       <Route path="/search" element={<SearchPage/>}/>
       <Route path="/item/:id" element={<ItemPage/>}/>

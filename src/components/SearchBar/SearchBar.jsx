@@ -2,9 +2,12 @@ import { useEffect, useState } from 'react'
 import { getUser } from '../../utilities/users-service.cjs'
 import styles from './SearchBar.module.scss'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 export default function SearchBar({ searchableItems, user, setUser }) {
    // console.log('searchableItems', searchableItems)
-   console.log('searchableItems in SB', searchableItems)
+   //console.log('searchableItems in SB', searchableItems)
+   const [matchedSearches,setMatchedSearches] = useState(null)
+   const navigate = useNavigate()
     const [userSearch,setUserSearch] = useState('')
     
     //console.log('itemsArr', itemsArr) //this returns the array properly
@@ -13,21 +16,38 @@ export default function SearchBar({ searchableItems, user, setUser }) {
     const itemNameAndIdArr = []
     const itemNameArr = []
 
+    
     for(let items of searchableItems){
-        console.log(items.name)
+        //console.log(items.name)
         itemNameArr.push(items.name)
         itemNameAndIdArr.push(items.name)
-  
+        
     }
-    
-    console.log('itemNameArr', itemNameArr)
-
 
     function handleChange(e){
-        const userTyping = e.target.value
-        setUserSearch(userTyping)
-        //console.log(userSearch)
+        setUserSearch(e.target.value)
+        console.log(userSearch)
     }
+
+    function handleButtonClick(){
+        const foundSearches = []
+        for(let item of itemNameArr){
+            if(item.toLowerCase().includes(userSearch.toLowerCase())){
+                console.log('yes!',item, 'exists!')
+                foundSearches.push(item)
+                setMatchedSearches(foundSearches)
+            } else{
+                console.log('nah sorry no matches for that homie')
+            }
+        }
+        console.log('foundSearches', foundSearches)
+        }
+    
+    
+    console.log('itemNameArr', itemNameArr[0])
+
+
+
     
     
     return (
@@ -41,8 +61,8 @@ export default function SearchBar({ searchableItems, user, setUser }) {
             </div></Link>
 
             <section>
-                <input type='search' defaultValue='  Search Scamazon.com' onChange={handleChange} />
-                <button></button>
+                <input type='search' onChange={handleChange} defaultValue='  Search Scamazon.com'  />
+                <button onClick={handleButtonClick} ></button>
         
             </section>
 
@@ -60,6 +80,7 @@ export default function SearchBar({ searchableItems, user, setUser }) {
                 <div className={styles.cartImg}></div>
                 <span>Cart</span>
             </div></Link>
+
         </div>
     )
 }
