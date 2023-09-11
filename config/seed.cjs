@@ -8,6 +8,9 @@ const Item = require('../models/item.cjs');
   await Category.deleteMany({});
   const categories = await Category.create([
     { name: 'Electronics', sortOrder: 10 },
+    { name: 'Sporting Goods', sortOrder: 20 },
+    { name: 'Make-up and Cosmetics', sortOrder: 30 },
+    { name: 'Books', sortOrder: 40 },
   ]);
 
   await Item.deleteMany({});
@@ -111,6 +114,275 @@ const Item = require('../models/item.cjs');
       rating: 4.7,
       image: '/img/firestick.png',
       countInventory: 25,
+    },
+    {
+      name: 'Big Black Foam Roller',
+      description:
+        'Coming exclusively in the black colorway, this foam roller is guaranteed to provide penetrating relief to all the sore spots on your body.',
+      category: categories[1],
+      price: 69.69,
+      rating: 5.0,
+      image: '/img/bbfr.png',
+      countInventory: 10,
+    },
+    {
+      name: 'The Penetrator',
+      description:
+        'As the name suggests, this massage gun is designed to penetrate in your muscle and help work out those kinks. Comes with all kinds of attachments to adapt to any and all massaging needs!',
+      category: categories[1],
+      price: 23.43,
+      rating: 5.0,
+      image: '/img/penetrator.png',
+      countInventory: 12,
+    },
+    {
+      name: 'Ribbed Foam Roller',
+      description:
+        'Providing ribbed relief, this foam roller incorporates ridges in its design. Its peaks and ridges are sure to hit the spot.',
+      category: categories[1],
+      price: 16.96,
+      rating: 5.0,
+      image: '/img/bbfr.png',
+      countInventory: 10,
+    },
+    {
+      name: 'Basketball',
+      description:
+        'With practice you can impress your friends with your ball handling skills!',
+      category: categories[1],
+      price: 15.99,
+      rating: 5.0,
+      image: '/img/basketball.png',
+      countInventory: 10,
+    },
+    {
+      name: 'SkateBoard',
+      description: 'With practice maybe you could be the next Tony Hawk?',
+      category: categories[1],
+      price: 12.39,
+      rating: 5.0,
+      image: '/img/skateboard.png',
+      countInventory: 10,
+    },
+    {
+      name: 'Jaw Exerciser',
+      description:
+        'Get an ultra defined jaw trainer with this product. Clinically proven to get you ladies',
+      category: categories[1],
+      price: 100.0,
+      rating: 2.3,
+      image: '/img/jaw.png',
+      countInventory: 10,
+    },
+    {
+      name: 'Foam Roller',
+      description:
+        'For those with more modest foam rolling needs. Recommended if you only rarely need stretching.',
+      category: categories[1],
+      price: 69.69,
+      rating: 5.0,
+      image: '/img/foamroller.png',
+      countInventory: 10,
+    },
+    {
+      name: "L'Oréal Paris True Match Super-Blendable Foundation",
+      description:
+        'Achieve a flawless complexion with this super-blendable foundation. It offers a wide range of shades to match your skin tone perfectly, providing a natural finish that lasts all day.',
+      category: categories[2],
+      price: 12.99,
+      rating: 4.5,
+      image: '/img/loreal-foundation.png',
+      countInventory: 100,
+    },
+    {
+      name: 'MAC Ruby Woo Lipstick',
+      description:
+        "Make a bold statement with this iconic red lipstick from MAC. It's long-lasting, highly pigmented, and adds a touch of glamour to any look.",
+      category: categories[2],
+      price: 19.99,
+      rating: 4.7,
+      image: '/img/mac-lipstick.png',
+      countInventory: 100,
+    },
+    {
+      name: 'NARS Radiant Creamy Concealer',
+      description:
+        'Conceal imperfections and brighten your under-eye area with this creamy concealer from NARS. It provides buildable coverage and a radiant finish.',
+      category: categories[2],
+      price: 30.0,
+      rating: 4.8,
+      image: '/img/nars-concealer.png',
+      countInventory: 100,
+    },
+    {
+      name: 'Anastasia Beverly Hills Modern Renaissance Eyeshadow Palette',
+      description:
+        'Create stunning eye looks with this highly pigmented eyeshadow palette. It features a mix of warm and neutral shades in both matte and shimmer finishes.',
+      category: categories[2],
+      price: 42.5,
+      rating: 4.9,
+      image: '/img/anastasia-eyeshadow.png',
+      countInventory: 100,
+    },
+    {
+      name: 'Fenty Beauty Killawatt Freestyle Highlighter',
+      description:
+        "Get that gorgeous glow with Fenty Beauty's highlighter. It's available in a variety of shades and can be used on the cheeks, eyes, and more.",
+      category: categories[2],
+      price: 34.99,
+      rating: 4.6,
+      image: '/img/fenty-highlighter.png',
+      countInventory: 100,
+    },
+    {
+      name: 'Urban Decay All Nighter Long-Lasting Makeup Setting Spray',
+      description:
+        "Keep your makeup in place all day and night with this setting spray from Urban Decay. It's oil-free and suitable for all skin types.",
+      category: categories[2],
+      price: 32.0,
+      rating: 4.7,
+      image: '/img/urban-decay-setting-spray.png',
+      countInventory: 100,
+    },
+    {
+      name: 'Maybelline Great Lash Mascara',
+      description:
+        "Achieve fuller, longer-looking lashes with Maybelline's Great Lash Mascara. Its iconic pink and green tube is a beauty classic.",
+      category: categories[2],
+      price: 5.99,
+      rating: 4.3,
+      image: '/img/maybelline-mascara.png',
+      countInventory: 100,
+    },
+    {
+      name: 'Too Faced Born This Way Foundation',
+      description:
+        "Get a natural, radiant complexion with this foundation from Too Faced. It's infused with coconut water and provides medium to full coverage.",
+      category: categories[2],
+      price: 39.5,
+      rating: 4.8,
+      image: '/img/too-faced-foundation.png',
+      countInventory: 100,
+    },
+    {
+      name: 'Revlon Super Lustrous Lip Gloss',
+      description:
+        "Add shine and dimension to your lips with Revlon's Super Lustrous Lip Gloss. It's available in a range of beautiful shades for any occasion.",
+      category: categories[2],
+      price: 7.49,
+      rating: 4.4,
+      image: '/img/revlon-lip-gloss.png',
+      countInventory: 100,
+    },
+    {
+      name: 'Clinique Dramatically Different Moisturizing Lotion+',
+      description:
+        "Hydrate your skin with Clinique's iconic moisturizing lotion. It helps strengthen the skin's moisture barrier for a healthy, radiant look.",
+      category: categories[2],
+      price: 28.5,
+      rating: 4.6,
+      image: '/img/clinique-moisturizer.png',
+      countInventory: 100,
+    },
+    {
+      name: 'Moby Click',
+      description:
+        'In a world where the vast digital seas dominate every aspect of life, Captain Ahabrowser, a seasoned net-surfer, is haunted by a legendary and elusive digital entity known as Moby Click',
+      category: categories[3],
+      price: 9.99,
+      rating: 5,
+      image: '/img/MobyClick.png',
+      countInventory: 100,
+    },
+    {
+      name: 'To Grill A MockingBird',
+      description:
+        'In the avian culinary world, a determined mockingbird chef rises to fame. As he preps for the ultimate "Fly & Fry Cook-off," he faces fierce competition and kitchen drama. "To Grill a Mockingbird" is a tale of passion, perseverance, and perfecting the art of bird gourmet.',
+      category: categories[3],
+      price: 9.99,
+      rating: 5,
+      image: '/img/ToGrillAMockingBird.png',
+      countInventory: 100,
+    },
+    {
+      name: 'War and Peas',
+      description:
+        'In a vegetable kingdom torn by conflict, two peas in a pod, Percy and Penelope, embark on a quest to unite their divided land. As they navigate a world of carrot cavalries and tomato treacheries, the duo learns the true meaning of unity and sacrifice. "War and Peas" is a whimsical tale of veggie valor, friendship, and the quest for peace on the dinner plate.',
+      category: categories[3],
+      price: 9.99,
+      rating: 5,
+      image: '/img/WarAndPeas.png',
+      countInventory: 100,
+    },
+    {
+      name: 'The Count Of Mint Tea Cristo',
+      description:
+        'After being wrongly accused and imprisoned, Edmond Dantès escapes and discovers a treasure of the worlds finest teas. Adopting the identity of the enigmatic "Count," he returns to Parisian society, wielding cups of his revitalizing mint tea as a tool for revenge, reconciliation, and redemption. Amidst balls and soirées, each sip reveals secrets, alliances, and a taste of sweet vengeance.',
+      category: categories[3],
+      price: 9.99,
+      rating: 5,
+      image: '/img/MintTeaCristo.png',
+      countInventory: 100,
+    },
+    {
+      name: 'Tails Of Two Kitties',
+      description:
+        'In the bustling metropolis of Catropolis, whisker-twitching twins Whiskers and Mittens embark on a fur-raising adventure, navigating the challenges of tangled yarn mysteries and laser pointer heists. Its a purrfect storm of feline antics as the two try to outsmart alley cats and avoid the dreaded bath time!',
+      category: categories[3],
+      price: 9.99,
+      rating: 5,
+      image: '/img/TailsOfTwoKitties.png',
+      countInventory: 100,
+    },
+    {
+      name: 'Game of Throne',
+      description:
+        'In a kingdom where everyone obsesses over a grand chair, feuds erupt over who has the coziest cushion. Dragons are mostly annoyed because no one made them a comfy recliner.',
+      category: categories[3],
+      price: 9.99,
+      rating: 5,
+      image: '/img/GOT.png',
+      countInventory: 100,
+    },
+    {
+      name: 'I am smart',
+      description:
+        'In I Am Smart, readers delve into a complex tapestry of pseudo-intellectual words and expertly designed blank pages, ensuring youll look deeply contemplative at every gathering. Perfect for those moments when you want to nod thoughtfully while contributing absolutely nothing to the conversation!',
+      category: categories[3],
+      price: 9.99,
+      rating: 5,
+      image: '/img/ImSmart.png',
+      countInventory: 100,
+    },
+    {
+      name: 'It',
+      description:
+        'In the town of Derry, a clown offers balloon animal tutorials with a terrifying twist. Kids band together to confront their deepest fears: a never-ending childhood birthday party gone awry.',
+      category: categories[3],
+      price: 9.99,
+      rating: 5,
+      image: '/img/It.png',
+      countInventory: 100,
+    },
+    {
+      name: 'AntiSocial',
+      description:
+        'Dive deep into a gripping anthology of blank pages and the art of pretending to be engrossed. The ultimate guide for introverts and book lovers who just need a minute... or an hour... or a whole day.',
+      category: categories[3],
+      price: 9.99,
+      rating: 5,
+      image: '/img/AntiSocial.png',
+      countInventory: 100,
+    },
+    {
+      name: 'How To Basic Code',
+      description:
+        'Discover the thrilling world of live debugging and caffeine-induced panic. An essential guide for those who believe sleep is overrated and that users are the best QA testers!',
+      category: categories[3],
+      price: 9.99,
+      rating: 5,
+      image: '/img/HowToBasicCode.png',
+      countInventory: 100,
     },
   ]);
   console.log(items);
