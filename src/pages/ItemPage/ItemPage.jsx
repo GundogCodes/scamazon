@@ -62,7 +62,7 @@ export default function ItemPage() {
         console.log(error);
       }
     })();
-  }, []);
+  }, [id]);
 
   return (
     <>

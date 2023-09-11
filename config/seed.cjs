@@ -169,7 +169,7 @@ const Item = require('../models/item.cjs');
       description:
         'Get an ultra defined jaw trainer with this product. Clinically proven to get you ladies',
       category: categories[1],
-      price: 100.0,
+      price: 100,
       rating: 2.3,
       image: '/img/jaw.png',
       countInventory: 10,
@@ -209,7 +209,7 @@ const Item = require('../models/item.cjs');
       description:
         'Conceal imperfections and brighten your under-eye area with this creamy concealer from NARS. It provides buildable coverage and a radiant finish.',
       category: categories[2],
-      price: 30.0,
+      price: 30,
       rating: 4.8,
       image: '/img/nars-concealer.png',
       countInventory: 100,
@@ -219,7 +219,7 @@ const Item = require('../models/item.cjs');
       description:
         'Create stunning eye looks with this highly pigmented eyeshadow palette. It features a mix of warm and neutral shades in both matte and shimmer finishes.',
       category: categories[2],
-      price: 42.5,
+      price: 42.55,
       rating: 4.9,
       image: '/img/anastasia-eyeshadow.png',
       countInventory: 100,
@@ -239,7 +239,7 @@ const Item = require('../models/item.cjs');
       description:
         "Keep your makeup in place all day and night with this setting spray from Urban Decay. It's oil-free and suitable for all skin types.",
       category: categories[2],
-      price: 32.0,
+      price: 32,
       rating: 4.7,
       image: '/img/urban-decay-setting-spray.png',
       countInventory: 100,
@@ -259,7 +259,7 @@ const Item = require('../models/item.cjs');
       description:
         "Get a natural, radiant complexion with this foundation from Too Faced. It's infused with coconut water and provides medium to full coverage.",
       category: categories[2],
-      price: 39.5,
+      price: 39.55,
       rating: 4.8,
       image: '/img/too-faced-foundation.png',
       countInventory: 100,
@@ -279,7 +279,7 @@ const Item = require('../models/item.cjs');
       description:
         "Hydrate your skin with Clinique's iconic moisturizing lotion. It helps strengthen the skin's moisture barrier for a healthy, radiant look.",
       category: categories[2],
-      price: 28.5,
+      price: 28.55,
       rating: 4.6,
       image: '/img/clinique-moisturizer.png',
       countInventory: 100,
