@@ -50,7 +50,7 @@ function App() {
   }
 
     <Routes>
-      <Route path="/" element={<HomePage  />}/>
+      <Route path="/" element={searchableItems && <HomePage  />}/>
 
       <Route path="/user" element={<UserPage user={user} setUser={setUser}/>}/>
       <Route path="/search" element={<SearchPage/>}/>

@@ -1,12 +1,11 @@
 import { useEffect, useState, useRef } from 'react'
 import { getUser } from '../../utilities/users-service.cjs'
 import styles from './SearchBar.module.scss'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { Link ,useNavigate} from 'react-router-dom'
 export default function SearchBar({ searchableItems, user, setUser }) {
    // console.log('searchableItems', searchableItems)
    //console.log('searchableItems in SB', searchableItems)
-    const [matchedSearches,setMatchedSearches] = useState(null)
+    const [matchedSearches,setMatchedSearches] = useState([])
     const navigate = useNavigate()
     const inputBar = useRef(null)
     const [userSearch,setUserSearch] = useState('')
@@ -27,29 +26,29 @@ export default function SearchBar({ searchableItems, user, setUser }) {
     //console.log('itemNameArr ', itemNameArr)
     //console.log('itemIdArr ', itemIdArr)
     function handleChange(e){
+        const foundSearchedItem = []
         setUserSearch(e.target.value)
         console.log('user is typing: ',userSearch)
         if(userSearch === '' || userSearch === '  Search Scamazon.com'){
             return
         } else{
-            for(let item of itemNameArr){
+            for(let name of itemNameArr){
                 
-                if(item.toLowerCase().includes(userSearch.toLowerCase())){
-                    console.log('matched Search Item id: ',itemIdArr[itemNameArr.indexOf(item)])
+                if(name.toLowerCase().includes(userSearch.toLowerCase())){
+                    //console.log('search matches this item: ', name)
+                    foundSearchedItem.push(name)
+                    setMatchedSearches(foundSearchedItem)
                 }
             }
         }
     }
-    console.log('itemandNumArr', itemIdArr)
+    console.log('matched Search items: ',matchedSearches)
+    //console.log('itemandNumArr', itemIdArr)
     
     function handleButtonClick(){
         console.log('button clicked: ',inputBar.current.value)
     }
     
-    console.log('itemNameArr', itemNameArr[0])
-
-
-
     
     
     return (
