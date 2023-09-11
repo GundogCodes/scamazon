@@ -1,8 +1,8 @@
-import { useEffect, useState, useRef,  } from 'react'
+import { useEffect, useState, useRef, Component } from 'react'
 import { getUser } from '../../utilities/users-service.cjs'
 import styles from './SearchBar.module.scss'
 import { Link ,useNavigate} from 'react-router-dom'
-export default function SearchBar2({ searchableItems, user}) {
+export default function SearchBar({ searchableItems, user}) {
    console.log('searchableItems (on SearchBar2)', searchableItems)
    //console.log('searchableItems in SB', searchableItems)
     const [matchedSearches,setMatchedSearches] = useState([])
@@ -49,7 +49,9 @@ export default function SearchBar2({ searchableItems, user}) {
         console.log('button clicked: ',inputBar.current.value)
     }
     
-    
+    function handleLiClick(e){
+        console.log(e.target.innerText)
+    }
     
     return (
         <div className={styles.SearchBar}>
@@ -62,9 +64,35 @@ export default function SearchBar2({ searchableItems, user}) {
 
                     
                         <ul className={styles.searchResultsList}>
+                            <li>WHY</li>
+                            <li>TF</li>
+                            <li>IS</li>
+                            <li>THE LIs</li>
+                            <li>WORKING</li>
+                            <li>BUT</li>
+                            <li>NOT</li>
+                            <li>THE</li>
+                            <li>FUCKING</li>
+                            <li>MAP</li>
+                            <li>FUNCTION</li>
+                            <li>IS</li>
+                            <li>IT</li>
+                            <li>NOT</li>
+                            <li>THE</li>
+                            <li onClick={handleLiClick}>SAME</li>
+                            <li>SHIT</li>
+                            <li>!!!</li>
+                            <li>!!!</li>
+                            <li>!!!</li>
+                            <li>!!!</li>
+                            <li>!!!</li>
+                            <li>!!!</li>
+                            <li>!!!</li>
+                            <li>!!!</li>
+            
                             {
-                            matchedSearches.map((result) =>{
-                                <li className={styles.searchResult}>{result}</li>
+                            matchedSearches.map(result =>{
+                                <li onClick={handleLiClick} className={styles.searchResult}>{result}</li>
                                 console.log('html part result',result)
                             })
                             }

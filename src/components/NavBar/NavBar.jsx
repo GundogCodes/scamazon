@@ -17,7 +17,10 @@ export default function NavBar({ searchableItems, user, setUser }) {
                 {user.address?
                 <span>{user.address.city} {user.address.zip}</span>
                 :
-                <>Sign in to view your addresses</>
+                <>
+                <br/>
+                <>View your addresses</>
+                </>
             }
                 </>
                 :

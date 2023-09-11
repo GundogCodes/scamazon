@@ -1,9 +1,9 @@
-import SearchBar from "../../components/NavBar/NavBar"
 
-export default function SearchPage(){
+
+export default function SearchPage({searchedItems}){
     return(
         <>
-        <SearchBar/>        
+
         </>
     )
 }
