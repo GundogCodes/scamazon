@@ -8,11 +8,34 @@
     height: 100vh;
     color: black;
     .WishlistContainer {
-        background-color: white;
+        display: flex;
+        flex-direction: row;
+        color: black;
+        text-align: center;        
+        justify-content: center;    
+        align-items: center;  
+        background-color: pink;
         width: 80vw;
         height: 80vh;
     }
-    .WishlistItems {
+    .WishlistItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        color: black;
         background-color: aqua;
+        > p { 
+            margin: 0 1rem;
+        }
+
+        > img {
+            border: .1vmin solid black;;
+            margin-right: 1rem;
+        }
+
+        > button {
+            margin-left: 1rem;
+        }
     }
 }
