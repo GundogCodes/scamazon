@@ -29,8 +29,8 @@ export default function SearchBar({ searchableItems, user}) {
         const foundSearchedItem = []
         setUserSearch(e.target.value)
         console.log('user is typing: ',userSearch)
-        if(userSearch === '' || userSearch === '  Search Scamazon.com'){
-            return
+        if(userSearch === '' ||userSearch === null || userSearch === '  Search Scamazon.com'){
+            setMatchedSearches([])
         } else{
             for(let name of itemNameArr){
                 
@@ -62,41 +62,18 @@ export default function SearchBar({ searchableItems, user}) {
                 <button onClick={handleButtonClick} ></button>
                 </div>
 
-                    
+                    {matchedSearches.length > 0 && (
+
                         <ul className={styles.searchResultsList}>
-                            <li>WHY</li>
-                            <li>TF</li>
-                            <li>IS</li>
-                            <li>THE LIs</li>
-                            <li>WORKING</li>
-                            <li>BUT</li>
-                            <li>NOT</li>
-                            <li>THE</li>
-                            <li>FUCKING</li>
-                            <li>MAP</li>
-                            <li>FUNCTION</li>
-                            <li>IS</li>
-                            <li>IT</li>
-                            <li>NOT</li>
-                            <li>THE</li>
-                            <li onClick={handleLiClick}>SAME</li>
-                            <li>SHIT</li>
-                            <li>!!!</li>
-                            <li>!!!</li>
-                            <li>!!!</li>
-                            <li>!!!</li>
-                            <li>!!!</li>
-                            <li>!!!</li>
-                            <li>!!!</li>
-                            <li>!!!</li>
+                         
             
                             {
-                            matchedSearches.map(result =>{
-                                <li onClick={handleLiClick} className={styles.searchResult}>{result}</li>
-                                console.log('html part result',result)
-                            })
+                                matchedSearches.map(result =>{
+                                    return <li onClick={handleLiClick} className={styles.searchResult}>{result}</li>
+                                })
                             }
                         </ul>
+                                )}
                     
 
 
