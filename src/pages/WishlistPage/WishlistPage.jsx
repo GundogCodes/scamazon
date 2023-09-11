@@ -16,7 +16,7 @@ export default function WishlistPage({user}) {
     })
     ()
   })
-  // console.log(userWishlist)
+  console.log(userWishlist)
   //Image, name, price
   const items = userWishlist.items
   const wishlistItems = items?.map(wishlistItem => {
@@ -32,8 +32,8 @@ export default function WishlistPage({user}) {
       </div>
     </div>
   })
-  console.log(userWishlist.item)
-  console.log(wishlistItems)
+  // console.log(userWishlist)
+  // console.log(currentWishlist)
 
   // const wishlistItemContainer = document.querySelector(".container")
   // function ShowWishlistItems() {
@@ -66,7 +66,7 @@ export default function WishlistPage({user}) {
         {!userWishlist || !items || items.length === 0 ? 
           (<div>Wishlist is empty :(</div>)
           :
-          ({wishlistItems})
+          ([wishlistItems])
         }
       </div>
       </>
