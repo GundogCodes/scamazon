@@ -29,7 +29,7 @@ export default function SearchBar({ searchableItems, user}) {
         const foundSearchedItem = []
         setUserSearch(e.target.value)
         console.log('user is typing: ',userSearch)
-        if(userSearch === '' ||userSearch === null || userSearch === '  Search Scamazon.com'){
+        if(userSearch === ' ' || userSearch === '' || userSearch === null || userSearch === '  Search Scamazon.com'){
             setMatchedSearches([])
         } else{
             for(let name of itemNameArr){
@@ -50,7 +50,13 @@ export default function SearchBar({ searchableItems, user}) {
     }
     
     function handleLiClick(e){
-        console.log(e.target.innerText)
+        const clickedItem = e.target.innerText
+        console.log('clickedItem ', clickedItem)
+        const indexOfClickedItem = itemNameArr.indexOf(clickedItem)
+        const idOfClickedItem = itemIdArr[indexOfClickedItem]
+        console.log('indexofclickedItem', indexOfClickedItem)
+        console.log('idOfClickedItem',idOfClickedItem)
+        navigate(`item/${idOfClickedItem}`)
     }
     
     return (
