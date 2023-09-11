@@ -53,7 +53,7 @@ const Item = require('../models/item.cjs');
       countInventory: 100,
     },
     {
-      name: 'Introducing Echo Pop | Full sound compact smart speaker with Alexa',
+      name: 'Echo Pop | Full sound compact smart speaker with Alexa',
       description:
         'This compact smart speaker with Alexa features full sound thats great for bedrooms and small spaces. Small enough to blend in and mighty enough to stand out.',
       category: categories[0],

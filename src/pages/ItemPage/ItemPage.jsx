@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getById } from '../../utilities/items-api.cjs';
 import styles from './ItemPage.module.scss';
 import { Row, Col, Image, ListGroup, Card } from 'react-bootstrap';
@@ -12,19 +12,20 @@ export default function ItemPage() {
   const [item, setItem] = useState(null);
   const [cart, setCart] = useState(null);
   const [wishList, setWishList] = useState(null);
+  const navigate = useNavigate();
 
   console.log('krazy kart time:', cart);
   async function handleAddToCart() {
     const updatedCart = await addToCart(id);
     setCart(updatedCart);
-    window.alert(`${item.name} has been added to your Cart`);
+    navigate('/cart');
   }
 
   console.log('test wishList:', wishList);
   async function handleAddToWishList() {
     const updatedWishList = await addToWishList(id);
     setWishList(updatedWishList);
-    window.alert(`${item.name} has been added to your Wishlist`);
+    navigate('/wishlist');
   }
 
   // Get wishList data
