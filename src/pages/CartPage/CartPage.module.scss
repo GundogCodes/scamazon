@@ -1,27 +1,46 @@
+
+
 .CartPage{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 4vh;
-    width: 100vw;
+    margin-top: 9vh;
+   
     height: 100vh;
     color: white;
     background-color: rgb(237, 235, 234);
-    
+    padding-left: 20px;  /* Adjust as needed */
+    padding-right: 20px; /* Adjust as needed */
     .userName{
         color: rgb(7, 7, 7);
     }
 
     .Ordersdetails{
-       
-            display: flex;
-            flex-direction: row;
-            color: black;
-            text-align: center;         /* This centers inline or inline-block content. */
-            justify-content: center;    /* This centers flex items on the main axis (horizontally, in this case). */
-            align-items: center;        /* This centers flex items on the cross axis (vertically, in this case). */
-            font-size: 24px;            /* Adjust this value according to your preference. */
-        
+        display: flex;
+        flex-direction: row; 
+        color: black;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        .qty > span {
+            margin: 0 9px; /* This gives 5px of spacing on both left and right side of the <span> */
+        }
+        .btnForQty {
+            background-color: rgba(255, 216, 20); /* You can change the color to your preference */
+            border: none;
+            padding: 5px 10px; /* Adjust padding as needed */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem; /* Adjust font-size as needed */
+    
+            &:hover {
+                background-color: rgba(240, 204, 68); /* Hover effect */
+            }
+    
+        }
+    
         .OrdersList{
             width: 90vw;
             height: 81vh;
@@ -38,7 +57,7 @@
         .columnWrap {
             display: flex;
             flex-direction: column;
-            gap: 1rem; // To add space between checkout and promo
+            gap: 1rem;
 
             .checkout, .promo {
                 display: flex;
@@ -49,7 +68,7 @@
                 background-color: white;
                 color: rgb(0, 0, 0);
                 margin-left: .9vw;
-                padding: 1rem; // Add padding as needed
+                padding: 1rem;
             }
 
             .checkout {
@@ -65,7 +84,7 @@
                     cursor: pointer;
                     border-radius: 5px;
                     transition: background-color 0.3s ease;
-                
+
                     &:hover {
                         background-color: rgba(240, 204, 68);
                     }
@@ -73,7 +92,7 @@
             }
 
             .promo {
-                height: 30vh;// You can add additional styles for promo here
+                height: 30vh;
             }
         }
 
@@ -102,6 +121,31 @@
 
             > button {
                 margin-left: 1rem;
+            }
+        }
+    }
+}
+
+/* For screens smaller than 768px (can adjust as needed) */
+@media (max-width: 768px) {
+    .CartPage {
+        .Ordersdetails {
+            flex-direction: column;
+            
+            .OrdersList {
+                width: 95vw;
+                height: auto; /* Adjust according to your design requirements. */
+            }
+            
+            .columnWrap {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+
+                .checkout, .promo {
+                    width: 45vw; /* Adjust width for smaller screens */
+                    margin-left: 0; /* Reset margin */
+                }
             }
         }
     }

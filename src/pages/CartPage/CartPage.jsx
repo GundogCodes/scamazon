@@ -1,11 +1,11 @@
 import styles from './CartPage.module.scss';
 import { useState, useEffect } from 'react';
-import { getCart, checkout } from '../../utilities/orders-api.cjs';
+import { getCart, checkout, setItemQtyInCart } from '../../utilities/orders-api.cjs';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function CartPage({ user, setUser }) {
     const [cart, setCart] = useState(null);
-    console.log("line7", cart);
+   
     const navigate = useNavigate();
 
     useEffect(function () {
@@ -15,35 +15,48 @@ export default function CartPage({ user, setUser }) {
         }
         fetchCartData();
     }, []);
-    
-    console.log(user._id);
 
-    const handleChangeQty = (id, qty) => {
-        console.log("Change quantity for item:", id, "to:", qty);
+    async function handleChangeQty(e, itemId, newQty) {
+        const updatedCart = await setItemQtyInCart(itemId, newQty);
+        setCart(updatedCart);
     }
 
-    const lineItems = cart?.lineItems?.map(lineItem => (
-        <div key={lineItem._id}>
-            <div className={styles.lineItem}>
-                <Link to={`/item/${lineItem.item._id}`}>
-                    <img src={lineItem.item.image} className={styles.image} alt={lineItem.item.name} />
-                </Link>
-                <p>Name: {lineItem.item.name}</p>
-                <p>Quantity: {lineItem.quantity}</p>
-                <p>Price: ${lineItem.item.price.toFixed(2)}</p>
-                {cart.isPaid ? null : <button onClick={() => handleChangeQty(lineItem._id, lineItem.quantity - 1)}>Remove item</button>}
+    function renderLineItem(lineItem) {
+        return (
+            <div key={lineItem._id}>
+                <div className={styles.lineItem}>
+                    <Link to={`/item/${lineItem.item._id}`}>
+                        <img src={lineItem.item.image} className={styles.image} alt={lineItem.item.name} />
+                    </Link>
+                    <p>Name: {lineItem.item.name}</p>
+                    <div className={styles.qty}>
+                    <p>Quantity:</p>
+                        {!cart.isPaid && (
+                            <button
+                                className={styles.btnForQty}
+                                onClick={(e) => handleChangeQty(e,lineItem.item._id, lineItem.quantity -= 1)}
+                            >−</button>
+                        )}
+                        <span>{lineItem.quantity}</span>
+                        {!cart.isPaid && (
+                            <button
+                                className={styles.btnForQty}
+                                onClick={(e) => handleChangeQty(e,lineItem.item._id, lineItem.quantity += 1)}
+                            >+</button>
+                        )}
+                  
+                    </div>
+                    <p>Price: ${lineItem.item.price.toFixed(2)}</p>
+                </div>
+                <hr className={styles.lineSeparator} />
             </div>
-            <hr className={styles.lineSeparator} />
-        </div>
-    ));
+        );
+    }
 
     async function handleCheckout() {
         await checkout(user._id);
-        console.log('line41', cart)
-        navigate('/cart');
+        window.location.reload();
     }
-
-    const totalPrice = cart?.lineItems?.reduce((total, lineItem) => total + (lineItem.item.price * lineItem.quantity), 0).toFixed(2);
 
     return (
         <div className={styles.CartPage}>
@@ -53,14 +66,14 @@ export default function CartPage({ user, setUser }) {
             <div className={styles.Ordersdetails}>
                 <div className={styles.OrdersList}>
                     {!cart || !cart.lineItems || cart.lineItems.length === 0 ? (
-                        <div>Your cart is empty, my dude. Time to part with your hard-earned cash – add some items and let the shopping adventure begin! 🛒💰</div>
+                        <div>Whoa there, my dude/dudette!Your cart is empty. 🛒 If Melon Husk catches wind, he might send me off to Mars. Look, I've got a family of 9... cats... to feed. 🐱 While his band sounds like a kazoo in a blender, let's keep him busy. Toss in some items and help a feline family out, will ya?</div>
                     ) : (
-                        lineItems
+                        cart.lineItems.map(item => renderLineItem(item))
                     )}
                 </div>
                 <div className={styles.columnWrap}>
                     <div className={styles.checkout}>
-                        <p>total: ${totalPrice}</p>
+                        <p>total: ${cart?.lineItems?.reduce((total, lineItem) => total + (lineItem.item.price * lineItem.quantity), 0).toFixed(2)}</p>
                         <button className={styles.checkoutbtn} onClick={handleCheckout}>Proceed to checkout</button>
                     </div>
                     <div className={styles.promo}> promotion components here</div>
