@@ -13,7 +13,7 @@ const Item = require('../models/item.cjs');
   await Item.deleteMany({});
   const items = await Item.create([
     {
-      name: 'Sony Playstation 5',
+      name: 'Used PS5',
       description:
         'The PS5 console unleashes new gaming possibilities that you never anticipated. Experience lightning fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio, and an all-new generation of incredible PlayStation games.',
       category: categories[0],

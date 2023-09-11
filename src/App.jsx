@@ -1,5 +1,6 @@
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { getAll } from './utilities/items-api.cjs'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import NavBar from './components/NavBar/NavBar'
@@ -25,14 +26,27 @@ import LogOut from './components/LogOut/LogOut'
 function App() {
   const [user, setUser] = useState(getUser());
 
+  const [searchableItems, setSearchableItems] = useState(null)
+
+
+  useEffect(  ()=>{
+    (async ()=>{
+
+      const allItems = await getAll()
+      setSearchableItems(allItems)
+      //console.log('searchableItems', searchableItems)
+      
+    }) ()
+    
+},[ ])
+
   return (
     <>
 
 
     <NavBar routes={routes} />
-
     <Routes>
-      <Route path="/" element={<HomePage  />}/>
+      <Route path="/" element={searchableItems && <HomePage searchableItems={searchableItems} />}/>
       <Route path="/user" element={<UserPage user={user} setUser={setUser}/>}/>
       <Route path="/search" element={<SearchPage/>}/>
       <Route path="/item/:id" element={<ItemPage/>}/>
@@ -43,9 +57,8 @@ function App() {
       <Route path="/edit" element={<EditUserPage user={user} setUser={setUser}/>}/>
       <Route path="/login" element={<LoginPage user={user} setUser={setUser}/>}/>
       <Route path="/wishlist" element={<WishlistPage user={user} setUser={setUser}/>}/>
-    </Routes>
+      </Routes>
     <LogOut user={user} setUser={setUser}/>
-
     </>
   );
 }
