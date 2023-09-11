@@ -33,7 +33,7 @@ export default function PromoCarousel({promotionItems}) {
           />
           <Carousel.Caption className={styles.caption}>
           <h3 className={styles.cardTitle}> {carouselItems[0].name} </h3>
-          <p className={styles.itemDesc}>Comes with instructions on how to fix it</p> 
+          <p className={styles.itemDesc}>Come with instructions on how to repair it.</p> 
           <a href= {`item/${promotionItems[0]._id}`} className={styles.sm} > Buy Now! </a>
         </Carousel.Caption>
       </Carousel.Item>
@@ -44,19 +44,19 @@ export default function PromoCarousel({promotionItems}) {
           />
         <Carousel.Caption className={styles.caption}>
           <h3 className={styles.cardTitle}>{carouselItems[4].name}</h3>
-          <p className={styles.itemDesc}>AHHHHHHHH beat Dave Grohl in drum battle!!</p>
-          <a href= {`item/${promotionItems[6]._id}`} className={styles.sm} > Buy Now! </a>
+          <p className={styles.itemDesc}>{promotionItems[4].description}</p>
+          <a href= {`item/${promotionItems[4]._id}`} className={styles.sm} > Buy Now! </a>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item className={styles.CarouselItem} >
         <Image
           className="d-block w-100"
-          src='../../public/img/football.png'
+          src='../../public/img/fireworks.png'
           />
         <Carousel.Caption className={styles.caption}>
-          <h3 className={styles.cardTitle}>{carouselItems[1].name}</h3>
-          <p className={styles.itemDesc}>Tom Brady Signed Footballs- $.01</p>
-          <a href= {`item/${promotionItems[1]._id}`} className={styles.sm} > Buy Now! </a>
+          <h3 className={styles.cardTitle}>{carouselItems[9].name}</h3>
+          <p className={styles.itemDesc}>{promotionItems[9].description}</p>
+          <a href= {`item/${promotionItems[9]._id}`} className={styles.sm} > Buy Now! </a>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

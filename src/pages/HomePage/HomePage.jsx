@@ -25,7 +25,12 @@ export default function HomePage( {searchableItems} ) {
         searchableItems[5],
         searchableItems[6],
         searchableItems[7],
-        searchableItems[8]
+        searchableItems[8],
+        searchableItems[9],
+        searchableItems[10],
+        searchableItems[11],
+        searchableItems[12],
+        searchableItems[13],
     ]
     console.log(promotionItems, 'promotionItems')
 

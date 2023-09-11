@@ -90,13 +90,58 @@ const Item = require('../models/item.cjs');
       image: '/img/lego-barbie.png',
     },
     {
-      name: 'Spare Tires',
+      name: 'Rey Mysterio POP Doll',
       description:
-        'Call Jim for size availability. If Jim is not there ask for Larry.',
-      category: categories[5],
+        'The best wrestler of all time. He deserved more belts :(',
+      category: categories[4],
       price: 75.33,
-      rating: 2.3,
-      image: '/img/tire.png',
+      rating: 5.0,
+      image: '/img/rey.png',
+    },
+    {
+      name: 'Ball-in-a-Cup!',
+      description:
+        'Your Pop-Pop kept himself entertained for days upon days with this. Only 4 left in the world because nobody makes them anymore',
+      category: categories[4],
+      price: 100.00,
+      rating: 5.0,
+      image: '/img/ball.png',
+    },
+    {
+      name: 'DIY Potato Cannon',
+      description: 
+        'Can be retrofitted for coconuts in case you want to feel like you are in Donkey Kong 64',
+      category: categories[5],
+      price: 100.00,
+      rating: 5.0,
+      image: '/img/cannon.png',
+    },
+    {
+      name: 'Completely Legal Fireworks',
+      description: 
+        'Yup. There is nothing illicit about these things at all!',
+      category: categories[5],
+      price: 1000.00,
+      rating: 4.5,
+      image: '/img/fireworks.png',
+    },
+    {
+      name: 'Moon Shoes',
+      description: 
+        'Relive the 90s baby!!',
+      category: categories[5],
+      price: 777.77,
+      rating: 5.0,
+      image: '/img/moonshoes.png',
+    },
+    {
+      name: 'Wells For Boys (As seen on SNL)',
+      description: 
+        '"Wells for sensitive little boys to wish upon, condife in, and reflecy by".',
+      category: categories[5],
+      price: 470.00,
+      rating: 4.5,
+      image: '/img/well.png',
     },
 
 
