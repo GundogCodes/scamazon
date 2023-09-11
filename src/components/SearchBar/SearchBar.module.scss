@@ -34,6 +34,9 @@
             padding: 20px;
             background-color: rgba(244, 192, 118);
         }
+        button:hover{
+            background-color: adjust-hue($color: #ffab59, $degrees: 0);
+        }
     }
 
     .searchResultsList {

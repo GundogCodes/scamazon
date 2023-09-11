@@ -64,7 +64,7 @@ export default function SearchBar({ searchableItems, user}) {
 
 
                 <div className={styles.searchBarDiv}>
-                <input ref={inputBar} type='search' onChange={handleChange} defaultValue='  Search Scamazon.com'  />
+                <input ref={inputBar} type='search' onChange={handleChange} placeholder='  Search Scamazon.com'  />
                 <button onClick={handleButtonClick} ></button>
                 </div>
 
