@@ -34,7 +34,7 @@ function App() {
 
       const allItems = await getAll()
       setSearchableItems(allItems)
-      //console.log('searchableItems', searchableItems)
+      console.log('searchableItems', searchableItems)
       
     }) ()
     

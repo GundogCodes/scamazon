@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { getUser } from '../../utilities/users-service.cjs'
 import styles from './SearchBar.module.scss'
 import { Link } from 'react-router-dom'
@@ -6,43 +6,45 @@ import { useNavigate } from 'react-router-dom'
 export default function SearchBar({ searchableItems, user, setUser }) {
    // console.log('searchableItems', searchableItems)
    //console.log('searchableItems in SB', searchableItems)
-   const [matchedSearches,setMatchedSearches] = useState(null)
-   const navigate = useNavigate()
+    const [matchedSearches,setMatchedSearches] = useState(null)
+    const navigate = useNavigate()
+    const inputBar = useRef(null)
     const [userSearch,setUserSearch] = useState('')
     
-    //console.log('itemsArr', itemsArr) //this returns the array properly
+    console.log('searchableItems', searchableItems) //this returns the array properly
     //console.log('itemsArr', itemsArr[2].name) this returns name properly
     //console.log(user)
-    const itemNameAndIdArr = []
+    const itemIdArr = []
     const itemNameArr = []
 
     
-    for(let items of searchableItems){
-        //console.log(items.name)
-        itemNameArr.push(items.name)
-        itemNameAndIdArr.push(items.name)
+    for(let item of searchableItems){
+        //console.log(item._id)
+        itemNameArr.push(item.name)
+        itemIdArr.push(item._id)
         
     }
-
+    //console.log('itemNameArr ', itemNameArr)
+    //console.log('itemIdArr ', itemIdArr)
     function handleChange(e){
         setUserSearch(e.target.value)
-        console.log(userSearch)
-    }
-
-    function handleButtonClick(){
-        const foundSearches = []
-        for(let item of itemNameArr){
-            if(item.toLowerCase().includes(userSearch.toLowerCase())){
-                console.log('yes!',item, 'exists!')
-                foundSearches.push(item)
-                setMatchedSearches(foundSearches)
-            } else{
-                console.log('nah sorry no matches for that homie')
+        console.log('user is typing: ',userSearch)
+        if(userSearch === '' || userSearch === '  Search Scamazon.com'){
+            return
+        } else{
+            for(let item of itemNameArr){
+                
+                if(item.toLowerCase().includes(userSearch.toLowerCase())){
+                    console.log('matched Search Item id: ',itemIdArr[itemNameArr.indexOf(item)])
+                }
             }
         }
-        console.log('foundSearches', foundSearches)
-        }
+    }
+    console.log('itemandNumArr', itemIdArr)
     
+    function handleButtonClick(){
+        console.log('button clicked: ',inputBar.current.value)
+    }
     
     console.log('itemNameArr', itemNameArr[0])
 
@@ -56,19 +58,31 @@ export default function SearchBar({ searchableItems, user, setUser }) {
             <Link to='/'><img src='https://selenakitt.com/wp-content/files/scamazon.png' /></Link>
 
             <Link to='/address'><div className={styles.deliverDiv}>
+                {user?
+                <>
                 Deliver to {user.name}
                 <span>{user.address.city} {user.address.zip}</span>
+                </>
+                :
+                <>Sign in</>
+            }
             </div></Link>
 
             <section>
-                <input type='search' onChange={handleChange} defaultValue='  Search Scamazon.com'  />
+                <input ref={inputBar} type='search' onChange={handleChange} defaultValue='  Search Scamazon.com'  />
                 <button onClick={handleButtonClick} ></button>
-        
             </section>
+                
 
             <Link to='/user'><div className={styles.toUser}>
+                {user?
+                <>
                 Hello, {user.name}
                 <span>View Account</span>
+                </>
+                :
+                <>Sign in to view Account</>
+            }
             </div></Link>
 
             <Link to='/orders'><div className={styles.toOrders}>
