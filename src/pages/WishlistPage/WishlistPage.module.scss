@@ -7,9 +7,12 @@
     width: 100vw;
     height: 100vh;
     color: black;
+    .WishlistContainer {
+        background-color: white;
+        width: 80vw;
+        height: 80vh;
+    }
     .WishlistItems {
-    background-color: white;
-    width: 80vw;
-    height: 80vh;
+        background-color: aqua;
     }
 }
