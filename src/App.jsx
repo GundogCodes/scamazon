@@ -20,7 +20,7 @@ import EditUserPage from './pages/EditUserPage/EditUserPage'
 import {getUser} from '../src/utilities/users-service.cjs'
 import Footer from './components/Footer/Footer'
 import LogOut from './components/LogOut/LogOut'
-import SearchBar from './components/SearchBar/SearchBar'
+
 
 
 function App() {
@@ -44,9 +44,9 @@ function App() {
     <>
 
 
-    <NavBar routes={routes} />
+
     {searchableItems?
-    <SearchBar searchableItems={searchableItems} user={user} setUser={setUser}/> :<></>
+    <NavBar searchableItems={searchableItems} user={user} setUser={setUser}/> :<></>
   }
 
     <Routes>

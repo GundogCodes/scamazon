@@ -2,8 +2,8 @@ import { useEffect, useState, useRef } from 'react'
 import { getUser } from '../../utilities/users-service.cjs'
 import styles from './SearchBar.module.scss'
 import { Link ,useNavigate} from 'react-router-dom'
-export default function SearchBar({ searchableItems, user, setUser }) {
-   // console.log('searchableItems', searchableItems)
+export default function SearchBar2({ searchableItems, user}) {
+   console.log('searchableItems (on SearchBar2)', searchableItems)
    //console.log('searchableItems in SB', searchableItems)
     const [matchedSearches,setMatchedSearches] = useState([])
     const navigate = useNavigate()
@@ -54,46 +54,25 @@ export default function SearchBar({ searchableItems, user, setUser }) {
     return (
         <div className={styles.SearchBar}>
 
-            <Link to='/'><img src='https://selenakitt.com/wp-content/files/scamazon.png' /></Link>
-
-            <Link to='/address'><div className={styles.deliverDiv}>
-                {user?
-                <>
-                Deliver to {user.name}
-                <span>{user.address.city} {user.address.zip}</span>
-                </>
-                :
-                <>Sign in</>
-            }
-            </div></Link>
 
             <section>
+                <div className={styles.searchBarDiv}>
                 <input ref={inputBar} type='search' onChange={handleChange} defaultValue='  Search Scamazon.com'  />
                 <button onClick={handleButtonClick} ></button>
+                </div>
+                <div className={styles.searchResults}>
+                    
+                        <ul className={styles.searchResultsList}>
+                            {
+                            matchedSearches.map((result) =>{
+                                <p className={styles.searchResult}>{result}</p>
+                            })
+                            }
+                        </ul>
+                    
+                </div>
             </section>
-                
-
-            <Link to='/user'><div className={styles.toUser}>
-                {user?
-                <>
-                Hello, {user.name}
-                <span>View Account</span>
-                </>
-                :
-                <>Sign in to view Account</>
-            }
-            </div></Link>
-
-            <Link to='/orders'><div className={styles.toOrders}>
-                Returns
-                <span>& Orders</span>
-            </div></Link>
-
-            <Link to='/cart'><div className={styles.toCart}>
-                <div className={styles.cartImg}></div>
-                <span>Cart</span>
-            </div></Link>
-
+            
         </div>
     )
 }

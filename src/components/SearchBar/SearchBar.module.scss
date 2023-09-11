@@ -1,93 +1,49 @@
-.SearchBar{
-    width: 100vw;
-    height: 75px;
-    background-color: rgba(20,25,32);
+section{
+    background-color: red;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-around ;
-    position: fixed;
-    top:60px;
-    img{
-        width: 140px;
-        height: 50px;
-        border-radius: 15px;
-    } 
-    img:hover{
-        border-style: solid;
-        border-width: 2px;
-        border-color: white;
-    }
-    .deliverDiv{
+    justify-content: center;
+    flex-direction: column;
+    height: 60px;
+    .searchBarDiv{
         display: flex;
-        flex-direction: column;
-        color: white;
-        width: 200px;
-        height: 50px;
-        justify-content: center;
-        align-items: flex-start;
-        span{
-            font-weight: bold;
-        }
-        
-    }
-    .deliverDiv:hover{
-        border-style: solid;
-        border-width: 2px;
-        border-color: white;
-    }
-
-    .dropDown{
-        position: relative;
-        top:0px;
-        left:0px;
-        width:850px ;
-        height: 60px;
-
-        background-color: red;
-    }
-
-    section{
-        display: flex;
-       
+        flex-direction: row;
+        width: 800px;
+        background-color: green;
         input{
-            border-style: none;
-            width: 800px;
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
-            height: 50px;
+            width: 600px;
+
         }
         button{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
+            background-color: blue;
             width: 50px;
-            height: 52px;
-            background-image: url(https://cdn-icons-png.flaticon.com/128/2989/2989907.png);
-            background-size:44px  ;
-            padding: 20px;
-            background-color: rgba(244,192,118);
+            height: 50px;
         }
     }
-    .toUser, .toOrders, .toCart{
-        display: flex;
-        flex-direction: column;
-        height: 50px;
-        justify-content: center;
-        align-items: flex-start;
-        color: white;
-        padding: 20px;
-        span{
-            font-weight: bold;
+    .searchResultsDiv{
+        top:160px;
+        background-color: yellow;
+        width: 800px;
+        position: absolute;
+        ul{
+            background-color: pink;
+            p{
+                width: 400px;
+                background-color: orange;
+            }
         }
-    }
-    .toUser:hover, .toOrders:hover, .toCart:hover{
-        border-style: solid;
-        border-width: 2px;
-        border-color: white;
-    }
 
- 
+    }
+}
+.toUser, .toOrders, .toCart{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    padding: 20px;
+    span{
+        font-weight: bold;
+    }
 }
