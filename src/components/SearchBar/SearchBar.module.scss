@@ -1,49 +1,62 @@
-section{
-    background-color: red;
+.SearchBar {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    height: 60px;
-    .searchBarDiv{
+    background-color: blue;
+
+    .searchBarDiv {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
         width: 800px;
-        background-color: green;
-        input{
-            width: 600px;
+        height: 75px;
 
-        }
-        button{
-            background-color: blue;
-            width: 50px;
+        background-color: green;
+
+        input {
+
+            border-style: none;
+            width: 800px;
+            border-top-left-radius: 15px;
+
             height: 50px;
         }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            width: 50px;
+            height: 50px;
+            background-image: url(https://cdn-icons-png.flaticon.com/128/2989/2989907.png);
+            background-size: 44px;
+            padding: 20px;
+            background-color: rgba(244, 192, 118);
+        }
     }
-    .searchResultsDiv{
-        top:160px;
+
+    .searchResultsList {
+
         background-color: yellow;
         width: 800px;
         position: absolute;
-        ul{
-            background-color: pink;
-            p{
-                width: 400px;
-                background-color: orange;
-            }
+        top: 60px;
+        height: 25px;
+        width: 750px;
+        overflow-y:visible;
+
+        .searchResult {
+            overflow-y: visible;
+            font-size: xx-large;
+            color: black;
+            width: 400px;
+            background-color: orange;
         }
 
+
+
     }
-}
-.toUser, .toOrders, .toCart{
-    display: flex;
-    flex-direction: column;
-    height: 50px;
-    justify-content: center;
-    align-items: flex-start;
-    color: white;
-    padding: 20px;
-    span{
-        font-weight: bold;
-    }
+
 }

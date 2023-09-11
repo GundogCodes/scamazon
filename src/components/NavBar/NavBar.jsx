@@ -6,7 +6,7 @@ import SearchBar from '../SearchBar/SearchBar'
 export default function NavBar({ searchableItems, user, setUser }) {
     
     return (
-        <div className={styles.SearchBar}>
+        <div className={styles.NavBar}>
 
             <Link to='/'><img src='https://selenakitt.com/wp-content/files/scamazon.png' /></Link>
 
@@ -17,7 +17,7 @@ export default function NavBar({ searchableItems, user, setUser }) {
                 {user.address?
                 <span>{user.address.city} {user.address.zip}</span>
                 :
-                <></>
+                <>Sign in to view your addresses</>
             }
                 </>
                 :
@@ -31,7 +31,7 @@ export default function NavBar({ searchableItems, user, setUser }) {
             <Link to='/user'><div className={styles.toUser}>
                 {user?
                 <>
-                Hello, {user.name}
+                Hello, {user.name} <br/>
                 <span>View Account</span>
                 </>
                 :
@@ -40,8 +40,8 @@ export default function NavBar({ searchableItems, user, setUser }) {
             </div></Link>
 
             <Link to='/orders'><div className={styles.toOrders}>
-                Returns
-                <span>& Orders</span>
+                Returns <br/>
+                <span> & Orders</span>
             </div></Link>
 
             <Link to='/cart'><div className={styles.toCart}>

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef,  } from 'react'
 import { getUser } from '../../utilities/users-service.cjs'
 import styles from './SearchBar.module.scss'
 import { Link ,useNavigate} from 'react-router-dom'
@@ -42,7 +42,7 @@ export default function SearchBar2({ searchableItems, user}) {
             }
         }
     }
-    console.log('matched Search items: ',matchedSearches)
+    //console.log('matched Search items: ',matchedSearches)
     //console.log('itemandNumArr', itemIdArr)
     
     function handleButtonClick(){
@@ -55,23 +55,23 @@ export default function SearchBar2({ searchableItems, user}) {
         <div className={styles.SearchBar}>
 
 
-            <section>
                 <div className={styles.searchBarDiv}>
                 <input ref={inputBar} type='search' onChange={handleChange} defaultValue='  Search Scamazon.com'  />
                 <button onClick={handleButtonClick} ></button>
                 </div>
-                <div className={styles.searchResults}>
+
                     
                         <ul className={styles.searchResultsList}>
                             {
                             matchedSearches.map((result) =>{
-                                <p className={styles.searchResult}>{result}</p>
+                                <li className={styles.searchResult}>{result}</li>
+                                console.log('html part result',result)
                             })
                             }
                         </ul>
                     
-                </div>
-            </section>
+
+
             
         </div>
     )
