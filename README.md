@@ -6,7 +6,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">Contents</a>
       <ul>
         <li><a href="#Purpose">Purpose</a></li>
         <li><a href="#Usage">Usage</a></li>
