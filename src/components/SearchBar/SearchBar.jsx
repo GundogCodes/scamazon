@@ -1,15 +1,19 @@
 import { useEffect, useState, useRef, Component } from 'react'
 import { getUser } from '../../utilities/users-service.cjs'
 import styles from './SearchBar.module.scss'
-import { Link ,useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
 export default function SearchBar({ searchableItems, user}) {
    console.log('searchableItems (on SearchBar2)', searchableItems)
    //console.log('searchableItems in SB', searchableItems)
+    const [searchButtonClicked, setSearchButtonClicked] = useState(false)
+    const [clickedItemID, setClickedItemID] = useState('')
     const [matchedSearches,setMatchedSearches] = useState([])
-    const navigate = useNavigate()
+    const navigate =  useNavigate()
+
     const inputBar = useRef(null)
     const [userSearch,setUserSearch] = useState('')
-    
+    const liKey = useRef()
     console.log('searchableItems', searchableItems) //this returns the array properly
     //console.log('itemsArr', itemsArr[2].name) this returns name properly
     //console.log(user)
@@ -47,6 +51,8 @@ export default function SearchBar({ searchableItems, user}) {
     
     function handleButtonClick(){
         console.log('button clicked: ',inputBar.current.value)
+        console.log('all returned items', matchedSearches)
+        setSearchButtonClicked(true)
     }
     
     function handleLiClick(e){
@@ -56,13 +62,17 @@ export default function SearchBar({ searchableItems, user}) {
         const idOfClickedItem = itemIdArr[indexOfClickedItem]
         console.log('indexofclickedItem', indexOfClickedItem)
         console.log('idOfClickedItem',idOfClickedItem)
-        navigate(`item/${idOfClickedItem}`)
+        //navigate(`item/${idOfClickedItem}`)
+        //setClickedItemID(idOfClickedItem)
+
+        console.log('ClICKEDITEM ID : ', idOfClickedItem)
+        navigate(`/item/${idOfClickedItem}`)
+
     }
     
     return (
         <div className={styles.SearchBar}>
-
-
+            
                 <div className={styles.searchBarDiv}>
                 <input ref={inputBar} type='search' onChange={handleChange} placeholder='  Search Scamazon.com'  />
                 <button onClick={handleButtonClick} ></button>
@@ -75,7 +85,7 @@ export default function SearchBar({ searchableItems, user}) {
             
                             {
                                 matchedSearches.map(result =>{
-                                    return <li onClick={handleLiClick} className={styles.searchResult}>{result}</li>
+                                    return <li  key={itemIdArr.indexOf(result)} onClick={handleLiClick} className={styles.searchResult}>{result}</li>
                                 })
                             }
                         </ul>
