@@ -44,7 +44,7 @@
 * [Testing] (#testing)
 * [App_Features]  (#app-features) /*(mentions the function names, type of function (if applicable(i.e. Callback, loop, closure)) what it does, type of request it sends (if applicable), or any other information)*/
 * [Technical_Challenges] (#technical-challenges)
-* [Collaborators] (#collaborators) --> --> -->
+* [Collaborators] (#collaborators) --> 
 
 ### Purpose 
 
