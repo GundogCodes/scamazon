@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getAll } from './utilities/items-api.cjs';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
 import NavBar from './components/NavBar/NavBar';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -21,12 +24,26 @@ import LogOut from './components/LogOut/LogOut';
 function App() {
   const [user, setUser] = useState(getUser());
 
+  const [searchableItems, setSearchableItems] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const allItems = await getAll();
+      setSearchableItems(allItems);
+      //console.log('searchableItems', searchableItems)
+    })();
+  }, []);
+
   return (
     <>
       <NavBar routes={routes} />
-
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/"
+          element={
+            searchableItems && <HomePage searchableItems={searchableItems} />
+          }
+        />
         <Route
           path="/user"
           element={<UserPage user={user} setUser={setUser} />}

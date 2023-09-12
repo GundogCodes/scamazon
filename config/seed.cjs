@@ -18,7 +18,7 @@ const Item = require('../models/item.cjs');
   await Item.deleteMany({});
   const items = await Item.create([
     {
-      name: 'Sony Playstation 5',
+      name: 'Used PS5',
       description:
         'The PS5 console unleashes new gaming possibilities that you never anticipated. Experience lightning fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio, and an all-new generation of incredible PlayStation games.',
       category: categories[0],
@@ -578,6 +578,38 @@ const Item = require('../models/item.cjs');
       rating: 4.5,
       image: '/img/well.png',
       countInventory: 100,
+    },
+    {
+      name: 'Muppets Animal Puppet',
+      description: 'Beat Dave Grohl in drum battle',
+      category: categories[5],
+      price: 499.99,
+      rating: 5.0,
+      image: '/img/animal-puppet.png',
+    },
+    {
+      name: 'Gnome on Dragon',
+      description: 'There is no reason to NOT have one',
+      category: categories[5],
+      price: 33.33,
+      rating: 4.8,
+      image: '/img/gnome.png',
+    },
+    {
+      name: 'Pokemon Emerald',
+      description: 'Relive your childhood',
+      category: categories[5],
+      price: 1234.56,
+      rating: 4.9,
+      image: '/img/pokemon-emerald.png',
+    },
+    {
+      name: 'Lego Barbie',
+      description: 'The collaboration we never realized we needed.',
+      category: categories[5],
+      price: 300.56,
+      rating: 4.5,
+      image: '/img/lego-barbie.png',
     },
   ]);
   console.log(items);
