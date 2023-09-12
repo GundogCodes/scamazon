@@ -11,11 +11,11 @@
         <li><a href="#Purpose">Purpose</a></li>
         <li><a href="#Usage">Usage</a></li>
         <li><a href="#Portfolio">Portfolio</a></li>
-        <li><a href="#Technologies_Used">Portfolio</a></li>
+        <li><a href="#Technologies_Used">Technologies Used</a></li>
         <li><a href="Routing">API/Routing</a></li>
-        <li><a href="#App/Site Features">Portfolio</a></li>
-        <li><a href="#Technical Challenges">Portfolio</a></li>
-        <li><a href="#Collaborators">Portfolio</a></li>
+        <li><a href="#App/Site Features">Features</a></li>
+        <li><a href="#Technical Challenges">Challenges</a></li>
+        <li><a href="#Collaborators">Collaborators</a></li>
       </ul>
     </li>
     <!-- <li>
