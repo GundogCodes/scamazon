@@ -3,12 +3,11 @@ import { getUser } from '../../utilities/users-service.cjs'
 import styles from './SearchBar.module.scss'
 import { Link, useNavigate } from 'react-router-dom'
 
-export default function SearchBar({ searchableItems, user}) {
+export default function SearchBar({ searchableItems, user, matchedSearches,setMatchedSearches}) {
    console.log('searchableItems (on SearchBar2)', searchableItems)
    //console.log('searchableItems in SB', searchableItems)
     const [searchButtonClicked, setSearchButtonClicked] = useState(false)
     const [clickedItemID, setClickedItemID] = useState('')
-    const [matchedSearches,setMatchedSearches] = useState([])
     const navigate =  useNavigate()
 
     const inputBar = useRef(null)

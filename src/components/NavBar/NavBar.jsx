@@ -3,7 +3,7 @@ import { getUser } from '../../utilities/users-service.cjs'
 import styles from './NavBar.module.scss'
 import { Link ,useNavigate} from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
-export default function NavBar({ searchableItems, user, setUser }) {
+export default function NavBar({ searchableItems, user, setUser, matchedSearches, setMatchedSearches }) {
     
     return (
         <div className={styles.NavBar}>
@@ -28,7 +28,7 @@ export default function NavBar({ searchableItems, user, setUser }) {
             }
             </div></Link>
 
-            <SearchBar searchableItems={searchableItems} />
+            <SearchBar searchableItems={searchableItems} matchedSearches={matchedSearches} setMatchedSearches={setMatchedSearches} />
                 
 
             <Link to='/user'><div className={styles.toUser}>

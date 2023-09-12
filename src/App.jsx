@@ -24,6 +24,8 @@ import LogOut from './components/LogOut/LogOut'
 
 
 function App() {
+  const [matchedSearches,setMatchedSearches] = useState([])
+ 
   const [user, setUser] = useState(getUser());
 
   const [searchableItems, setSearchableItems] = useState(null)
@@ -46,7 +48,7 @@ function App() {
 
 
     {searchableItems?
-    <NavBar searchableItems={searchableItems} user={user} setUser={setUser}/> :<></>
+    <NavBar searchableItems={searchableItems} user={user} setUser={setUser} matchedSearches={matchedSearches} setMatchedSearches={setMatchedSearches}/> :<></>
   }
 
     <Routes>
