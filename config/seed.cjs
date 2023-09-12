@@ -487,15 +487,6 @@ const Item = require('../models/item.cjs');
       countInventory: 100,
     },
     {
-      name: 'Muppets Animal Puppet',
-      description: 'Beat Dave Grohl in drum battle',
-      category: categories[5],
-      price: 499.99,
-      rating: 5.0,
-      image: '/img/animal-puppet.png',
-      countInventory: 100,
-    },
-    {
       name: 'Gnome on Dragon',
       description: 'There is no reason to NOT have one',
       category: categories[5],
