@@ -25,7 +25,7 @@ export default function LoginForm({user, setUser }) {
     }
     const navigate = useNavigate()
     function handleClick() {
-        navigate('/');
+        navigate('/user');
     }
 
     function handleLoginValueChange(evt) {

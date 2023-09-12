@@ -50,7 +50,7 @@ export default function ItemPage() {
         console.log(error);
       }
     })();
-  }, []);
+  }, [id]);
 
   // Get the item data
   useEffect(() => {
