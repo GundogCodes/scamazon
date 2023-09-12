@@ -3,34 +3,42 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    background-color: white;
     width: 100vw;
     height: 100vh;
     color: black;
     .WishlistContainer {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         color: black;
         text-align: center;        
-        justify-content: center;    
+        justify-content: flex-start;    
         align-items: center;  
         background-color: pink;
         width: 80vw;
         height: 80vh;
     }
-    .WishlistItem {
+    .item {
+        background: black
+    }
+    .wishlistItem {
+        flex-direction: column;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0.5rem 1rem;
+        padding: 1rem;
         color: black;
-        background-color: aqua;
+        background-color: white;
+        border: .1vmin solid black;
+        width: 75vw;
+        height: 10vh;
+        
         > p { 
             margin: 0 1rem;
         }
 
         > img {
-            border: .1vmin solid black;;
+            border: .1vmin solid black;
             margin-right: 1rem;
         }
 

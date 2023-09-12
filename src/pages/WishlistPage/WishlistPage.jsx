@@ -19,44 +19,6 @@ export default function WishlistPage({user}) {
   console.log(userWishlist)
   //Image, name, price
   const items = userWishlist.items
-  const wishlistItems = items?.map(wishlistItem => (
-    <div key={wishlistItem._id}>
-      <div classname={styles.wishlistItem}>
-        {/* <link to={`/item/${wishlistItem._id}`}> */}
-          <img src={wishlistItem.image} className={styles.image} alt={wishlistItem.name} />
-        {/* </link> */}
-        <div>Hello</div>
-        <p>Name: {wishlistItem.name}</p>
-        <p>Price: ${wishlistItem.price.toFixed(2)}</p>
-        <button onClick={() => removeItem(wishlistItem._id)}>Remove Item</button>
-        <button onClick={() => addToCart(wishlistItem._id, wishlistItem._id.delete)}>Add to Cart</button>
-      </div>
-    </div>
-  ))
-  // console.log(userWishlist)
-  // console.log(currentWishlist)
-
-  // const wishlistItemContainer = document.querySelector(".container")
-  // function ShowWishlistItems() {
-  //   items.map ((Item) => {
-  //     return(
-  //       <Item 
-  //         name={item.name}
-  //         price={item.price}
-  //         image={item.image}
-  //       />
-  //     )
-  //   })
-  //   ()
-
-    // for (i=0; i<items.length-1; i++) {
-    //   const wishlistItem = document.createElement("div")
-    //   wishlistItem.setAttribute("class", "itemContainer")
-    //   wishlistItemContainer.append(wishlistItem)
-    // }
-  // }
-//user.req._id
-
 
   return (
     <div className={styles.WishlistPage}>
@@ -67,7 +29,17 @@ export default function WishlistPage({user}) {
         {!userWishlist || !items || items.length === 0 ? 
           (<div>Wishlist is empty :(</div>)
           :
-          wishlistItems
+          items.map(wishlistItem => (
+            <div key={wishlistItem._id}>
+              <div className={styles.wishlistItem}>
+                <img src={wishlistItem.image} className={styles.image} alt={wishlistItem.name} />
+                <p>{wishlistItem.name}</p>
+                <p>${wishlistItem.price.toFixed(2)}</p>
+                <button onClick={() => removeItem(wishlistItem._id)}>Remove Item</button>
+                <button onClick={() => addToCart(wishlistItem._id, wishlistItem._id.delete)}>Add to Cart</button>
+              </div>
+            </div>
+          ))
         } 
       </div>
       </>
