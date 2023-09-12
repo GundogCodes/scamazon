@@ -13,8 +13,8 @@
         <li><a href="#Portfolio">Portfolio</a></li>
         <li><a href="#Technologies_Used">Technologies Used</a></li>
         <li><a href="Routing">API/Routing</a></li>
-        <li><a href="#App/Site Features">Features</a></li>
-        <li><a href="#Technical Challenges">Challenges</a></li>
+        <li><a href="#App/Site_Features">Features</a></li>
+        <li><a href="#Technical_Challenges">Challenges</a></li>
         <li><a href="#Collaborators">Collaborators</a></li>
       </ul>
     </li>
