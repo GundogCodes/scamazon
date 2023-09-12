@@ -126,7 +126,7 @@ Our team created a MERN stack web application similar in style and function to m
   <summary>Portfolio</summary>
   
  ## Portfolio
-  1. Wireframed 
+  1. Wireframes 
   <img src= './public/img/scamazon-landing-page.png'/>
   2. Erd
   3. Trello
@@ -147,6 +147,8 @@ Our team created a MERN stack web application similar in style and function to m
 
 ### API 
 
+
+
 ### Routing
 
 - USER ROUTES
@@ -157,9 +159,41 @@ Our team created a MERN stack web application similar in style and function to m
 | POST            | /user/login      | Logs in user      |
 | POST            | /user/logout/:id | Logs out user     |
 
+-  ITEM ROUTES
+
+| **HTTP Method** | **End Point**    |    **Action**     |
+| :-------------- | :--------------: | ----------------: |
+| GET            | /                 | Get items         |
+| GET            | /:id              |Gets one item by id| 
+
+- ORDER ROUTES
+
+| **HTTP Method** | **End Point**    |    **Action**              |
+| :-------------- | :--------------: | --------------------------:|
+| GET             | /cart            | Gets the cart              |
+| GET             | /history         | Gets order history         |
+| POST            | /cart/items/:id  | Adds to cart               |
+| POST            | /cart/checkout   | Checkout cart              |
+| PUT             | /cart/qty        | Sets item quantity in cart |
+
+- WISHLIST ROUTES
+
+| **HTTP Method** | **End Point**    |    **Action**         |
+| :-------------- | :--------------: | ---------------------:|
+| GET             | /                | Gets the wish list    |
+| POST            | /:id             | Adds to wish list     |
+| DELETE          | /:id             | Delete from wish list |
+
 ### Testing
 
-### App Features 
+### App/Site Features 
+
+#### Wish List 
+    Our wishlist uses MERN stack technology to target items by their id number and add them to an array to be rendered as list. In general, this practice is used by professionals in the industry. Over time, this type of feature has been adopted by several e-commerce companies. 
+- Cart/Checkout 
+- Rating Component 
+- Carousel 
+- Category Bar
 
 ### Technical_Challenges
 
