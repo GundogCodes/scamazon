@@ -61,7 +61,7 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
   
   ## Portfolio
   
-  1. Wireframed 
+  1. Wireframes 
 
   ##### Landing Page
   ![Landing Page](./public/img/scamazon-landing-page-correct.png)
@@ -105,8 +105,12 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
 
   <img src= './public/img/Working-for-Scamazon.png'/>
   
-
+  2. ERD 
+  
   3. Trello
+      https://trello.com/b/9bIYwNbL/scamazon
+      <img src= './public/img/trello.png'/>
+
 </details>
 
 <!-- ### Wireframes
@@ -174,10 +178,7 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
 
 ### Installation 
 
-<!-- ### Trello Board
 
-https://trello.com/b/9bIYwNbL/scamazon
-<img src= './public/img/trello.png'/> -->
 
 ### Technologies_Used
 
