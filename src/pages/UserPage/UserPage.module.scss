@@ -35,7 +35,7 @@
         }
         .box{
             box-shadow: 8px 8px 3px 3px gainsboro;
-        display: flex;
+            display: flex;
             flex-direction: row;
             align-items: center;
             border:solid;
@@ -48,7 +48,7 @@
             margin: 1vmin;
             position: relative;
             img{
-
+                height: 80px;
                 width: 80px;
             }
             .pDiv{
