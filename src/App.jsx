@@ -27,41 +27,59 @@ import CartPage from './pages/CartPage/CartPage'
 
 function App() {
   const [user, setUser] = useState(getUser());
-  
+
   const [searchableItems, setSearchableItems] = useState(null)
 
 
-  useEffect(  ()=>{
-    (async ()=>{
-
-      const allItems = await getAll()
-      setSearchableItems(allItems)
+  useEffect(() => {
+    (async () => {
+      const allItems = await getAll();
+      setSearchableItems(allItems);
       //console.log('searchableItems', searchableItems)
-      
-    }) ()
-    
-},[ ])
+    })();
+  }, []);
 
   return (
     <>
-
-
-    <NavBar routes={routes} />
-    <Routes>
-      <Route path="/" element={searchableItems && <HomePage searchableItems={searchableItems} />}/>
-      <Route path="/user" element={<UserPage user={user} setUser={setUser}/>}/>
-      <Route path="/search" element={<SearchPage/>}/>
-      <Route path="/item/:id" element={<ItemPage/>}/>
-      <Route path="/categories" element={<CategoryPage />}/>
-      <Route path="/orders" element={<OrderPage/>}/>
-      <Route path="/address" element={<AddressFormPage user={user} setUser={setUser} />}/>
-      <Route path="/payments" element={<YourPaymentPage user={user} setUser={setUser}/>}/>
-      <Route path="/edit" element={<EditUserPage user={user} setUser={setUser}/>}/>
-      <Route path="/login" element={<LoginPage user={user} setUser={setUser}/>}/>
-      <Route path="/wishlist" element={<WishlistPage user={user} setUser={setUser}/>}/>
+      <NavBar routes={routes} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            searchableItems && <HomePage searchableItems={searchableItems} />
+          }
+        />
+        <Route
+          path="/user"
+          element={<UserPage user={user} setUser={setUser} />}
+        />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/item/:id" element={<ItemPage />} />
+        <Route path="/categories" element={<CategoryPage />} />
+        <Route path="/orders" element={<OrderPage />} />
+        <Route
+          path="/address"
+          element={<AddressFormPage user={user} setUser={setUser} />}
+        />
+        <Route
+          path="/payments"
+          element={<YourPaymentPage user={user} setUser={setUser} />}
+        />
+        <Route
+          path="/edit"
+          element={<EditUserPage user={user} setUser={setUser} />}
+        />
+        <Route
+          path="/login"
+          element={<LoginPage user={user} setUser={setUser} />}
+        />
+        <Route
+          path="/wishlist"
+          element={<WishlistPage user={user} setUser={setUser} />}
+        />
       <Route path="/cart" element={<CartPage user={user} setUser={setUser}/>} />
     </Routes>
-    <LogOut user={user} setUser={setUser}/>
+      <LogOut user={user} setUser={setUser} />
     </>
   );
 }
