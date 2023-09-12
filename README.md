@@ -1,7 +1,8 @@
 <img src= './public/img/scamazon.png'/>
 
 # SCAMAZON
- 
+### "Delivering imaginary solutions to your imaginary needs." - Scamazon CEO, Melon Husk
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -9,7 +10,7 @@
       <a href="#about-the-project">Contents</a>
       <ul>
         <li><a href="#Purpose">Purpose</a></li>
-        <li><a href="#Usage">Usage</a></li>
+        <li><a href="#Meet-The-Team">Meet our team</a></li>
         <li><a href="#Portfolio">Portfolio</a></li>
         <li><a href="#Technologies_Used">Technologies Used</a></li>
         <li><a href="Routing">API/Routing</a></li>
@@ -21,7 +22,7 @@
     <!-- <li>
       <a href="#placeholder">placeholder</a>
       <ul>
-        <li><a href="#placeholder">placeholder</a></li>
+        <li><a href="#API">API</a></li>
         <li><a href="#placeholder">placeholder</a></li>
         <li><a href="#placeholder">placeholder</a></li>
       </ul>
@@ -185,7 +186,8 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
 | [![Webpack][Webpack]][Webpack-url] | [![DigitalOcean][DigitalOcean]][DigitalOcean-url] | [![Gulp][Gulp]][Gulp-url] | [![Babel][Babel]][Babel-url] | [![Nodemon][Nodemon]][Nodemon-url] |
 
 
-### Routing
+<details id ="API" >
+  <summary>API</summary>
 
 - USER ROUTES
 
@@ -194,6 +196,29 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
 | POST            | /user            | Creates user      |
 | POST            | /user/login      | Logs in user      |
 | POST            | /user/logout/:id | Logs out user     |
+| DELETE          | /user/:id        | Delete user       |
+| PUT             | /user/:id        | Update user       |
+| GET             | /user/:id        | Get user info     |
+
+
+
+- ORDER ROUTES
+
+| **HTTP Method** | **End Point**    |    **Action**     |
+| :-------------- | :--------------: | ----------------: |
+| GET             | /orders/cart            | get cart info       |
+| GET             | /orders/history         | orders history      |
+| POST            | /orders/cart/items/:id  | add item to cart    |
+| POST            | /orders/checkout        | checkout cart       |
+
+- ITEMS ROUTES
+
+| **HTTP Method** | **End Point**    |    **Action**     |
+| :-------------- | :--------------: | ----------------: |
+| GET             | /items           | get items info    |
+| GET             | /items/:id       | get one item info |
+
+</details>
 
 -  ITEM ROUTES
 
