@@ -27,7 +27,7 @@ import CartPage from './pages/CartPage/CartPage'
 
 function App() {
   const [matchedSearches,setMatchedSearches] = useState([])
-  const [idsOfMatchedSearches, setIdsOfMatchedSearches] = useState([])
+  const [dataOfMatchedSearches, setDataOfMatchedSearches] = useState([])
   const [user, setUser] = useState(getUser());
 
   const [searchableItems, setSearchableItems] = useState(null)
@@ -56,8 +56,8 @@ function App() {
     setUser={setUser} 
     matchedSearches={matchedSearches} 
     setMatchedSearches={setMatchedSearches}
-    idsOfMatchedSearches={idsOfMatchedSearches}
-    setIdsOfMatchedSearches={setIdsOfMatchedSearches}
+    dataOfMatchedSearches={dataOfMatchedSearches}
+    setDataOfMatchedSearches={setDataOfMatchedSearches}
     /> :<></>
   }
 
@@ -65,7 +65,7 @@ function App() {
       <Route path="/" element={searchableItems && <HomePage searchableItems={searchableItems}  />}/>
 
       <Route path="/user" element={<UserPage user={user} setUser={setUser}/>}/>
-      <Route path="/search" element={<SearchPage matchedSearches={matchedSearches} setMatchedSearches={setMatchedSearches} searchableItems={searchableItems} idsOfMatchedSearches={idsOfMatchedSearches} setIdsOfMatchedSearches={setIdsOfMatchedSearches}/>}/>
+      <Route path="/search" element={<SearchPage matchedSearches={matchedSearches} setMatchedSearches={setMatchedSearches} searchableItems={searchableItems} dataOfMatchedSearches={dataOfMatchedSearches} setDataOfMatchedSearches={setDataOfMatchedSearches}/>}/>
       <Route path="/item/:id" element={<ItemPage/>}/>
       <Route path="/categories" element={<CategoryPage />}/>
       <Route path="/orders" element={<OrderPage/>}/>

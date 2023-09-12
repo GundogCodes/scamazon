@@ -3,7 +3,7 @@ import { getUser } from '../../utilities/users-service.cjs'
 import styles from './SearchBar.module.scss'
 import { Link, useNavigate } from 'react-router-dom'
 
-export default function SearchBar({ searchableItems, user, matchedSearches,setMatchedSearches, idsOfMatchedSearches, setIdsOfMatchedSearches}) {
+export default function SearchBar({ searchableItems, user, matchedSearches,setMatchedSearches, dataOfMatchedSearches, setDataOfMatchedSearches}) {
    console.log('searchableItems (on SearchBar)', searchableItems)
 
     const [searchButtonClicked, setSearchButtonClicked] = useState(false)
@@ -47,11 +47,16 @@ export default function SearchBar({ searchableItems, user, matchedSearches,setMa
         for(let element of matchedSearches){
             for(let item of searchableItems){
                 if(element === item.name){
-                     idOfMatchedResult.push(item._id)
+                     idOfMatchedResult.push({
+                        name:item.name,
+                        itemId:item._id, itemPrice:item.price,
+                        itemDes:item.description, 
+                        itemRating:item.rating,
+                        img:item.image})
                 }
             }
         }
-        setIdsOfMatchedSearches(idOfMatchedResult)
+        setDataOfMatchedSearches(idOfMatchedResult)
         navigate('/search')
         }
     
