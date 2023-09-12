@@ -20,6 +20,8 @@ import EditUserPage from './pages/EditUserPage/EditUserPage'
 import {getUser} from '../src/utilities/users-service.cjs'
 import Footer from './components/Footer/Footer'
 import LogOut from './components/LogOut/LogOut'
+import CartPage from './pages/CartPage/CartPage'
+
 
 
 
@@ -29,6 +31,7 @@ function App() {
   const [user, setUser] = useState(getUser());
 
   const [searchableItems, setSearchableItems] = useState(null)
+
 
 
   useEffect(  ()=>{
@@ -52,7 +55,7 @@ function App() {
   }
 
     <Routes>
-      <Route path="/" element={searchableItems && <HomePage  />}/>
+      <Route path="/" element={searchableItems && <HomePage searchableItems={searchableItems}  />}/>
 
       <Route path="/user" element={<UserPage user={user} setUser={setUser}/>}/>
       <Route path="/search" element={<SearchPage/>}/>
@@ -64,9 +67,9 @@ function App() {
       <Route path="/edit" element={<EditUserPage user={user} setUser={setUser}/>}/>
       <Route path="/login" element={<LoginPage user={user} setUser={setUser}/>}/>
       <Route path="/wishlist" element={<WishlistPage user={user} setUser={setUser}/>}/>
+      <Route path="/cart" element={<CartPage user={user} setUser={setUser}/>} />
     </Routes>
-    <LogOut user={user} setUser={setUser}/>
-
+      <LogOut user={user} setUser={setUser} />
     </>
   );
 }

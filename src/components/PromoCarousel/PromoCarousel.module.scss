@@ -1,0 +1,67 @@
+
+.Carousel {
+
+    background-image: url('https://www.nw-waco.org/wp-content/uploads/2021/05/welcome-amazon-smile.jpeg');
+    height: 20rem;
+    width: 50rem;
+    border-radius: 25%;
+    color: black;
+    border: outset black 3px;
+
+
+
+
+
+
+    .CarouselItem {
+        height: 19rem;
+        width: 8.5rem;
+        align-content: space-between;
+        position: relative;
+        left: 21rem;
+    }
+
+
+    .caption {
+        margin-top: 5px;
+        color: rgb(0, 0, 0); 
+        position: relative; 
+        left: -0.09rem; 
+        align-content: space-evenly;
+        padding-bottom: 5px;
+        
+    }
+    a {
+        color: black;
+    }
+
+
+
+
+    @media screen and (min-width:576px) {
+        .carouselInner{
+            display: flex;
+        }
+    
+        .carouselItem{
+            display: block;
+            margin-right: 0;
+            flex: 0 0 calc(100%/3);
+        }   
+    }
+}
+
+
+
+
+// @media screen and (min-width:576px) {
+//     .carousel-inner{
+//         display: flex;
+//     }
+
+//     .carousel-item{
+//         display: block;
+//         margin-right: 0;
+//         flex: 0 0 calc(100%/3);
+//     }   
+// }
