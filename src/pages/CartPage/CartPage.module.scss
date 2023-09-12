@@ -9,8 +9,8 @@
     height: 100vh;
     color: white;
     background-color: rgb(237, 235, 234);
-    padding-left: 20px;  /* Adjust as needed */
-    padding-right: 20px; /* Adjust as needed */
+    padding-left: 20px;  
+    padding-right: 20px; 
     .userName{
         color: rgb(7, 7, 7);
     }
@@ -24,19 +24,19 @@
         align-items: center;
         font-size: 24px;
         .qty > span {
-            margin: 0 9px; /* This gives 5px of spacing on both left and right side of the <span> */
+            margin: 0 9px; 
         }
         .btnForQty {
-            background-color: rgba(255, 216, 20); /* You can change the color to your preference */
+            background-color: rgba(255, 216, 20); 
             border: none;
-            padding: 5px 10px; /* Adjust padding as needed */
+            padding: 5px 10px; 
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            font-size: 1rem; /* Adjust font-size as needed */
+            font-size: 1rem; 
     
             &:hover {
-                background-color: rgba(240, 204, 68); /* Hover effect */
+                background-color: rgba(240, 204, 68); 
             }
     
         }
@@ -126,7 +126,7 @@
     }
 }
 
-/* For screens smaller than 768px (can adjust as needed) */
+
 @media (max-width: 768px) {
     .CartPage {
         .Ordersdetails {
@@ -134,7 +134,7 @@
             
             .OrdersList {
                 width: 95vw;
-                height: auto; /* Adjust according to your design requirements. */
+                height: auto;
             }
             
             .columnWrap {
@@ -143,8 +143,8 @@
                 justify-content: space-around;
 
                 .checkout, .promo {
-                    width: 45vw; /* Adjust width for smaller screens */
-                    margin-left: 0; /* Reset margin */
+                    width: 45vw; 
+                    margin-left: 0; 
                 }
             }
         }
