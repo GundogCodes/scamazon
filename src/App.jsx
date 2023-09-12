@@ -1,30 +1,35 @@
-import { useState, useEffect } from 'react';
-import { getAll } from './utilities/items-api.cjs';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import NavBar from './components/NavBar/NavBar';
-import { Routes, Route } from 'react-router-dom';
-import './App.css';
-import routes from './router/routes';
-import HomePage from './pages/HomePage/HomePage';
-import CategoryPage from './pages/CategoryPage/CategoryPage';
-import ItemPage from './pages/ItemPage/ItemPage';
-import LoginPage from './pages/LoginPage/LoginPage';
-import OrderPage from './pages/OrderPage/OrderPage';
-import SearchPage from './pages/SearchPage/SearchPage';
-import UserPage from './pages/UserPage/UserPage';
-import WishlistPage from './pages/WishlistPage/WishlistPage';
-import AddressFormPage from './pages/AddressFormPage/AddressFormPage';
-import YourPaymentPage from './pages/YourPaymentsPage/YourPaymentsPage';
-import EditUserPage from './pages/EditUserPage/EditUserPage';
-import { getUser } from '../src/utilities/users-service.cjs';
-import Footer from './components/Footer/Footer';
-import LogOut from './components/LogOut/LogOut';
+
+import { useState, useEffect } from 'react'
+import { getAll } from './utilities/items-api.cjs'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import NavBar from './components/NavBar/NavBar'
+import {Routes,Route} from 'react-router-dom'
+import './App.css'
+import routes from './router/routes'
+import HomePage from './pages/HomePage/HomePage'
+import CategoryPage from './pages/CategoryPage/CategoryPage'
+import ItemPage from './pages/ItemPage/ItemPage'
+import LoginPage from './pages/LoginPage/LoginPage'
+import OrderPage from './pages/OrderPage/OrderPage'
+import SearchPage from './pages/SearchPage/SearchPage'
+import UserPage from './pages/UserPage/UserPage'
+import WishlistPage from './pages/WishlistPage/WishlistPage'
+import AddressFormPage from './pages/AddressFormPage/AddressFormPage'
+import YourPaymentPage from './pages/YourPaymentsPage/YourPaymentsPage'
+import EditUserPage from './pages/EditUserPage/EditUserPage'
+import {getUser} from '../src/utilities/users-service.cjs'
+import Footer from './components/Footer/Footer'
+import LogOut from './components/LogOut/LogOut'
+import CartPage from './pages/CartPage/CartPage'
+
+
 
 function App() {
   const [user, setUser] = useState(getUser());
 
-  const [searchableItems, setSearchableItems] = useState(null);
+  const [searchableItems, setSearchableItems] = useState(null)
+
 
   useEffect(() => {
     (async () => {
@@ -72,7 +77,8 @@ function App() {
           path="/wishlist"
           element={<WishlistPage user={user} setUser={setUser} />}
         />
-      </Routes>
+      <Route path="/cart" element={<CartPage user={user} setUser={setUser}/>} />
+    </Routes>
       <LogOut user={user} setUser={setUser} />
     </>
   );

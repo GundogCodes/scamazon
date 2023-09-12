@@ -24,3 +24,20 @@
     align-self: center;
   }
 }
+.NavBarDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 0;
+    height: 60px;
+    background-color: rgba(34,41,53);
+    width: 100vw;
+    left: 0;
+    color:white;
+    position: fixed;
+        .titles{
+            padding: 0 2rem 0 2rem;
+            font-size: 2rem;
+            align-self: center;
+        }
+    }

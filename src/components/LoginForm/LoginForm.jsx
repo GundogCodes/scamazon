@@ -49,6 +49,7 @@ export default function LoginForm({user, setUser }) {
         try {
             const user = await usersService.login(credentials);
             setUser(user);
+            
         } catch {
             setError('Log In Failed - Try Again');
         }
