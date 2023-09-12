@@ -2,7 +2,7 @@
 
 # SCAMAZON
  
-<!-- <details>
+<details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -11,9 +11,14 @@
         <li><a href="#Purpose">Purpose</a></li>
         <li><a href="#Usage">Usage</a></li>
         <li><a href="#Portfolio">Portfolio</a></li>
+        <li><a href="#Technologies_Used">Portfolio</a></li>
+        <li><a href="Routing">API/Routing</a></li>
+        <li><a href="#App/Site Features">Portfolio</a></li>
+        <li><a href="#Technical Challenges">Portfolio</a></li>
+        <li><a href="#Collaborators">Portfolio</a></li>
       </ul>
     </li>
-    <li>
+    <!-- <li>
       <a href="#placeholder">placeholder</a>
       <ul>
         <li><a href="#placeholder">placeholder</a></li>
@@ -23,21 +28,22 @@
     </li>
     <li><a href="#placeholder">placeholder</a></li>
     <li><a href="#placeholder">placeholder</a></li>
-    <li><a href="#placeholder">placeholder</a></li>
+    <li><a href="#placeholder">placeholder</a></li> -->
   </ol>
-</details> -->
+</details>
+
 * [Purpose] (#purpose)
 * [Usage] (#usage)
-* [Wireframes] (#wireframes)
-* [ERD] (#ERD)
-* [Trello_Board] (#trello-board)
+* [Portfolio] (#portfolio)
+<!-- * [Wireframes] (#wireframes) -->
+<!-- * [ERD] (#ERD)
+* [Trello_Board] (#trello-board) -->
 * [Technologies_Used] (#technologies-used)
-* [API] (#api)
-* [Routing] (#routing)
+<!-- * [API] (#api) -->
+* [API/Routing] (#api/routing)
 * [Testing] (#testing)
 * [App_Features]  (#app-features) /*(mentions the function names, type of function (if applicable(i.e. Callback, loop, closure)) what it does, type of request it sends (if applicable), or any other information)*/
 * [Technical_Challenges] (#technical-challenges)
-* [Installation] (#installation)
 * [Collaborators] (#collaborators)
 
 ### Purpose 
@@ -48,7 +54,62 @@ Our team created a MERN stack web application similar in style and function to m
 
 This is a basic e-commerce application using the MERN stack. Its main usage is to show the world our newfound programming skills. 
 
-### Wireframes
+### Portfolio 
+
+<details id ="Portfolio" >
+  <summary>Portfolio</summary>
+  
+  ## Portfolio
+  
+  1. Wireframed 
+
+  ##### Landing Page
+  ![Landing Page](./public/img/scamazon-landing-page-correct.png)
+
+  ##### Items List
+  ![Items List](./public/img/Items-Page.png)
+
+  ##### Item Detail
+  ![Item Detail](./public/img/Item-Detail.png)
+
+  ##### Cart
+  ![Cart](./public/img/Cart.png)
+
+  ##### My Orders
+  ![My Orders](./public/img/My-Orders.png)
+
+  ##### Wishlist
+  ![Wishlist](./public/img/Wishlist.png)
+
+  ##### Checkout
+  ![Checkout](./public/img/Checkout.png)
+
+  ##### Login/Sign Up
+  ![Login](./public/img/Login.png)
+  ![Sign Up](./public/img/Sign-Up.png)
+
+  ##### My Account
+  ![My Account](./public/img/My-Account.png)
+
+  ##### Contact
+  ![Contact](./public/img/Contact-Us.png)
+
+  #### Misc
+  ![About](./public/img/About.png)
+  ![Career](./public/img/Careers.png)
+  ![CorpV](./public/img/Corporate-Values.png)
+  ![History](./public/img/History.png)
+  ![Jobopen](./public/img/Job-Openings.png)
+  ![Mission](./public/img/Mission.png)
+  <img src= './public/img/Testimonies.png'/>
+
+  <img src= './public/img/Working-for-Scamazon.png'/>
+  
+
+  3. Trello
+</details>
+
+<!-- ### Wireframes
 
 #### Landing Page
 <img src= './public/img/scamazon-landing-page-correct.png'/>
@@ -107,25 +168,16 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
 
 <img src= './public/img/Testimonies.png'/>
 
-<img src= './public/img/Working-for-Scamazon.png'/>
+<img src= './public/img/Working-for-Scamazon.png'/> -->
 
 ### ERD 
 
 ### Installation 
 
-<!-- <details id="Portfolio">
-  <summary>Portfolio</summary>
-  
- ## Portfolio
-  1. Wireframes 
-  <img src= './public/img/scamazon-landing-page.png'/>
-  2. Erd
-  3. Trello
-</details> -->
+<!-- ### Trello Board
 
-
-### Trello Board
-
+https://trello.com/b/9bIYwNbL/scamazon
+<img src= './public/img/trello.png'/> -->
 
 ### Technologies_Used
 
@@ -135,9 +187,6 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
 | [![Slack][Slack]][Slack-url] | [![Vscode][Vscode]][Vscode-url] | [![Github][Github]][Github-url] | [![Trello][Trello]][Trello-url] | [![BootStrap][BootStrap]][BootStrap-url] |
 | [![JWT][JWT]][JWT-url] | [![DigitalOcean][DigitalOcean]][DigitalOcean-url] | [![Gulp][Gulp]][Gulp-url] | [![Babel][Babel]][Babel-url] | [![Nodemon][Nodemon]][Nodemon-url] |
 | [![Webpack][Webpack]][Webpack-url] | [![DigitalOcean][DigitalOcean]][DigitalOcean-url] | [![Gulp][Gulp]][Gulp-url] | [![Babel][Babel]][Babel-url] | [![Nodemon][Nodemon]][Nodemon-url] |
-
-### API 
-
 
 
 ### Routing
