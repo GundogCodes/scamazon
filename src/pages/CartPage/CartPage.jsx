@@ -28,7 +28,9 @@ export default function CartPage({ user, setUser }) {
                     <Link to={`/item/${lineItem.item._id}`}>
                         <img src={lineItem.item.image} className={styles.image} alt={lineItem.item.name} />
                     </Link>
-                    <p>Name: {lineItem.item.name}</p>
+                    <div className={styles.cropText}>
+                    <p>{lineItem.item.name}</p>
+                    </div>
                     <div className={styles.qty}>
                     <p>Quantity:</p>
                         {!cart.isPaid && (
@@ -46,7 +48,12 @@ export default function CartPage({ user, setUser }) {
                         )}
                   
                     </div>
-                    <p>Price: ${lineItem.item.price.toFixed(2)}</p>
+                    <p>${lineItem.item.price.toFixed(2)}</p>
+                    <div className={styles.prime}>
+                    <img src="/img/Prime.png" alt="Description of Image" />
+                    <p>In Stock</p>
+                    <p className={styles.no}>NoReturn</p>
+                    </div>
                 </div>
                 <hr className={styles.lineSeparator} />
             </div>
