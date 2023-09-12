@@ -121,8 +121,9 @@ Our team created a MERN stack web application similar in style and function to m
 
 ### Usage
 
+This is a basic e-commerce application using the MERN stack. Its main usage is to show the world our newfound programming skills. 
 
-<details id="Portfolio">
+<!-- <details id="Portfolio">
   <summary>Portfolio</summary>
   
  ## Portfolio
@@ -130,7 +131,7 @@ Our team created a MERN stack web application similar in style and function to m
   <img src= './public/img/scamazon-landing-page.png'/>
   2. Erd
   3. Trello
-</details>
+</details> -->
 
 
 ### Trello Board
@@ -189,12 +190,17 @@ Our team created a MERN stack web application similar in style and function to m
 ### App/Site Features 
 
 #### Wish List 
-    Our wishlist uses MERN stack technology to target items by their id number and add them to an array to be rendered as list. In general, this practice is used by professionals in the industry. Over time, this type of feature has been adopted by several e-commerce companies. 
+   ##### Our wishlist uses MERN stack technology to target items by their id number and add them to an array to be rendered as list. In general, this practice is used by professionals in the industry. Over time, this type of feature has been adopted by several e-commerce companies 
 - Cart/Checkout 
-- Rating Component 
-- Carousel 
-- Category Bar
+  `Our Cart and Checkout features work hand-in-hand to deliver optimal and speedy services to our customers. We believe users time is more precious than ever, so we understand the importance of streamlined frontend with a solid backend to support the needs of everybody.`
 
+- Rating Component 
+  `We get a rating component on the frontend on a scale of 1 to 5 stars to enhance UX. Rating items allows users to contribute to our little community of shoppers with honest feedback on our products.`
+- Carousel 
+  `We used Bootstrap to make an item carouself on the home page. Carousels are commonly used in frontend development to add animation and interactivity to a page. Animation caters to peoples' short attention spans by allowing users to browse seemlessly through a set of items as soon as they get onto our website. This tricks the users into a feeling of control: they want to browse for items, and they once they go to our site, they get instant gratification.`
+#### Category Bar
+  ##### Our category bar enables users to quckly and seamlessly navigate through each category of items. This is useful for people in need of several items for specfic purposes.
+  
 ### Technical_Challenges
 
    #### Installing Vite 
