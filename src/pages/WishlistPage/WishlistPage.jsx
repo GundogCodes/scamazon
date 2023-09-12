@@ -35,8 +35,10 @@ export default function WishlistPage({user}) {
                 <img src={wishlistItem.image} className={styles.image} alt={wishlistItem.name} />
                 <p>{wishlistItem.name}</p>
                 <p>${wishlistItem.price.toFixed(2)}</p>
-                <button onClick={() => removeItem(wishlistItem._id)}>Remove Item</button>
-                <button onClick={() => addToCart(wishlistItem._id, wishlistItem._id.delete)}>Add to Cart</button>
+                <div className={styles.buttons}>
+                  <button onClick={() => removeItem(wishlistItem._id)}>Remove Item</button>
+                  <button onClick={() => addToCart(wishlistItem._id, wishlistItem._id.delete)}>Add to Cart</button>
+                </div>
               </div>
             </div>
           ))

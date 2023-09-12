@@ -17,12 +17,12 @@
         background-color: pink;
         width: 80vw;
         height: 80vh;
+        overflow: hidden;
+        white-space: nowrap;
     }
-    .item {
-        background: black
-    }
+
     .wishlistItem {
-        flex-direction: column;
+        flex-direction: row;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -32,6 +32,8 @@
         border: .1vmin solid black;
         width: 75vw;
         height: 10vh;
+
+        
         
         > p { 
             margin: 0 1rem;
@@ -46,4 +48,10 @@
             margin-left: 1rem;
         }
     }
+
+}
+
+.buttons{
+    flex-direction: column;
+    background: black
 }
