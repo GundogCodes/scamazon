@@ -32,7 +32,7 @@
   </ol>
 </details>
 
-* [Purpose] (#purpose)
+<!-- * [Purpose] (#purpose)
 * [Usage] (#usage)
 * [Portfolio] (#portfolio)
 <!-- * [Wireframes] (#wireframes) -->
@@ -44,7 +44,7 @@
 * [Testing] (#testing)
 * [App_Features]  (#app-features) /*(mentions the function names, type of function (if applicable(i.e. Callback, loop, closure)) what it does, type of request it sends (if applicable), or any other information)*/
 * [Technical_Challenges] (#technical-challenges)
-* [Collaborators] (#collaborators)
+* [Collaborators] (#collaborators) -->
 
 ### Purpose 
 
@@ -106,7 +106,7 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
   <img src= './public/img/Working-for-Scamazon.png'/>
   
   2. ERD 
-  
+
   3. Trello
       https://trello.com/b/9bIYwNbL/scamazon
       <img src= './public/img/trello.png'/>
@@ -173,11 +173,6 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
 <img src= './public/img/Testimonies.png'/>
 
 <img src= './public/img/Working-for-Scamazon.png'/> -->
-
-### ERD 
-
-### Installation 
-
 
 
 ### Technologies_Used
