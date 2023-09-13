@@ -3,6 +3,7 @@ import LoginPage from '../LoginPage/LoginPage'
 import styles from './YourPaymentsPage.module.scss'
 import {useEffect, useState} from 'react'
 import { getOrderHistory } from '../../utilities/orders-api.cjs'
+import { Link } from 'react-router-dom'
 import Footer from '../../components/Footer/Footer'
 export default function YourPaymentPage({user,setUser}){
     const [userOrders, setUserOrders] = useState([])
@@ -11,6 +12,7 @@ export default function YourPaymentPage({user,setUser}){
     const [platinumClicked, setPlatinumClicked] = useState(false)
     const [goldClicked, setGoldClicked] = useState(false)
     const [nothingClicked, setNothingClicked] = useState(true)
+
 
     useEffect(function(){
         async function fetchOrderHistory(){
@@ -21,9 +23,15 @@ export default function YourPaymentPage({user,setUser}){
         fetchOrderHistory()
     },[])
 
+    //console.log('userOrders', userOrders[0].lineItems)
+    const preOrders = []
+    for(let oldOrder of userOrders){
+       // console.log('oldOrder.lineItems: ',oldOrder.lineItems)
+        preOrders.push(oldOrder.lineItems)
+    }
 
-
-
+    // setPreviousOrders(preOrders)
+     console.log('previousOrders', preOrders)
 
     function handleTabClick(e){
         const innerText = e.target.innerText
@@ -34,6 +42,14 @@ export default function YourPaymentPage({user,setUser}){
         }
     
     }
+    const allItems = []
+    for(let order of preOrders){
+        for(let eachOrder of order){
+            console.log('eachOrder item: ', eachOrder)
+            allItems.push(eachOrder)
+        }
+    }
+
     function handleCardClick(e){
         const imgURL = e.target.src
         const blueURL = 'https://ma.visamiddleeast.com/dam/VCOM/regional/ap/taiwan/global-elements/images/tw-visa-gold-card-498x280.png'
@@ -67,7 +83,6 @@ export default function YourPaymentPage({user,setUser}){
         }
 
     }
-    console.log('userOrders', userOrders)
     return(
         <div className={styles.YourPaymentsPage}>
             {user?
@@ -81,12 +96,28 @@ export default function YourPaymentPage({user,setUser}){
            {tabClick?
            <div className={styles.transactionsTab}>
             <h1>Transactions</h1>
-            <div className={styles.transactionsDiv}>
-                <h3>Completed</h3>
-                <h5>USER TRANSACTIOS</h5>
-                <h5>USER TRANSACTIOS</h5>
-                <h5>USER TRANSACTIOS</h5>
-                <h5>USER TRANSACTIOS</h5>
+                <h6>Completed</h6>
+            <div className={styles.transactionsDiv} >
+                <section>
+                    {
+                        allItems.map((item)=>{
+                            return <Link to={`/item/${item.item._id}`}><div className={styles.itemCard}  style={{color:'black'}} >
+                                <div className={styles.imageSide}>
+
+                                <p className={styles.itemName} >{item.item.name}</p>
+                                <img  className={styles.itemImage} src={item.item.image}/>
+                                </div>
+                                <div className={styles.descriptionSide}>
+
+                                <p className={styles.itemQty} >{item.quantity}</p>
+                                <p className={styles.itemExtPrice} >${item.extPrice}</p>
+                                <p className={styles.itemId} >OrderID-{item._id.substring(0,5)}</p>
+                                </div>
+
+                                </div></Link>
+                        })
+                    }
+                </section>
             </div>
            </div>
            :
