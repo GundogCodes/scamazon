@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 9vh;
+    margin-top: 12vh;
     height: 100vh;
     color: white;
     background-color: rgb(237, 235, 234);
@@ -17,6 +17,7 @@
         font-size: 24px;
         color: black;
         text-align: center;
+        
         .qty > span {
             margin: 0 9px; 
         }
@@ -53,6 +54,7 @@
             height: 81vh;
             background-color: rgb(255, 255, 255);
             overflow-y: auto;
+            box-shadow: 8px 8px 3px 3px gainsboro;
             .image {
                 height: 8vw;
                 width: 8vw;
@@ -64,6 +66,7 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            box-shadow: 8px 8px 3px 3px gainsboro;
             .checkout, .promo {
                 display: flex;
                 flex-direction: column;
