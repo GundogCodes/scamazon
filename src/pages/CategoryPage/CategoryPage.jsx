@@ -1,6 +1,7 @@
 import styles from './CategoryPage.module.scss'
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Footer from '../../components/Footer/Footer';
 export default function CategoryPage({searchableItems}){
 
     const { name } = useParams();
@@ -55,6 +56,7 @@ export default function CategoryPage({searchableItems}){
                         </div></Link>
                 })}
             </section>
+            {/* <Footer/> */}
         </div>
     )
 }

@@ -3,6 +3,7 @@ import LoginPage from '../LoginPage/LoginPage'
 import styles from './YourPaymentsPage.module.scss'
 import {useEffect, useState} from 'react'
 import { getOrderHistory } from '../../utilities/orders-api.cjs'
+import Footer from '../../components/Footer/Footer'
 export default function YourPaymentPage({user,setUser}){
     const [userOrders, setUserOrders] = useState([])
     const [tabClick, setTabClick]= useState(false)
@@ -171,6 +172,7 @@ export default function YourPaymentPage({user,setUser}){
            :
            <LoginPage user={user} setUser={setUser}/>
     }
+    <Footer/>
         </div>
         )
     }

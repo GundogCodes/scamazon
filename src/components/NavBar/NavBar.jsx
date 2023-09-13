@@ -55,7 +55,7 @@ export default function NavBar({ searchableItems, user, setUser, matchedSearches
             }
             </div></Link>
 
-            <Link to='/orders'><div className={styles.toOrders}>
+            <Link to='/payments'><div className={styles.toOrders}>
                 Returns <br/>
                 <span> & Orders</span>
             </div></Link>
