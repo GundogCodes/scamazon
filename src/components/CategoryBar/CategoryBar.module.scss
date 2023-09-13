@@ -8,12 +8,13 @@
     top:75px;
     justify-content: space-around;
     align-self: center;
-    z-index: 98;
+    z-index: 40;
     h5{
         align-self: center;
-
         color:white;
-        padding: 5px;
+        padding: 2px;
+        padding-right: 10px;
+        padding-left: 10px;
     }
     h5:hover{
         border-style: solid;

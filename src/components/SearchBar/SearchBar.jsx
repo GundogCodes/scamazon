@@ -27,7 +27,7 @@ export default function SearchBar({ searchableItems, user, matchedSearches,setMa
         const foundSearchedItem = []
         setUserSearch(e.target.value)
         console.log('user is typing: ',userSearch)
-        if(userSearch === ' ' || userSearch === '' || userSearch === null || userSearch === '  Search Scamazon.com'){
+        if( userSearch === null || userSearch === '  Search Scamazon.com'){
             setMatchedSearches([])
         } else{
             for(let name of itemNameArr){
@@ -79,21 +79,26 @@ export default function SearchBar({ searchableItems, user, matchedSearches,setMa
         <div className={styles.SearchBar}>
             
                 <div className={styles.searchBarDiv}>
-                <input ref={inputBar} type='search' onChange={handleChange} placeholder='  Search Scamazon.com'  />
-                <button onClick={handleButtonClick} ></button>
+                    <input ref={inputBar} type='search' onChange={handleChange} placeholder='  Search Scamazon.com'  />
+                    <button onClick={handleButtonClick} ></button>
                 </div>
 
                     {matchedSearches.length > 0 && (
 
-                        <ul className={styles.searchResultsList}>
-                         
-            
+                        <ul  className={styles.searchResultsList}
+                            onMouseLeave={
+                                e=>{
+                                    setMatchedSearches([])
+                                }
+                            }
+                        >
                             {
                                 matchedSearches.map(result =>{
                                     return <li  key={itemIdArr.indexOf(result)} onClick={handleLiClick} className={styles.searchResult}>{result}</li>
                                 })
                             }
                         </ul>
+
                                 )}
                     
 
