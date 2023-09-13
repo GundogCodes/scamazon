@@ -42,7 +42,7 @@
         > img {
             border: .1vmin solid black;
             margin-right: 1rem;
-            width: 9vw;
+            width: 5vw;
             height: 5vh;
         }
 
@@ -54,10 +54,10 @@
 }
 
 .buttons{
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    background:pink;
     width: 10vw;
     height: 10vh;
 }
