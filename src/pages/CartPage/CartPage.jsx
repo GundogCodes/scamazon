@@ -94,7 +94,7 @@ export default function CartPage({ user, searchableItems }) {
 
     async function handleCheckout() {
         await checkout(user._id);
-        navigate('/payment');
+        navigate('/payments');
     }
 
     return (
