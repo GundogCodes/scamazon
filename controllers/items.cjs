@@ -2,7 +2,8 @@ const Item = require('../models/item.cjs');
 
 module.exports = {
   index,
-  show,
+  show
+
 
 };
 
@@ -26,12 +27,3 @@ async function show(req, res) {
   
 }
 
-// async function getByName(req,res,nameOfItem){
-//   try {
-//     const itemObjectByName = await Item.find({name:nameOfItem})
-//     res.status(200).json(itemObjectByName)
-//   } catch (e) {
-//     res.status(400).json({ msg: e.message });
-    
-//   }
-// }

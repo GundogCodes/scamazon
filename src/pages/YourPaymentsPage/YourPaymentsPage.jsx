@@ -1,13 +1,36 @@
 import CreditCard from '../../components/CreditCard/CreditCard'
 import LoginPage from '../LoginPage/LoginPage'
 import styles from './YourPaymentsPage.module.scss'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
+import { getOrderHistory } from '../../utilities/orders-api.cjs'
 export default function YourPaymentPage({user,setUser}){
+    const [userOrders, setUserOrders] = useState([])
     const [tabClick, setTabClick]= useState(false)
     const [blueClicked, setBlueClicked] = useState(false)
     const [platinumClicked, setPlatinumClicked] = useState(false)
     const [goldClicked, setGoldClicked] = useState(false)
     const [nothingClicked, setNothingClicked] = useState(true)
+
+    useEffect(function(){
+        async function fetchOrderHistory(){
+            const orders = await getOrderHistory()
+
+            setUserOrders(orders)
+        }
+        fetchOrderHistory()
+    },[])
+
+    //console.log('userOrders: ', userOrders[0].lineItems[0].item.name) <-- properly gets to name of item
+
+    for(let oldOrders of userOrders){
+        console.log('oldOrders: ',oldOrders)
+        for(let carts in oldOrders ){
+            console.log('carts', carts)
+           
+            }
+        }
+    
+
     function handleTabClick(e){
         const innerText = e.target.innerText
         if(innerText=== 'Transactions'){

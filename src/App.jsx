@@ -21,6 +21,7 @@ import {getUser} from '../src/utilities/users-service.cjs'
 import Footer from './components/Footer/Footer'
 import LogOut from './components/LogOut/LogOut'
 import CartPage from './pages/CartPage/CartPage'
+import CategoryBar from './components/CategoryBar/CategoryBar'
 
 
 
@@ -60,6 +61,8 @@ function App() {
     setDataOfMatchedSearches={setDataOfMatchedSearches}
     /> :<></>
   }
+  <CategoryBar/>
+
 
     <Routes>
       <Route path="/" element={searchableItems && <HomePage searchableItems={searchableItems}  />}/>
@@ -67,7 +70,7 @@ function App() {
       <Route path="/user" element={<UserPage user={user} setUser={setUser}/>}/>
       <Route path="/search" element={<SearchPage matchedSearches={matchedSearches} setMatchedSearches={setMatchedSearches} searchableItems={searchableItems} dataOfMatchedSearches={dataOfMatchedSearches} setDataOfMatchedSearches={setDataOfMatchedSearches}/>}/>
       <Route path="/item/:id" element={<ItemPage/>}/>
-      <Route path="/categories" element={<CategoryPage />}/>
+      <Route path="/categories/:name" element={searchableItems && <CategoryPage searchableItems={searchableItems} />}/>
       <Route path="/orders" element={<OrderPage/>}/>
       <Route path="/address" element={<AddressFormPage user={user} setUser={setUser} />}/>
       <Route path="/payments" element={<YourPaymentPage user={user} setUser={setUser}/>}/>

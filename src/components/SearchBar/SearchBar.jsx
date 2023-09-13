@@ -4,7 +4,7 @@ import styles from './SearchBar.module.scss'
 import { Link, useNavigate } from 'react-router-dom'
 
 export default function SearchBar({ searchableItems, user, matchedSearches,setMatchedSearches, dataOfMatchedSearches, setDataOfMatchedSearches}) {
-   console.log('searchableItems (on SearchBar)', searchableItems)
+
 
     const [searchButtonClicked, setSearchButtonClicked] = useState(false)
 
@@ -13,7 +13,7 @@ export default function SearchBar({ searchableItems, user, matchedSearches,setMa
     const inputBar = useRef(null)
     const [userSearch,setUserSearch] = useState('')
 
-    console.log('searchableItems', searchableItems) //this returns the array properly
+
     const itemIdArr = []
     const itemNameArr = []
 
