@@ -7,7 +7,7 @@ export default function CategoryPage({searchableItems}){
     const [neededItems, setNeededItems] = useState(null)
     const [category, setCategory] = useState('')
     
-    console.log('nameOfCategory', name)
+    //console.log('nameOfCategory', name)
     //console.log('searchableItems in CategoryPage: ', searchableItems)
 
     // if(name === 'sportingGoods'){
@@ -29,7 +29,7 @@ export default function CategoryPage({searchableItems}){
         }
         setNeededItems(matchedCategoryItems)
         
-        console.log('neededItems ',neededItems)
+        //console.log('neededItems ',neededItems)
     },[name])
        
 

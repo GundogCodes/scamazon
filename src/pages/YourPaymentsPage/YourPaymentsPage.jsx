@@ -20,16 +20,9 @@ export default function YourPaymentPage({user,setUser}){
         fetchOrderHistory()
     },[])
 
-    //console.log('userOrders: ', userOrders[0].lineItems[0].item.name) <-- properly gets to name of item
 
-    for(let oldOrders of userOrders){
-        console.log('oldOrders: ',oldOrders)
-        for(let carts in oldOrders ){
-            console.log('carts', carts)
-           
-            }
-        }
-    
+
+
 
     function handleTabClick(e){
         const innerText = e.target.innerText
@@ -73,7 +66,7 @@ export default function YourPaymentPage({user,setUser}){
         }
 
     }
-
+    console.log('userOrders', userOrders)
     return(
         <div className={styles.YourPaymentsPage}>
             {user?
