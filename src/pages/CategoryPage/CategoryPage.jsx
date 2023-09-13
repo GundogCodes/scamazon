@@ -32,24 +32,27 @@ export default function CategoryPage({searchableItems}){
         console.log('neededItems ',neededItems)
     },[name])
        
+
     
 
     return(
         <div className={styles.CategoryPage}>
             <div className={styles.header}>
-                <h1>{category.name}</h1>
+                <h1 className={styles.titles}>{name}</h1>
             </div>
             <section>
                 
                 { neededItems && 
                 neededItems.map(item=>{
-                    return <div className={styles.itemCard}>
-                        <p>{item.name}</p>
+                    return <Link to={`/item/${item._id}`}><div style={{color:'black'}} className={styles.itemCard}>
+                        <p className={styles.name}>{item.name}</p>
                         <img src={item.image}/>
-                        <p>{item.description}</p>
-                        <p>{item.price}</p>
-                        <p>{item.rating}</p>
-                        </div>
+                        <p className={styles.des}>{item.description}</p>
+                        <p className={styles.price}>${item.price}</p>
+                        <p className={styles.rating}>{item.rating} /5</p>
+
+
+                        </div></Link>
                 })}
             </section>
         </div>

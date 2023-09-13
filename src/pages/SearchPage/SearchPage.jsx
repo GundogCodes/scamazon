@@ -19,8 +19,7 @@ export default function SearchPage({matchedSearches,setMatchedSearches, searchab
 
     return(
         <div className={styles.SearchPage}>
-
-
+            <h1>{`1-${matchedSearches.length} results`}</h1>
             {
                 dataOfMatchedSearches && dataOfMatchedSearches.length > 0 ?
                 <>

@@ -9,6 +9,10 @@
         align-items: center;
         justify-content: flex-start;
 
+        h1{
+            width: 100vw;
+            margin-left:30vw;
+        }
 
             .itemCard{
                 display: flex;
@@ -20,6 +24,7 @@
                 border-width: 1px;
                 border-radius: 15px;
                 flex-direction: row;
+                background-color: white;
                 box-shadow: 8px 8px 3px 3px gainsboro;
                 
                 .imageSide{
