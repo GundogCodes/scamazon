@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom'
 
 export default function SearchBar({ searchableItems, user, matchedSearches,setMatchedSearches, dataOfMatchedSearches, setDataOfMatchedSearches}) {
 
-
     const [searchButtonClicked, setSearchButtonClicked] = useState(false)
 
     const navigate =  useNavigate()
@@ -74,12 +73,34 @@ export default function SearchBar({ searchableItems, user, matchedSearches,setMa
         navigate(`/item/${idOfClickedItem}`)
 
     }
-    
+
+    function handleKeyDown(e){
+        if(e.code ==='Enter'){
+            const idOfMatchedResult = []
+        console.log('button clicked: ',inputBar.current.value)
+        console.log('all returned items', matchedSearches)
+        for(let element of matchedSearches){
+            for(let item of searchableItems){
+                if(element === item.name){
+                     idOfMatchedResult.push({
+                        name:item.name,
+                        itemId:item._id, itemPrice:item.price,
+                        itemDes:item.description, 
+                        itemRating:item.rating,
+                        img:item.image})
+                }
+            }
+        }
+        setDataOfMatchedSearches(idOfMatchedResult)
+        navigate('/search')
+        }
+    }
+
     return (
         <div className={styles.SearchBar}>
             
                 <div className={styles.searchBarDiv}>
-                    <input ref={inputBar} type='search' onChange={handleChange} placeholder='  Search Scamazon.com'  />
+                    <input ref={inputBar} type='search' onChange={handleChange} onKeyDown={handleKeyDown} placeholder='  Search Scamazon.com'  />
                     <button onClick={handleButtonClick} ></button>
                 </div>
 
@@ -88,7 +109,7 @@ export default function SearchBar({ searchableItems, user, matchedSearches,setMa
                         <ul  className={styles.searchResultsList}
                             onMouseLeave={
                                 e=>{
-                                    setMatchedSearches([])
+                                    setMatchedSearches([''])
                                 }
                             }
                         >
