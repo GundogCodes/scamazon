@@ -10,23 +10,30 @@ export default function NavBar({ searchableItems, user, setUser, matchedSearches
 
             <Link to='/'><img src='https://selenakitt.com/wp-content/files/scamazon.png' /></Link>
 
-            <Link to='/address'><div className={styles.deliverDiv}>
-                {user?
+            {user ?
                 <>
-                Deliver to {user.name}
-                {user.address?
-                <span>{user.address.city} {user.address.zip}</span>
+                    <Link to='/address'><div className={styles.deliverDiv}>
+                        Deliver to {user.name}
+                        {user.address ?
+                            <span>{user.address.city} {user.address.zip}</span>
+                            :
+                            <>
+                                <br />
+
+                                <>View your addresses</>
+
+                            </>
+                        }
+                    </div></Link>
+
+                </>
                 :
                 <>
-                <br/>
-                <>View your addresses</>
+                    <Link to='/login'>
+                        <>Sign in</>
+                    </Link>
                 </>
             }
-                </>
-                :
-                <>Sign in</>
-            }
-            </div></Link>
 
             <SearchBar 
             searchableItems={searchableItems} 
