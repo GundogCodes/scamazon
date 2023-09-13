@@ -11,10 +11,11 @@ import PromoCollection from '../../components/PromoCollection/PromoCollection';
 //import NavBar from '../../components/NavBar/NavBar'
 
 export default function HomePage({ searchableItems }) {
-  //setting whether the promo items are "picked" by the random generation;
-  //const [items, setItems] = useState([])
-  //const useNavigate = useNavigate();
-  //console.log(searchableItems)
+  //make a dang for loop!! thank you Teo
+  // const promotionItems = [
+  //     searchableItems[i]
+  // ]
+  // console.log(promotionItems, 'promotionItems')
 
   const promotionItems = [
     searchableItems[0],
@@ -31,7 +32,10 @@ export default function HomePage({ searchableItems }) {
 
   return (
     <div className={styles.HomePage}>
-      <img className={styles.pageBanner} src="../img/scamazon-logo.png" />
+      <img
+        className={styles.pageBanner}
+        src="../public/img/scamazon-logo.png"
+      />
 
       <PromoCarousel
         promotionItems={promotionItems}
