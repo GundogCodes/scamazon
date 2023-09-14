@@ -24,7 +24,7 @@ export default function WishlistPage({user}) {
     <div className={styles.WishlistPage}>
       {user?
       <>
-      <h1>{user.name}'s Wishlist</h1>
+      <h1>{user.name.toUpperCase()}'S WISHLIST</h1>
       <div id= "container" className={styles.WishlistContainer}>
         {!userWishlist || !items || items.length === 0 ? 
           (<div>Wishlist is empty :(</div>)
