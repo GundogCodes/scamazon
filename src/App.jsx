@@ -71,7 +71,7 @@ function App() {
       <Route path="/search" element={<SearchPage matchedSearches={matchedSearches} setMatchedSearches={setMatchedSearches} searchableItems={searchableItems} dataOfMatchedSearches={dataOfMatchedSearches} setDataOfMatchedSearches={setDataOfMatchedSearches}/>}/>
       <Route path="/item/:id" element={<ItemPage/>}/>
       <Route path="/categories/:name" element={searchableItems && <CategoryPage searchableItems={searchableItems} />}/>
-      <Route path="/orders" element={<OrderPage/>}/>
+      {/* <Route path="/orders" element={<OrderPage/>}/> */}
       <Route path="/address" element={<AddressFormPage user={user} setUser={setUser} />}/>
       <Route path="/payments" element={<YourPaymentPage user={user} setUser={setUser}/>}/>
       <Route path="/edit" element={<EditUserPage user={user} setUser={setUser}/>}/>
