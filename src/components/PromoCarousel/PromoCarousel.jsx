@@ -13,7 +13,7 @@ export default function PromoCarousel({promotionItems}) {
   for (let items of promotionItems) {
     carouselItems.push(items)
   }
-  console.log(carouselItems, 'carouselItems')
+  //console.log(carouselItems, 'carouselItems')
 
   const handleSelect = (selectedIndex) => {
       console.log('clicked')

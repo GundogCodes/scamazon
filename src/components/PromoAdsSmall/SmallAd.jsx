@@ -11,7 +11,7 @@ export default function SmallAd({promotionItems}) {
     for (let items of promotionItems) {
       smallAdItems.push(items)
     }
-    console.log(smallAdItems, 'smallAdItems')
+  //  console.log(smallAdItems, 'smallAdItems')
     
     return (
         <main className={styles.SmallAd}>

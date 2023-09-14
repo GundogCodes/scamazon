@@ -37,6 +37,7 @@ export default function HomePage( {searchableItems} ) {
 
             <AdBanner 
             promotionItems={promotionItems} 
+            pickerArr={[2,3,4,5,6]}
              />
 
             <PromoAdsSmall promotionItems={promotionItems} 
@@ -48,7 +49,7 @@ export default function HomePage( {searchableItems} ) {
             
               
 
-            <Footer className={styles.Footer} />
+            {/* <Footer className={styles.Footer} /> */}
 
 
         </div>

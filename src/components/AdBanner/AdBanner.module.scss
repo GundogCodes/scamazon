@@ -1,54 +1,201 @@
 .AdBanner{
     width: 100vw;
     height: 600px;
-    background-color: red;
-    position: absolute;
     top:500px;
+    position: absolute;
     display:flex;
     align-items: center;
+    justify-content: space-around;
+    color: black;
+
     .leftMost{
-        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        width: 400px;
         height: 580px;
-        background-color: green;
+        font-size: 25px;
+        background-color: white;
+        font-weight: bold;
+        
+        .echo{
+            width: 300px;
+            height: 300px;
+            border-radius:15px;
+        
+        }
+        .dealDiv{
+            display: flex;
+            align-items: center;
+            .echoPrice{
+                border-radius:5px;
+                width: max-content;
+                padding-left: 5px;
+                padding-right: 5px;
+                margin-top: 10px ;
+                margin-left: 10px ;
+                color: white;
+                background-color: rgba(149,33,50);
+            }
+            span{
+                border-color: white;
+                padding: 10px;
+                
+                font-weight: bold;
+                background-color: white;
+                color: rgba(149,33,50);
+            }
+        }
+    
     }
     .middle{
-        width: 35vw;
+        width: 400px;
         height: 580px;
-        background-color: yellow;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+        font-weight:bold;
+
+
+        
         .middleOne{
-            width: 30vw;
-            background-color: blue;
+
+            width: 400px;
             height: 280px;
+            font-size: 20px;
+            background-color: white;
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+            section{
+            width: 400px;
+                display: flex;
+                align-items: center;
+                aside{
+                    font-size: 20px;
+                }
+                .ring{
+
+                    width: 150px;
+                    height: 150px;
+                    border-radius:15px;
+                    padding: 10px;
+                    background-color:gray;
+                }
+                p{
+                    margin-left: 10px;
+                    font-weight: lighter;
+                    display: flex;
+                    justify-content: center;
+                    width: 200px;
+                   
+                    span{
+                        text-decoration:line-through;
+                        color: black;
+                        color: gray;
+                    }
+                }
+                .lp{
+                    color: gray;
+                }
+            }
         }
         .middleTwo{
-            width: 30vw;
+            width: 400px;
             height: 280px;
-            background-color: salmon;
+            font-size: 20px;
+            background-color: white;
+            display: flex;
+
+            .ps5{
+                margin-top: 20px;
+                margin-left: 10px;
+                padding-left:10px ;
+                width: 200px;
+                height: 200px;
+                border-radius:15px;
+                padding: 10px;
+                background-color: gray;
+            }
+            aside{
+                width: 290px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-weight: lighter;
+                p{
+
+                }
+                .lp{
+                    background-color: rgba(149,33,50);
+                    color: white;
+                    font-weight: bold;
+                    border-radius: 7px;
+                    padding: 5px;
+
+                }
+            }
             
         }
     }
     .rightMost{
-        width: 25vw;
+        p{
+            margin-left: 10px;
+        }
+        width: 400px;
         height: 580px;
-        background-color: aquamarine;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
+        justify-content: space-evenly;
+        margin-left: 10px;
+        font-weight:bold;
+        background-color: white;            
+        
         .rightTop{
-            width: 24vw;
-            height: 270px;
-            background-color: pink;
+
+            height: 290px;
+            width:400px;
+            display: flex;
+            flex-direction: column;
+            .meta{
+                border-radius:15px;
+                width: 300px;
+                height: 200px;
+                border-style: solid;
+                margin-left: 10px;
+                border-width: 2px;
+            }
+            margin-top: 10px;
+            span{
+                margin-left: 10px;
+                font-weight: lighter;
+            }
         }
         .rightBottom{
-            height: 270px;
-            width: 24vw;
-            background-color: orange;
-            
+
+            width: 400px;
+            height: 290px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+            .iphone{
+                border-radius:15px;
+                height: 200px;
+                width: 200px;
+                background-color: gray;
+                padding: 10px;
+                border-width: 1px;
+                border-color: 1px;
+
+            }
+            span{
+                font-weight: lighter;
+            }
         }
     }
 }

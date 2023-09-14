@@ -22,16 +22,20 @@
         height: 20rem;
 
         .img{
+
             border-radius: 15px;
             width: 100vw;
-            height: 50vmin;
+            height: 100vh;
             align-self: center;
             justify-self: center;
             border-radius: 15px;
 
         }
         .caption{
+            align-self: center;
             justify-self: center;
+
+            margin-bottom: 70px;
         }
     }
 }
