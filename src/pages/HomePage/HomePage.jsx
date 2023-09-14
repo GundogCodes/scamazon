@@ -9,6 +9,7 @@ import PromoCollection from '../../components/PromoCollection/PromoCollection'
 import AdBanner from '../../components/AdBanner/AdBanner'
 //import PromoMedia from '../../components/PromoMedia/PromoMedia.jsx'
 //import NavBar from '../../components/NavBar/NavBar'
+import BottomAdBanner from '../../components/BottomAdBanner/BottomAdBanner'
 
 export default function HomePage( {searchableItems} ) {
 
@@ -47,9 +48,12 @@ export default function HomePage( {searchableItems} ) {
                 // items={items.filter(item => item.name.price === items)}
             /> 
             
-              
+              <BottomAdBanner
+              promotionItems={promotionItems}
+              pickerArr={[0,9,7,5,1]}
+              />
 
-            {/* <Footer className={styles.Footer} /> */}
+            <Footer className={styles.Footer} />
 
 
         </div>
