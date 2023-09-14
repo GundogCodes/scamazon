@@ -26,10 +26,13 @@ export default function PromoCarousel({promotionItems}) {
  
   return (
    <>
+   <div className={styles.container}>
+
+
     <Carousel activeIndex={styles.index} onSelect={handleSelect} className={styles.Carousel}>
       <Carousel.Item className={styles.CarouselItem} >
       <Link to={`item/${promotionItems[0][51]._id}`} > <Image 
-          className="d-block w-100"
+          className={styles.img}
           src='./img/rey.png'
           /> </Link>
           <Carousel.Caption className={styles.caption}>
@@ -40,7 +43,7 @@ export default function PromoCarousel({promotionItems}) {
       </Carousel.Item>
       <Carousel.Item className={styles.CarouselItem} >
       <Link to={`item/${promotionItems[0][60]._id}`} > <Image 
-          className="d-block w-100"
+          className={styles.img}
           src='../../img/cannon.png'
           /> </Link>
         <Carousel.Caption className={styles.caption}>
@@ -51,7 +54,7 @@ export default function PromoCarousel({promotionItems}) {
       </Carousel.Item>
       <Carousel.Item className={styles.CarouselItem} >
       <Link to={`item/${promotionItems[0][48]._id}`} > <Image 
-          className="d-block w-100"
+          className={styles.img}
           src='./img/animal.png'
           /> </Link>
         <Carousel.Caption className={styles.caption}>
@@ -62,7 +65,7 @@ export default function PromoCarousel({promotionItems}) {
       </Carousel.Item>
       <Carousel.Item className={styles.CarouselItem} >
       <Link to={`item/${promotionItems[0][35]._id}`} > <Image 
-          className="d-block w-100"
+          className={styles.img}
           src='./img/MobyClick.png'
           /> </Link>
         <Carousel.Caption className={styles.caption}>
@@ -72,6 +75,9 @@ export default function PromoCarousel({promotionItems}) {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+
+    
+    </div>
   </>
   );
 }

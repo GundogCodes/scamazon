@@ -1,16 +1,22 @@
+.container {
+    display:flex;
+    justify-content: center;
+    background-image: linear-gradient(rgb(236,194,129), rgb(192,210,216));
+    width: 100vw
+}
 
 .Carousel {
-
-    background-image: url('https://www.nw-waco.org/wp-content/uploads/2021/05/welcome-amazon-smile.jpeg');
     height: 20rem;
     width: 50rem;
     border-radius: 25%;
     color: black;
-    border: outset black 3px;
 
 
 
-
+    .img {
+        position:relative;
+        left: 25rem;
+    }
 
 
     .CarouselItem {
