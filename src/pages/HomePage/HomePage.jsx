@@ -52,6 +52,7 @@ export default function HomePage( {searchableItems} ) {
               promotionItems={promotionItems}
               pickerArr={[0,9,7,5,1]}
               />
+              <img src='./img/banner3.png'/>
 
 <div className={styles.Footer}>
             <section>
