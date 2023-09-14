@@ -1,0 +1,54 @@
+.AdBanner{
+    width: 100vw;
+    height: 600px;
+    background-color: red;
+    position: absolute;
+    top:500px;
+    display:flex;
+    align-items: center;
+    .leftMost{
+        width: 40vw;
+        height: 580px;
+        background-color: green;
+    }
+    .middle{
+        width: 35vw;
+        height: 580px;
+        background-color: yellow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        .middleOne{
+            width: 30vw;
+            background-color: blue;
+            height: 280px;
+        }
+        .middleTwo{
+            width: 30vw;
+            height: 280px;
+            background-color: salmon;
+            
+        }
+    }
+    .rightMost{
+        width: 25vw;
+        height: 580px;
+        background-color: aquamarine;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        .rightTop{
+            width: 24vw;
+            height: 270px;
+            background-color: pink;
+        }
+        .rightBottom{
+            height: 270px;
+            width: 24vw;
+            background-color: orange;
+            
+        }
+    }
+}
