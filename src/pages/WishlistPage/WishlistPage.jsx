@@ -45,19 +45,13 @@ export default function WishlistPage({ user }) {
                     <p>${wishlistItem.price.toFixed(2)}</p>
                     <div className={styles.buttons}>
                       <button
+                        className={styles.delete}
                         onClick={() => {
                           const wishList = removeItem(wishlistItem._id);
                           setUserWishlist(wishList);
                         }}
                       >
                         Remove Item
-                      </button>
-                      <button
-                        onClick={() =>
-                          addToCart(wishlistItem._id, wishlistItem._id.delete)
-                        }
-                      >
-                        Add to Cart
                       </button>
                     </div>
                   </div>
