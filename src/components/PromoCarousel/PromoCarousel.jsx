@@ -13,7 +13,7 @@ export default function PromoCarousel({promotionItems}) {
   for (let items of promotionItems) {
     carouselItems.push(items)
   }
-  console.log(carouselItems, 'carouselItems')
+  //console.log(carouselItems, 'carouselItems')
 
   const handleSelect = (selectedIndex) => {
       console.log('clicked')
@@ -25,31 +25,22 @@ export default function PromoCarousel({promotionItems}) {
    
  
   return (
+   <div className={styles.container}>
    <>
    <div className={styles.container}>
 
 
     <Carousel activeIndex={styles.index} onSelect={handleSelect} className={styles.Carousel}>
-      <Carousel.Item className={styles.CarouselItem} >
-      <Link to={`item/${promotionItems[0][51]._id}`} > <Image 
-          className={styles.img}
-          src='./img/rey.png'
-          /> </Link>
-          <Carousel.Caption className={styles.caption}>
-          <h3 className={styles.cardTitle}> {carouselItems[0][51].name} </h3>
-          <p className={styles.itemDesc}>{promotionItems[0][51].description}</p> 
-          {/* <a href= {`item/${promotionItems[0][51]._id}`} className={styles.sm} > Buy Now! </a> */}
-        </Carousel.Caption>
-      </Carousel.Item>
+
       <Carousel.Item className={styles.CarouselItem} >
       <Link to={`item/${promotionItems[0][60]._id}`} > <Image 
           className={styles.img}
-          src='../../img/cannon.png'
+          src='./img/cannon.png'
           /> </Link>
         <Carousel.Caption className={styles.caption}>
           <h3 className={styles.cardTitle}>{carouselItems[0][60].name}</h3>
           <p className={styles.itemDesc}>{promotionItems[0][60].description}</p>
-          {/* <a href= {`item/${promotionItems[4]._id}`} className={styles.sm} > Buy Now! </a> */}
+          <a href= {`item/${promotionItems[4]._id}`} className={styles.sm} > Buy Now! </a>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item className={styles.CarouselItem} >
@@ -60,7 +51,7 @@ export default function PromoCarousel({promotionItems}) {
         <Carousel.Caption className={styles.caption}>
           <h3 className={styles.cardTitle}>{carouselItems[0][48].name}</h3>
           <p className={styles.itemDesc}>{promotionItems[0][48].description}</p>
-          {/* <a href= {`item/${promotionItems[0][48]._id}`} className={styles.sm} > Buy Now! </a> */}
+          <a href= {`item/${promotionItems[0][48]._id}`} className={styles.sm} > Buy Now! </a>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item className={styles.CarouselItem} >
@@ -71,14 +62,22 @@ export default function PromoCarousel({promotionItems}) {
         <Carousel.Caption className={styles.caption}>
           <h3 className={styles.cardTitle}>{carouselItems[0][35].name}</h3>
           <p className={styles.itemDesc}>{promotionItems[0][35].description}</p>
-          {/* <a href= {`item/${promotionItems[0][48]._id}`} className={styles.sm} > Buy Now! </a> */}
+          <a href= {`item/${promotionItems[0][48]._id}`} className={styles.sm} > Buy Now! </a>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item className={styles.CarouselItem} >
+      <Link to={`item/${promotionItems[0][51]._id}`} > <Image 
+          className={styles.img}
+          src='./img/rey.png'
+          /> </Link>
+          <Carousel.Caption style={{color:'white', background:'rgba(0,0,0,0.5)', borderRadius:'15px' } } className={styles.caption}>
+          <h3 className={styles.cardTitle}> {carouselItems[0][51].name} </h3>
+          <p className={styles.itemDesc}>{promotionItems[0][51].description}</p> 
+
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-
-    
-    </div>
-  </>
+  </div>
   );
 }
 
