@@ -1,6 +1,7 @@
 <img src= 'https://i.imgur.com/rRxtGTS.png'/>
 
 # [SCAMAZON](https://scamazon.jmsmith.me/)
+### [Trello](https://trello.com/b/9bIYwNbL/scamazon)
 ### "Delivering imaginary solutions to your imaginary needs." - Scamazon CEO, Melon Husk
 
 <details>
