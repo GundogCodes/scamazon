@@ -1,0 +1,22 @@
+.LogOut{
+
+  width: 100vw;
+  position: relative;
+  height: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  button{
+    width: 100px;
+    height: 3vmin;
+    background-color: rgba(244,192,118);
+    border-radius: 15px;
+    bottom: 0;
+    position: fixed;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+}

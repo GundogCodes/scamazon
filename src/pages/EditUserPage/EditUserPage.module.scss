@@ -1,0 +1,99 @@
+.EditUserPage{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 60px;
+    height: 96vh;
+    .titles{
+        width: 100vw;
+        margin-left: 120px;
+    }
+    .linkDiv{
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        background-color:rgba(32,36,46);
+        color:black;
+        h1{
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            margin-top: 50vh;
+        }
+    }
+    .headers{
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 15px;
+        width: 100vw;
+        margin-left: 120px;
+    }
+    form{
+        box-shadow: 8px 8px 3px 3px gainsboro;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 700px;
+        height: 700px;
+        section{
+            box-shadow: 8px 8px 3px 3px gainsboro;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 15px;
+            width: 650px;
+            height: 150px;
+            margin: 10px;
+            padding-left: 20px;
+            font-weight: bold;
+            h4{
+                font-weight: lighter;
+            }
+            .editButt{
+                box-shadow: 8px 8px 3px 3px gainsboro;
+                margin-right: 50px;
+                align-self: flex-end;
+                padding-left: 20px;
+                padding-right: 20px;
+                background-color: white;
+                font-weight: bold;
+            }
+            .sectionHeader{
+            
+                display: flex;
+                flex-direction: row;
+            }
+            input{
+                border-width: 1px;
+                border-style: solid;
+                width: 350px;
+                border-width: 1px;
+            border-style: solid;
+            border-radius: 15px;
+            }
+        }
+        button{
+            margin-left: 20px;
+            margin-bottom: 10px;
+            align-self: flex-start;
+            background-color: rgba(234,209,92);
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 15px;
+            
+        }
+        
+    }
+    
+}  
+

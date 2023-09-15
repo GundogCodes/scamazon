@@ -1,69 +1,67 @@
-const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const Schema = mongoose.Schema;
 
-//not sure if this is going to break anything, 10-12 is the standard industry number of rounds for hashing
-const SALT_ROUNDS = 10
+const SALT_ROUNDS = 10;
 
 /********************** 
 this is the user model schema
 ***********************/
 
+//make a new schema for the address
+const addressSchema = new Schema({
+  street: { type: String, trim: true, lowercase: true, required: true },
+  city: { type: String, trim: true, lowercase: true, required: true },
+  state: { type: String, trim: true, lowercase: true, required: true },
+  zip: { type: String, trim: true, lowercase: true, required: true },
+});
 const userSchema = new Schema(
-    {
-        name: { 
-            type: String, 
-            required: true 
-        },
-        email: { 
-            type: String, 
-            required: true, 
-            lowercase: true, 
-            unique: true 
-        },
-        password: { 
-            type: String, 
-            trim: true,
-            minlength: 3,
-            required: true
-        },
-        address: {
-            street: string,
-            city: string,
-            state: string,
-            zip: string,
-            lowercase: true,
-            trim: true,
-            required: true
-        },
-        phoneNumber: {
-            type: String,
-            trim: true,
-            required: true
-        },
-        //ask josh about this???
-        wishList: {
-            itemArray : [
-                {
-                    item: { type: Schema.Types.ObjectId, ref: 'Item' }
-                }
-            ]
-        }
-    },
-    {
-        timestamps: true,
-        toJSON: {
-            transorm : function (doc, ret) {
-                delete ret.password
-                return ret
-            }
-        }
-    }
-)
 
-userSchema.pre('save', async function(next) {
-    // single line if statement, if password is not modified, return next
-    if (!this.isModified('password')) return next()
-    this.password = await bcrypt.hash(this.password, SALT_ROUNDS)
-    return next()
-})
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      lowercase: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      trim: true,
+      minlength: 3,
+      required: true,
+    },
+
+
+    address: addressSchema,
+
+
+    phoneNumber: {
+      type: String,
+      trim: true,
+    },
+  },
+  {
+    timestamps: true,
+    toJSON: {
+      transform: function (doc, ret) {
+        delete ret.password;
+        return ret;
+      },
+    },
+  }
+
+);
+
+userSchema.pre('save', async function (next) {
+  if (!this.isModified('password')) return next();
+  this.password = await bcrypt.hash(this.password, SALT_ROUNDS);
+  return next();
+});
+
+const User = mongoose.model('User', userSchema);
+
+module.exports = User;

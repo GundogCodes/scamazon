@@ -1,35 +1,87 @@
-import { useState } from 'react'
+import { getAll } from './utilities/items-api.cjs'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import NavBar from './components/NavBar/NavBar'
+import {Routes,Route} from 'react-router-dom'
 import './App.css'
 
+import HomePage from './pages/HomePage/HomePage'
+import CategoryPage from './pages/CategoryPage/CategoryPage'
+import ItemPage from './pages/ItemPage/ItemPage'
+import LoginPage from './pages/LoginPage/LoginPage'
+
+import SearchPage from './pages/SearchPage/SearchPage'
+import UserPage from './pages/UserPage/UserPage'
+import WishlistPage from './pages/WishlistPage/WishlistPage'
+import AddressFormPage from './pages/AddressFormPage/AddressFormPage'
+import YourPaymentPage from './pages/YourPaymentsPage/YourPaymentsPage'
+import EditUserPage from './pages/EditUserPage/EditUserPage'
+import {getUser} from '../src/utilities/users-service.cjs'
+
+import LogOut from './components/LogOut/LogOut'
+import CartPage from './pages/CartPage/CartPage'
+import CategoryBar from './components/CategoryBar/CategoryBar'
+
+
+
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [matchedSearches,setMatchedSearches] = useState([])
+  const [dataOfMatchedSearches, setDataOfMatchedSearches] = useState([])
+  const [user, setUser] = useState(getUser());
+
+  const [searchableItems, setSearchableItems] = useState(null)
+
+
+
+  useEffect(  ()=>{
+    (async ()=>{
+
+      const allItems = await getAll()
+      setSearchableItems(allItems)
+
+      
+    }) ()
+    
+},[])
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+
+
+    {searchableItems?
+    <NavBar searchableItems={searchableItems} 
+    user={user} 
+    setUser={setUser} 
+    matchedSearches={matchedSearches} 
+    setMatchedSearches={setMatchedSearches}
+    dataOfMatchedSearches={dataOfMatchedSearches}
+    setDataOfMatchedSearches={setDataOfMatchedSearches}
+    /> :<></>
+  }
+  <CategoryBar/>
+
+
+    <Routes>
+      <Route path="/" element={searchableItems && <HomePage searchableItems={searchableItems}  />}/>
+
+      <Route path="/user" element={<UserPage user={user} setUser={setUser}/>}/>
+      <Route path="/search" element={<SearchPage matchedSearches={matchedSearches} setMatchedSearches={setMatchedSearches} searchableItems={searchableItems} dataOfMatchedSearches={dataOfMatchedSearches} setDataOfMatchedSearches={setDataOfMatchedSearches}/>}/>
+      <Route path="/item/:id" element={<ItemPage/>}/>
+      <Route path="/categories/:name" element={searchableItems && <CategoryPage searchableItems={searchableItems} />}/>
+
+      <Route path="/address" element={<AddressFormPage user={user} setUser={setUser} />}/>
+      <Route path="/payments" element={<YourPaymentPage user={user} setUser={setUser}/>}/>
+      <Route path="/edit" element={<EditUserPage user={user} setUser={setUser}/>}/>
+      <Route path="/login" element={<LoginPage user={user} setUser={setUser}/>}/>
+      <Route path="/wishlist" element={<WishlistPage user={user} setUser={setUser}/>}/>
+      <Route path="/cart" element={searchableItems && <CartPage user={user} setUser={setUser} searchableItems={searchableItems}/>} />
+    </Routes>
+      <LogOut user={user} setUser={setUser} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
