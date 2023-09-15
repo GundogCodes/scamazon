@@ -1,4 +1,4 @@
-<img src= './public/img/scamazon.png'/>
+<img src= 'https://i.imgur.com/rRxtGTS.png'/>
 
 # [SCAMAZON](https://scamazon.jmsmith.me/)
 ### "Delivering imaginary solutions to your imaginary needs." - Scamazon CEO, Melon Husk
