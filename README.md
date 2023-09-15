@@ -51,6 +51,9 @@
 
 Our team created a MERN stack web application similar in style and function to multinational e-commerce platform, Amazon, for General Assembly coding bootcamp. 
 
+### Meet The Team
+<td align="center"><a href="http://donavon.com"><img src="https://avatars0.githubusercontent.com/u/887639?v=3" width="100px;" alt="Donavon West"/><br /><sub><b>Donavon West</b></sub></a><br /><a href="https://github.com/codesandbox/codesandbox-client/commits?author=donavon" title="Code">💻</a></td>
+
 ### Usage
 
 This is a basic e-commerce application using the MERN stack. Its main usage is to show the world our newfound programming skills. 
