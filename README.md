@@ -114,66 +114,7 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
 
 </details>
 
-<!-- ### Wireframes
 
-#### Landing Page
-<img src= './public/img/scamazon-landing-page-correct.png'/>
-
-#### Items List
-
-<img src= './public/img/Items-Page.png'/>
-
-#### Item Detail
-
-<img src= './public/img/Item-Detail.png'/>
-
-#### Cart
-
-<img src= './public/img/Cart.png'/>
-
-#### My Orders
- 
-<img src= './public/img/My-Orders.png'/>
-
-#### Wishlist
-<img src= './public/img/Wishlist.png'/>
-
-
-#### Checkout
-
-<img src= './public/img/Checkout.png'/>
-
-#### Login/Sign Up
-
-<img src= './public/img/Login.png'/>
-
-<img src= './public/img/Sign-Up.png'/>
-
-#### My Account
-
-<img src= './public/img/My-Account.png'/>
-
-#### Contact
-
-<img src= './public/img/Contact-Us.png'/>
-
-#### Misc
-
-<img src= './public/img/About.png'/>
-
-<img src= './public/img/Careers.png'/>
-
-<img src= './public/img/Corporate-Values.png'/>
-
-<img src= './public/img/History.png'/>
-
-<img src= './public/img/Job-Opening.png'/>
-
-<img src= './public/img/Mission.png'/>
-
-<img src= './public/img/Testimonies.png'/>
-
-<img src= './public/img/Working-for-Scamazon.png'/> -->
 
 
 ### Technologies_Used
@@ -182,8 +123,8 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
 | ------- | ------- | ------- | ------- | ------- |
 | [![React][React.js]][React-url] | [![Nodejs][Node.js]][Node-url] | [![Express][Express]][Express-url] | [![Postman][Postman]][Postman-url] | [![Mongodb][Mongodb]][Mongodb-url] |
 | [![Slack][Slack]][Slack-url] | [![Vscode][Vscode]][Vscode-url] | [![Github][Github]][Github-url] | [![Trello][Trello]][Trello-url] | [![BootStrap][BootStrap]][BootStrap-url] |
-| [![JWT][JWT]][JWT-url] | [![DigitalOcean][DigitalOcean]][DigitalOcean-url] | [![Gulp][Gulp]][Gulp-url] | [![Babel][Babel]][Babel-url] | [![Nodemon][Nodemon]][Nodemon-url] |
-| [![Webpack][Webpack]][Webpack-url] | [![DigitalOcean][DigitalOcean]][DigitalOcean-url] | [![Gulp][Gulp]][Gulp-url] | [![Babel][Babel]][Babel-url] | [![Nodemon][Nodemon]][Nodemon-url] |
+| [![JWT][JWT]][JWT-url] | [![DigitalOcean][DigitalOcean]][DigitalOcean-url] | [![Vite][Vite]][Vite-url] | [![Sass][Sass]][Sass-url] | [![Nodemon][Nodemon]][Nodemon-url] |
+| [![Figma][Figma]][Figma-url] | [![Zoom][Zoom]][Zoom-url] | | | |
 
 
 <details id ="API" >
@@ -210,6 +151,8 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
 | GET             | /orders/history         | orders history      |
 | POST            | /orders/cart/items/:id  | add item to cart    |
 | POST            | /orders/checkout        | checkout cart       |
+| PUT             | /cart/qty               | setItemQty cart     |
+
 
 - ITEMS ROUTES
 
@@ -218,32 +161,19 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
 | GET             | /items           | get items info    |
 | GET             | /items/:id       | get one item info |
 
-</details>
-
--  ITEM ROUTES
-
-| **HTTP Method** | **End Point**    |    **Action**     |
-| :-------------- | :--------------: | ----------------: |
-| GET            | /                 | Get items         |
-| GET            | /:id              |Gets one item by id| 
-
-- ORDER ROUTES
-
-| **HTTP Method** | **End Point**    |    **Action**              |
-| :-------------- | :--------------: | --------------------------:|
-| GET             | /cart            | Gets the cart              |
-| GET             | /history         | Gets order history         |
-| POST            | /cart/items/:id  | Adds to cart               |
-| POST            | /cart/checkout   | Checkout cart              |
-| PUT             | /cart/qty        | Sets item quantity in cart |
-
 - WISHLIST ROUTES
+
 
 | **HTTP Method** | **End Point**    |    **Action**         |
 | :-------------- | :--------------: | ---------------------:|
 | GET             | /                | Gets the wish list    |
 | POST            | /:id             | Adds to wish list     |
 | DELETE          | /:id             | Delete from wish list |
+
+
+</details>
+
+
 
 ### Testing
 
@@ -336,3 +266,22 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
 
 [Webpack-url]: https://webpack.js.org/
 
+[Vite]: https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white
+
+[Vite-url]: https://vitejs.dev/
+
+[Sass]: https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white
+
+[Sass-url]: https://sass-lang.com/
+
+[Storybook]: https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white
+
+[Storybook-url]: https://storybook.js.org/
+
+[Figma]: https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white
+
+[Figma-url]: figma.com
+
+[Zoom]: https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white
+
+[Zoom-url]: zoom.us
