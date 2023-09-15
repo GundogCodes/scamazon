@@ -54,13 +54,13 @@ Our team created a MERN stack web application similar in style and function to m
 ### Meet The Team
 <table>
   <tr>
-<td align="center"><a href="https://github.com/GundogCodes"><img src="https://i.imgur.com/XhlTpTz.png" width="100px;" alt="Gunish Sharma"/><br /><sub><b>Gunish Sharma</b></sub></a><br /><a href="https://github.com/GundogCodes" title="Code">💻</a></td>
-<td align="center"><a href="https://github.com/jmsmith23"><img src="https://i.imgur.com/M0986DH.png" width="100px;" alt="Jeff Smith"/><br /><sub><b>Jeff Smith</b></sub></a><br /><a href="https://github.com/jmsmith23" title="Code">💻</a></td>
-<td align="center"><a href="https://github.com/SapnaPalkhade"><img src="https://avatars0.githubusercontent.com/u/887639?v=3" width="100px;" alt="Sapana Palkhade"/><br /><sub><b>Sapana Palkhade</b></sub></a><br /><a href="https://github.com/SapnaPalkhade" title="Code">💻</a></td>
-<td align="center"><a href="https://github.com/TJCole03"><img src="https://i.imgur.com/B5U1Gjo.png" width="100px;" alt="T.J"/><br /><sub><b>T.J.</b></sub></a><br /><a href="https://github.com/TJCole03" title="Code">💻</a></td>
-<td align="center"><a href="https://github.com/AndrewELe"><img src="https://i.imgur.com/GZKAC6w.png" width="100px;" alt="Andrew Le"/><br /><sub><b>Andrew Le</b></sub></a><br /><a href="https://github.com/AndrewELe" title="Code">💻</a></td>
-<td align="center"><a href="https://github.com/poyalex"><img src="https://i.imgur.com/n5PRqGP.png" width="100px;" alt="Alex Poy"/><br /><sub><b>Alex Poy</b></sub></a><br /><a href="https://github.com/poyalex" title="Code">💻</a></td>
-<td align="center"><a href="https://github.com/bangoo040993"><img src="https://i.imgur.com/lbkq3Pg.png" width="100px;" alt="Bao Ngo"/><br /><sub><b>Bao Ngo</b></sub></a><br /><a href="https://github.com/bangoo040993" title="Code">💻</a></td>
+<td align="center"><a href="https://www.linkedin.com/in/gunisharma/"><img src="https://i.imgur.com/XhlTpTz.png" width="100px;" alt="Gunish Sharma"/><br /><sub><b>Gunish Sharma</b></sub></a><br /><a href="https://github.com/GundogCodes" title="Code">💻</a></td>
+<td align="center"><a href="https://www.linkedin.com/in/jeffrey-smith-dev/"><img src="https://i.imgur.com/M0986DH.png" width="100px;" alt="Jeff Smith"/><br /><sub><b>Jeff Smith</b></sub></a><br /><a href="https://github.com/jmsmith23" title="Code">💻</a></td>
+<td align="center"><a href="https://www.linkedin.com/in/sapana-g/"><img src="https://i.imgur.com/Jt7HTtE.gif" width="100px;" alt="Sapana Palkhade"/><br /><sub><b>Sapana Palkhade</b></sub></a><br /><a href="https://github.com/SapnaPalkhade" title="Code">💻</a></td>
+<td align="center"><a href="https://www.linkedin.com/in/tj-cole/"><img src="https://i.imgur.com/B5U1Gjo.png" width="100px;" alt="T.J"/><br /><sub><b>T.J.</b></sub></a><br /><a href="https://github.com/TJCole03" title="Code">💻</a></td>
+<td align="center"><a href="https://www.linkedin.com/in/andrewele1987/"><img src="https://i.imgur.com/GZKAC6w.png" width="100px;" alt="Andrew Le"/><br /><sub><b>Andrew Le</b></sub></a><br /><a href="https://github.com/AndrewELe" title="Code">💻</a></td>
+<td align="center"><a href="https://www.linkedin.com/in/alexander-j-poy-33279aa0/"><img src="https://i.imgur.com/n5PRqGP.png" width="100px;" alt="Alex Poy"/><br /><sub><b>Alex Poy</b></sub></a><br /><a href="https://github.com/poyalex" title="Code">💻</a></td>
+<td align="center"><a href="https://www.linkedin.com/in/bao-ngo0409/"><img src="https://i.imgur.com/lbkq3Pg.png" width="100px;" alt="Bao Ngo"/><br /><sub><b>Bao Ngo</b></sub></a><br /><a href="https://github.com/bangoo040993" title="Code">💻</a></td>
   </tr>
 </table>
 
@@ -210,6 +210,8 @@ This is a basic e-commerce application using the MERN stack. Its main usage is t
 
 
 ### Collaborators 
+<img src= 'https://i.imgur.com/xFWldHo.png'/>
+
 
   
 
