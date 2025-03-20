@@ -7,10 +7,16 @@ const PORT = process.env.PORT || 8000;
 const MONGODB_URI = process.env.MONGODB_URI
 const db = mongoose.connection;
 
-mongoose.connect(MONGODB_URI);
-db.on('open', () => {
-    console.log('Mongo is Connected');
-});
+if(!MONGODB_URI){
+    console.log("MONGODB URI is Undefined");
+    process.exit(1);
+} else{
+
+    mongoose.connect(MONGODB_URI);
+    db.on('open', () => {
+      console.log('Mongo is Connected');
+    });
+}
 */
 
 /* Middleware */
